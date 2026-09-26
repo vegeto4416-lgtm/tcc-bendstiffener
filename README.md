@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/32689753/README.md)
 <div align="center">
     <img src="logo-ifes.svg" alt="Logo Ifes" width="180" height="180"/>
     <h1>📐 Classe LaTeX Ifes — v9.0.2 (Normas 2024)</h1>
