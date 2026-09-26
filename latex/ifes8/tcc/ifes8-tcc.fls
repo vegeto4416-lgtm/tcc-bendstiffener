@@ -1,6 +1,6 @@
-PWD c:\Users\Usuario\Downloads\IFES\Repos\tcc-bendstiffener\TCC - Bend Stiffener\ifes8\tcc
+PWD c:\Users\Usuario\Downloads\IFES\Repos\tcc-bendstiffener\latex\ifes8\tcc
 INPUT C:\Users\Usuario\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\Usuario\Downloads\IFES\Repos\tcc-bendstiffener\TCC - Bend Stiffener\ifes8\tcc\ifes8-tcc.tex
+INPUT c:\Users\Usuario\Downloads\IFES\Repos\tcc-bendstiffener\latex\ifes8\tcc\ifes8-tcc.tex
 OUTPUT ifes8-tcc.log
 INPUT .\ifes8.cls
 INPUT ifes8.cls
