@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.26)  26 SEP 2026 19:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.27)  27 SEP 2026 09:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1600,13 +1600,13 @@ L3 programming layer <2020/03/25>
 Here is how much of TeX's memory you used:
  35619 strings out of 467871
  639402 string characters out of 5417408
- 1424821 words of memory out of 5000000
+ 1424828 words of memory out of 5000000
  63481 multiletter control sequences out of 15000+600000
  706592 words of font info for 182 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,13n,121p,1130b,2438s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmb10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on ifes8-tcc.pdf (51 pages, 624946 bytes).
+Output written on ifes8-tcc.pdf (51 pages, 624971 bytes).
 PDF statistics:
  803 PDF objects out of 1000 (max. 8388607)
  225 named destinations out of 1000 (max. 500000)
