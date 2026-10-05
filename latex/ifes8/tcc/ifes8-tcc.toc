@@ -1,0 +1,73 @@
+\changetocdepth {4}
+\babel@toc {brazilian}{}\relax 
+\babel@toc {brazil}{}\relax 
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\babel@toc {english}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {brazil}{}\relax 
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}Introdução}{14}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Uso Básico da Classe Ifes8}{14}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Uma Seção para Testar Listas Não Ordenadas}{15}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Uma Seção sem Propósito}{16}{section.1.3}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {2}Objetivo Geral}{20}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Objetivos Específicos}{20}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Seção Terciária}{20}{subsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.1.1}Seção Quaternária}{21}{subsubsection.2.1.1.1}%
+\contentsline {paragraph}{\numberline {2.1.1.1.1}Seção Quinária}{21}{paragraph.2.1.1.1.1}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}Este é um Capítulo com Título Realmente Bastante Longo para Verificar o Alinhamento}{22}{chapter.3}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {4}Formatação de Elementos Pré-textuais}{23}{chapter.4}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {5}Formatação de Elementos Textuais}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Formatação de Tabelas}{25}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Formatação de Figuras}{26}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Formatação de Equações e Fórmulas}{27}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Formatação de Códigos Fonte}{29}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Formatação de Citações}{30}{section.5.5}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {6}Formatação de Elementos Pós-textuais}{32}{chapter.6}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {7}Conclusões}{33}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Análises}{33}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Trabalhos Futuros}{34}{section.7.2}%
+\vspace {\cftbeforechapterskip }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{37}{section*.32}%
+\renewcommand *{\cftappendixname }{AP\^ENDICE \space }
+\setcounter {tocdepth}{0}
+\setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
+\cftinsert {A}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {A}Demonstração do Teorema Loren Ipsum}{41}{appendix.A}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {B}Visão Geral de Indução Estrutural}{43}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Princípio da Boa Ordenação}{43}{appendix.B.1}%
+\contentsline {section}{\numberline {B.2}Indução em Listas}{43}{appendix.B.2}%
+\contentsline {subsection}{\numberline {B.2.1}Estudo de Caso: Tamanho da Lista}{44}{subsection.B.2.1}%
+\contentsline {subsection}{\numberline {B.2.2}Estudo de Caso: Pesquisa em Lista}{44}{subsection.B.2.2}%
+\contentsline {section}{\numberline {B.3}Indução em Árvores}{45}{appendix.B.3}%
+\contentsline {subsection}{\numberline {B.3.1}Estudo de Caso: Cálculo de Profundidade}{45}{subsection.B.3.1}%
+\contentsline {subsection}{\numberline {B.3.2}Estudo de Caso: Pesquisa em Árvore}{46}{subsection.B.3.2}%
+\cftinsert {AAA}
+\renewcommand *{\cftappendixname }{ANEXO \space }
+\setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
+\cftinsert {A}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {A}Exemplo de lombada}{48}{appendix.anexochapback.1}%

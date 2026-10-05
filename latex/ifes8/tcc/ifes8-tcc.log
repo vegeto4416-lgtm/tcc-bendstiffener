@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.5)  5 OCT 2026 19:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.5)  5 OCT 2026 20:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -551,13 +551,6 @@ Sidefootvsep and sidefootheight: 14.5pt and 590.14995pt
 
 \c@abntex@bookmarkcounter=\count356
 \cftlastnumwidth=\skip196
-
-Class memoir Warning: \settocpreprocessor is marked deprecated and will be
-(memoir)              removed in 2026, the problem it tried to solve 
-(memoir)              (see manual, section 9.2.3),
-(memoir)              has been fixed in the kernel, and the feature is
-(memoir)              no longer needed. on input line 483.
-
 \chapternamenumlength=\skip197
 \ABNTEXcitacaorecuo=\skip198
 \c@alineasi=\count357
@@ -735,6 +728,14 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 \cftbeforequadroskip=\skip275
 \cftquadroindent=\skip276
 \cftquadronumwidth=\skip277
+
+
+Class memoir Warning: \settocpreprocessor is marked deprecated and will be
+(memoir)              removed in 2026, the problem it tried to solve 
+(memoir)              (see manual, section 9.2.3),
+(memoir)              has been fixed in the kernel, and the feature is
+(memoir)              no longer needed. on input line 403.
+
 ) (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks31
@@ -1108,7 +1109,10 @@ Package babel Info: 'brazilian' activates 'portuges' shorthands.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 86.
  (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (ifes8-tcc.aux)
+) (ifes8-tcc.aux
+Package babel Info: 'brazil' activates 'portuges' shorthands.
+(babel)             Reported on input line 14.
+)
 \openout1 = `ifes8-tcc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
@@ -1130,8 +1134,6 @@ LaTeX Font Info:    ... okay on input line 86.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
 LaTeX Font Info:    ... okay on input line 86.
 Package hyperref Info: Link coloring OFF on input line 86.
-Package babel Info: 'brazil' activates 'portuges' shorthands.
-(babel)             Reported on input line 86.
 \myptabbox=\box79
 \myptabboxwidth=\skip286
 Package caption Info: Begin \AtBeginDocument code.
@@ -1216,9 +1218,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--136
  []
 
 
-LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 136.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 136--136
 
  []
@@ -1265,23 +1264,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 214--219
 ] [3
 
 
-]
-
-LaTeX Warning: Citation `Asimov2004' on page 4 undefined on input line 238.
-
-[4
+] [4
 
 ] [5
 
 ] [6
 
-]
-No file ifes8-tcc.lof.
-[7
+] (ifes8-tcc.lof) [7
 
-]
-No file ifes8-tcc.lot.
-[8
+] (ifes8-tcc.lot) [8
 
 ] (ifes8-tcc.loq
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1.
@@ -1303,28 +1294,22 @@ Package microtype Info: Loading generic protrusion settings for font family
 ] [12
 
 
-{C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
-No file ifes8-tcc.toc.
-[13
+{C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] (ifes8-tcc.toc
+
+LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <12> not available
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 26.
+
+) [13
 
 
 ]
 Cap\'{\i }tulo 1.
-
-LaTeX Warning: Citation `Ifes2024' on page 14 undefined on input line 357.
-
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 367.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 367.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 367.
-
-LaTeX Warning: Citation `abntex2classe' on page 14 undefined on input line 371.
-
-
-LaTeX Warning: Citation `Ifes2024' on page 14 undefined on input line 375.
-
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
@@ -1345,14 +1330,7 @@ File: lstlang2.sty 2025/11/14 1.11b listings language file
 File: lstlang3.sty 2025/11/14 1.11b listings language file
 ) (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-)
-
-LaTeX Warning: Citation `Ifes2024' on page 14 undefined on input line 394.
-
-
-LaTeX Warning: Citation `Ifes2024' on page 14 undefined on input line 397.
-
-[14
+) [14
 
 
 ]
@@ -1412,1608 +1390,195 @@ Package blindtext Warning: brazil not defined, using English instead.
 Cap\'{\i }tulo 2.
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 478.
+(blindtext)                 on input line 510.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 491.
+(blindtext)                 on input line 515.
 
 [20
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 514.
+(blindtext)                 on input line 520.
 
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 519.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 524.
-
-[21] [22]
+[21]
 Cap\'{\i }tulo 3.
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 533.
+(blindtext)                 on input line 529.
 
-[23
+[22
 
 ]
 Cap\'{\i }tulo 4.
+[23
 
-LaTeX Warning: Citation `Araujo2016' on page 24 undefined on input line 543.
-
-
-LaTeX Warning: Citation `Araujo2016' on page 24 undefined on input line 565.
-
-
-LaTeX Warning: Citation `Ifes2024' on page 24 undefined on input line 574.
-
-[24
-
-] [25]
+] [24]
 Cap\'{\i }tulo 5.
-
-LaTeX Warning: Citation `Ifes2024' on page 26 undefined on input line 603.
-
-
-LaTeX Warning: Citation `Araujo2016' on page 26 undefined on input line 624.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `tabela-ibge' on page 26 undefined on input line 673.
-
-
-LaTeX Warning: Citation `Wikibook-LaTeX' on page 26 undefined on input line 709.
-
-
-LaTeX Warning: Reference `qdr:ex2' on page 26 undefined on input line 713.
-
-
-Underfull \hbox (badness 1552) in paragraph at lines 755--757
+Underfull \hbox (badness 1552) in paragraph at lines 751--753
 \T1/lmr/m/n/12 (+20) sunshine. Howe-ver, the
  []
 
 
-Underfull \hbox (badness 3514) in paragraph at lines 755--757
+Underfull \hbox (badness 3514) in paragraph at lines 751--753
 \T1/lmr/m/n/12 (+20) strong bre-eze will bring
  []
 
 
-Underfull \hbox (badness 1107) in paragraph at lines 757--760
+Underfull \hbox (badness 1107) in paragraph at lines 753--756
 []|\T1/lmr/m/n/12 (+20) Cloudy with rain, across
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 757--760
+Underfull \hbox (badness 10000) in paragraph at lines 753--756
 \T1/lmr/m/n/12 (+20) many northern re-gi-ons.
  []
 
 
-Underfull \hbox (badness 2707) in paragraph at lines 757--760
+Underfull \hbox (badness 2707) in paragraph at lines 753--756
 \T1/lmr/m/n/12 (+20) Clear spells across most
  []
 
 
-LaTeX Warning: Citation `Wikibook-LaTeX' on page 26 undefined on input line 765.
-
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Reference `tab:ex3' on page 26 undefined on input line 769.
-
-[26
+[25
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 806.
-
-
-LaTeX Warning: Citation `Kottwitz2015' on page 27 undefined on input line 808.
+(Font)              <17.28> on input line 802.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `fig:ex1' on page 27 undefined on input line 814.
-
-\mycount=\count449
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ) in font nullfont!
-Missing character: There is no * in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no p in font nullfont!
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Missing ) inserted for expression.
-<to be read again> 
-                   \pgf@x 
-l.838     }
-           
-I was expecting to see `+', `-', `*', `/', or `)'. Didn't.
-
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   )
-l.838     }
-           
-(That makes 100 errors; please try again.) 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26] [27] [28] [29]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 930.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/12'.
+(microtype)             Ignoring protrusion settings for this character.
+ (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 961.
+ [30] [31]
+Cap\'{\i }tulo 6.
+[32
+
+]
+Cap\'{\i }tulo 7.
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 1051.
+
+[33
+
+]
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 1055.
+
+[34] [35] (ifes8-tcc.bbl [36]
+bibitemlist
+[37
+
+] [38]) [39] [40
+
+]
+AP\^ENDICE A.
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 1077.
+
+[41
+
+] [42]
+AP\^ENDICE B.
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 1085.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 1089.
+
+[43
+
+]
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 1093.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 1097.
+
+[44]
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 1101.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 1105.
+
+[45]
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 1109.
+
+[46] [47
+
+]
+ANEXO A.
+<pics/normas-ifes-apendice-d.png, id=588, 544.0325pt x 770.88pt>
+File: pics/normas-ifes-apendice-d.png Graphic file (type png)
+<use pics/normas-ifes-apendice-d.png>
+Package pdftex.def Info: pics/normas-ifes-apendice-d.png  used on input line 1119.
+(pdftex.def)             Requested size: 435.2266pt x 616.70485pt.
+[48
+
+ <./pics/normas-ifes-apendice-d.png>]
+\tf@lof=\write5
+\openout5 = `ifes8-tcc.lof'.
+
+\tf@lot=\write6
+\openout6 = `ifes8-tcc.lot'.
+
+\tf@loq=\write7
+\openout7 = `ifes8-tcc.loq'.
+
+\tf@toc=\write8
+\openout8 = `ifes8-tcc.toc'.
+
+ 
+enddocument/afterlastpage (AED): lastpage setting LastPage.
+(ifes8-tcc.aux)
+ ***********
+LaTeX2e <2026-06-01>
+L3 programming layer <2020/03/25>
+ ***********
+ ) 
 Here is how much of TeX's memory you used:
- 35268 strings out of 467441
- 640886 string characters out of 5406619
- 1277115 words of memory out of 5000000
- 63745 multiletter control sequences out of 15000+600000
- 697825 words of font info for 151 fonts, out of 8000000 for 9000
+ 36110 strings out of 467441
+ 654620 string characters out of 5406619
+ 1437222 words of memory out of 5000000
+ 64394 multiletter control sequences out of 15000+600000
+ 706586 words of font info for 182 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,13n,121p,1078b,2457s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,13n,121p,1130b,2457s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmb10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
+Output written on ifes8-tcc.pdf (51 pages, 627188 bytes).
+PDF statistics:
+ 809 PDF objects out of 1000 (max. 8388607)
+ 231 named destinations out of 1000 (max. 500000)
+ 46304 words of extra memory for PDF output out of 51595 (max. 10000000)
 
-c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex:838:  ==> Fatal error occurred, no output PDF file produced!
