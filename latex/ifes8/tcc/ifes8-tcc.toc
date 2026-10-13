@@ -25,7 +25,8 @@
 \contentsline {subsubsection}{\numberline {2.1.1.1}Seção Quaternária}{21}{subsubsection.2.1.1.1}%
 \contentsline {paragraph}{\numberline {2.1.1.1.1}Seção Quinária}{21}{paragraph.2.1.1.1.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}Este é um Capítulo com Título Realmente Bastante Longo para Verificar o Alinhamento}{22}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}Referencial Teórico}{22}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Viscoelasticidade}{22}{section.3.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {4}Formatação de Elementos Pré-textuais}{23}{chapter.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
