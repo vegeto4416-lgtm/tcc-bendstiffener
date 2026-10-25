@@ -58,13 +58,12 @@
 
 \titulo{Metodologia para Caracterização Viscoelástica e Dimensionamento de Enrijecedores à Flexão para Risers Flexíveis}
 
-\autor{Alexandre Lima Simões}
-%%% \autor{Pedro Antônio Gomes Goronci}
-\autorficha{Simões, Alexandre Lima}
+\autor{Alexandre Lima Simões\\Pedro Antônio Gomes Goronci}
+\autorficha{Simões, Alexandre Lima;Goronci, Pedro Antônio Gomes}
 
-\orientador{Prof. Dr. Jefferson O. Andrade}
+\orientador{Prof. Dr. Vinicius Erler de Souza Ramos}
 
-\coorientadora{Prof.ª Dr.ª Fulana Detal Longname}
+% \coorientadora{Prof.ª Dr.ª Fulana Detal Longname}
 
 \instituicao{Instituto Federal do Espírito Santo}
 
@@ -120,11 +119,13 @@
           \imprimirinstituicao, \imprimirdata\\
 
           \hspace{0.5cm}        
-          1. Palavra-chave1.
-          2. Palavra-chave2.
-          I. Orientador.
-          II. Universidade xxx.
-          III. Faculdade de xxx.
+          1. Viscoelasticidade.
+          2. Engenharia do petróleo.
+          3. Equações diferenciais.
+          4. Métodos numéricos.
+          I. Vinicius Erler de Souza Ramos.
+          II. Instituto Federal do Espírito Santo.
+          III. Campus Vitória.
           IV. Título.
           
           \begin{flushright}
@@ -164,11 +165,15 @@
     \textbf{COMISSÃO EXAMINADORA}\\[5mm]
     \assinatura{\imprimirorientador \\
       Instituto Federal do Espírito Santo \\
-      Orientadora}
+      Orientador}
     % \vspace{-1cm}
-    \assinatura{\imprimircoorientador \\
-      Instituto Federal do Espírito Santo \\
-      Coorientador}
+    \makeatletter
+    \abntex@ifnotempty{\imprimircoorientador}{%
+      \assinatura{\imprimircoorientador \\
+        Instituto Federal do Espírito Santo \\
+        Coorientador}
+    }
+    \makeatother
     % \vspace{-1cm}
     \assinatura{Membro Convidado da Banca 1 \\
       Instituição Externa 1}
@@ -244,33 +249,39 @@
 
 %%% Ambiente para resumo em português
 \begin{resumo}
-  O objetivo deste documento é servir como um modelo de trabalho de
-  conclusão de curso tem por objetivo, bem como apresentar e descrever
-  os mecanismos básicos para a confecção deste tipo de documento
-  utilizando a classe de documentos \ifestex\ em \LaTeX.
-  %
-  Para uma melhor compreensão do modo de utilização desta classe é
-  necessário analisar o código fonte deste documento bem como ler a
-  documentação da classe \abnTeX, na qual a classe \ifestex\ se
-  baseia.
 
-  Palavras-chave: Palavra1. Palavra2. Palavra3. Palavra4.
+  A engenharia \emph{offshore} (fora da costa) é responsável pelo desenvolvimento de atividades
+  relacionadas à exploração e produção de petróleo e gás natural em ambientes marítimos. Para essas
+  aplicações, o uso de linhas flexíveis é essencial para o escoamento da produção e para a interligação
+  de equipamentos marinhos com a plataforma de operação FPSO (\emph{Floating Production Storage and Offloading}).
+  De modo geral, as linhas flexíveis não possuem resistência à flexão suficiente para suportar as cargas associadas
+  ao ambiente que são trasnferidas para as conexões de topo, sendo necessário o uso de enrijecedores à flexão.
+  O objetivo deste trabalho é apresentar uma metodologia para a caracterização viscoelástica e 
+  o dimensionamento de enrijecedores à flexão para risers flexíveis por meio da implementação 
+  de um modelo matemático capaz de descrever o comportamento viscoelástico mediante regressão
+  dos dados experimentais obtidos no ensaio de relaxação do poliuretano e implementação de solução
+  numérica para avaliação da resposta dinâmica do sistema enrijecedor de curvatura com duto flexível
+  em regime harmônico.
+
+  Palavras-chave: Engenharia offshore. Enrijecedores à Flexão. Viscoelasticidade. Métodos numéricos. Dimensionamento. 
 \end{resumo}
 
 %%% Ambiente para resumo em inglês.
 \begin{resumo}[Abstract]
   \begin{otherlanguage}{english}
-    The goal of this document is to work as a model for the
-    undergraduate final year project report, as well as present and
-    describe the basic mechanisms for the preparation of this type of
-    document using the \LaTeX\ document class \ifestex.
-    %
-    To better understand how to use that class, it is necessary to
-    study the source code of this document as well as read the
-    documentation of the \abnTeX\ class, upon which the \ifestex\
-    class is based.
+    The offshore engineering is responsible for the development of activities related to the exploration and 
+    production of oil and natural gas in marine environments. For these applications, the use of flexible 
+    risers is essential for the flow of production and for the interconnection of marine equipment with the 
+    FPSO (\emph{Floating Production Storage and Offloading}) platform. In general, flexible risers do not 
+    have sufficient bending resistance to withstand the loads associated with the environment, which are transferred 
+    to the top connections, making the use of bending stiffeners necessary. The objective of this work is to 
+    present a methodology for the viscoelastic characterization and the design of bending stiffeners for flexible 
+    risers through the implementation of a mathematical model capable of describing the viscoelastic behavior by 
+    regression of the experimental data obtained in the polyurethane relaxation test and the implementation of a 
+    numerical solution for evaluating the dynamic response of the bending stiffener system with flexible pipe under 
+    harmonic regime.
 
-    Keywords: Keyword1. Keyword2. Keyword3. Keyword4.
+    Keywords: Offshore Engineering. Bending Stiffeners. Viscoelasticity. Numerical Methods. Design.
   \end{otherlanguage}
 \end{resumo}
 
@@ -347,7 +358,8 @@
 %%% Configuração do espaçamento entre títulos e texto
 \setlength{\afterchapskip}{0\baselineskip}
 
-
+% ----------------------------------------------------------------------
+% Alexandre
 \chapter{Introdução}
 \label{cha:introducao}
 
@@ -456,6 +468,7 @@ específicas da classes \abnTeX\ serão passadas diretamente à ela.
 \blindtext[2]
 
 % ----------------------------------------------------------------------
+% Pedro
 \chapter{Objetivo Geral}
 \label{cha:objetivo-geral}
 
@@ -464,8 +477,7 @@ para caracterização viscoelástica de poliuretanos e análise de enrijecedores
 flexão para \emph{risers} flexíveis, empregando modelos constitutivos identificados a 
 partir de ensaios de relaxação e fluência (\emph{creep}), implementação computacional
 da formulação de análise e proposição de critérios para dimensionamento de 
-enrijecedores à flexão.
-
+enrijecedores à flexão para um carregamento harmônico simples.
 
 \section{Objetivos Específicos}
 \label{sec:objetivos-especificos}
@@ -476,19 +488,19 @@ O trabalho tem como objetivos específicos:
   \item Realizar revisão bibliográfica sobre: viscoelasticidade, poliuretanos, 
 enrijecedores à flexão, modelos físicos e séries de Prony.
   \item Implementar procedimentos para identificação de parâmetros de modelos 
-viscoelásticos a partir de dados de ensaios de relaxação e/ou fluência em Python.
-  \item Implementar numericamente a formulação viscoelástica para enrijecedores à
-flexão.
-  \item Avaliar a resposta estrutural do enrijecedor submetido a carregamentos 
-representativos da operação de \emph{risers} flexíveis.
-  \item Comparar os resultados obtidos considerando comportamento viscoelástico
-e elástico.
-  \item Propor critérios para dimensionamento de enrijecedores à flexão considerando
-os efeitos viscoelásticos do poliuretano.
- 
+viscoelásticos a partir de dados de ensaios de relaxação.
+  \item Implementar numericamente a formulação viscoelástica para enrijecedores à flexão, 
+  considerando os efeitos viscoelásticos do poliuretano e carregamento harmônico simples.
+  \item Avaliar e validar a resposta estrutural do enrijecedor e comparar com os resultados 
+  esperados pela bibliografia.
+  \item Realização de um estudo de caso.
+  \item Análise dos resultados obtidos no estudo de caso e discussão sobre as limitações 
+  envolvendo a metodologia.
+
 \end{enumerate}
 
 % ---------------------------------------------------------------------
+% Alexandre
 \chapter{Referencial Teórico}
 \label{cha:referencial-teorico}
 
@@ -514,6 +526,11 @@ com ênfase em poliuretanos.
 \label{sec:metodos-numericos}
 
 \blindtext[1]
+
+% ----------------------------------------------------------------------
+% Pedro
+\chapter{Metodologia}
+
 
 % ----------------------------------------------------------------------
 \chapter{Formatação de Elementos Pré-textuais}
