@@ -59,7 +59,7 @@
 \titulo{Metodologia para Caracterização Viscoelástica e Dimensionamento de Enrijecedores à Flexão para Risers Flexíveis}
 
 \autor{Alexandre Lima Simões\\Pedro Antônio Gomes Goronci}
-\autorficha{Simões, Alexandre Lima;Goronci, Pedro Antônio Gomes}
+\autorficha{Simões, Alexandre Lima; Goronci, Pedro Antônio Gomes}
 
 \orientador{Prof. Dr. Vinicius Erler de Souza Ramos}
 
@@ -363,88 +363,34 @@
 \chapter{Introdução}
 \label{cha:introducao}
 
-O Instituto Federal do Espírito Santo (Ifes) normatiza definições de
-apresentação para trabalhos acadêmicos. À época da edição deste
-documento (agosto de 2026), a norma mais recente é a 9ª edição,
-publicada em 2024 \cite{Ifes2024}.
+\begin{itemize}
+  \item Contextualização da indústria offshore e a importância das linhas flexíveis.
+  \item Problema de pesquisa: necessidade de enrijecedores à flexão para risers flexíveis.
+  \item Aprofundamento do problema: desafios na caracterização viscoelástica de poliuretanos e dimensionamento de enrijecedores.
+  \item Análise global e inputs do problema (cargas submetidas).
+  \item Apresentação de ferramentas e métodos numéricos relevantes para o desenvolvimento da análise estrutural do \emph{bend stiffener}.
+  \begin{itemize}
+    \item Softwares de análise estrutural e simulação numérica como OrcaBend.
+    \item Linguagens de programação utilizadas para implementação de modelos matemáticos como Python e MATLAB.
+    \item Métodos numéricos aplicados à análise de estruturas viscoelásticas, incluindo método de diferenças finitas (FDM), Runge-Kutta e método da perturbação.
+  \end{itemize}
+  \item Apresentação das séries de Prony como ferramenta fundamental para desenvolvimento da formulação matemática e implementação computacional da análise estrutural do \emph{bend stiffener}.
+\end{itemize}
 
-Com o objetivo de facilitar tanto o trabalho dos alunos na preparação
-de seus Trabalhos de Conclusão de Curso (TCC), quanto o trabalho do
-setor de bibliotecas, responsável pela validação da formatação dos
-trabalhos entregues, foi solicitado que o Ifes disponibilizasse uma
-classe e/ou modelo em \LaTeX\ que seguisse as normas de
-apresentação. Com esse objetivo foi iniciado o trabalho de construção
-da classe \ifestex.\footnote{A título de esclarecimento, caso não seja
-  evidente, o autor deste documento é o Prof.\ Jefferson O.\ Andrade,
-  o estudante \emph{Alunus Alunovisk Alunovich} é fictício.}
+\section{Como inserir códigos fonte no documento}
+\label{sec:inserir-codigo-fonte}
 
-Este documento funciona ao mesmo tempo como manual e como modelo de
-TCC para a classe \ifestex. Esta classe é essencialmente uma
-customização da classe \abnTeX\ \cite{abntex2classe} -- que, por sua
-vez, é uma extensão da classe \texttt{memoir}. Deste modo, este
-manual/modelo, vai buscar, na medida do possível, não repetir o que já
-está disponível no manual do \abnTeX\ ou nas normas do Ifes
-\cite{Ifes2024}, e se concentrar no que é novo e/ou diferente na
-classe \ifestex.
+Exemplo de uso da classe \texttt{ifes8} para elaboração de trabalhos acadêmicos de acordo com as normas do Ifes e como inserir linhas de código fonte no documento.
 
-É altamente recomendável que os estudantes verifiquem, além da versão
-em PDF deste documento, também o seu código fonte em \LaTeX.
-
-\section{Uso Básico da Classe Ifes8}
-\label{sec:uso-basico}
-
-Para utilizar a classe \ifestex\ no seu trabalho acadêmico,
-evidentemente, você precisará informar ao \LaTeX\ que está usando a
-classe. Isso é feito colocando-se a declaração abaixo como a primeira
-linha de código do seu documento.\vspace{\baselineskip}
-
+\vspace{\baselineskip}
 \begin{lstlisting}[language={[LaTeX]TeX}]
   \documentclass[times,english,brazil]{ifes8}  
 \end{lstlisting}
 
-A opção \texttt{12pt} indica o tamanho padrão da fonte do texto,
-conforme estabelecido pelas normas do Ifes \cite[pp.~20]{Ifes2024}.
-
-A opção \texttt{a4paper} estabelece o uso de papel tamanho A4,
-conforme definido em \cite[pp.~19]{Ifes2024}.
-
-A opção \texttt{times} não é explicitamente necessária uma vez que ela
-é o padrão. Essa opção faz com que a fonte padrão do documento seja
-“Latin Modern” que é semelhante à “Times New Roman”, porém superior
-tipograficamente. A opção complementar à \texttt{times} é a
-\texttt{arial}. A opção \texttt{arial} faz com que a fonte padrão do
-documento (inclusive para fórmulas matemáticas) seja a “Helvetica” que
-é semelhante à “Arial”, porém superior tipograficamente.
-
-As opções \texttt{english} e \texttt{brazil} são passadas ao pacote
-\texttt{babel}, que é carregado automaticamente pela classe \abnTeX.
-A classe \texttt{babel} redefine vários elementos do \LaTeX para
-controlar questões relacionadas ao idioma do documento, tais como
-nomes de alguns elementos textuais pré-definidos (``Figura'',
-``Tabela'', etc.) e hifenização. A razão de incluir a opção
-\texttt{english} é devido à necessidade de haver o resumo em língua
-estrangeira. Caso o resumo esteja em outra língua estrangeira deve-se
-usar a opção correspondente, como \texttt{french}, \texttt{spanish},
-etc. É importante notar que, quando mais de uma opção de linguagem é
-informada ao \texttt{babel} é preciso dizer ao babel no corpo do
-documento que língua usar. Isso é feito colocando-se a seguinte linha
-de código no documento:\vspace{\baselineskip}
-
-\begin{lstlisting}[language={[LaTeX]TeX}]
-  \selectlanguage{brazil}  
-\end{lstlisting}
-
-Além destas opções, qualquer opção válida para a classe \abnTeX\ pode
-ser passada na declaração \texttt{documentclass}. As opções
-específicas da classes \abnTeX\ serão passadas diretamente à ela.
-
-
 \section{Uma Seção para Testar Listas Não Ordenadas}
 
-\blindtext[1]
-
 \begin{itemize}
-\item Primiero item.
+\item Primeiro item.
 \item Segundo item.
   \begin{itemize}
   \item Primeiro sub-item.
@@ -464,8 +410,6 @@ específicas da classes \abnTeX\ serão passadas diretamente à ela.
 \item Terceiro item.
 \item Quarto item.
 \end{itemize}
-
-\blindtext[2]
 
 % ----------------------------------------------------------------------
 % Pedro
