@@ -8,48 +8,43 @@
 \babel@toc {brazil}{}\relax 
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{14}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Como inserir códigos fonte no documento}{14}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Uma Seção para Testar Listas Não Ordenadas}{14}{section.1.2}%
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{9}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Como inserir códigos fonte no documento}{10}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Uma Seção para Testar Listas Não Ordenadas}{10}{section.1.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Objetivo Geral}}{16}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Objetivos Específicos}{16}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Premissas Adotadas}{16}{section.2.2}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Objetivo Geral}}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Objetivos Específicos}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Premissas Adotadas}{12}{section.2.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Referencial Teórico}}{18}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Viscoelasticidade}{18}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Equações Diferenciais}{18}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Métodos Numéricos}{18}{section.3.3}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Referencial Teórico}}{14}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Viscoelasticidade}{14}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Equações Diferenciais}{14}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Métodos Numéricos}{14}{section.3.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Metodologia}}{20}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Metodologia}}{16}{chapter.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Formatação de Elementos Pré-textuais}}{21}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Formatação de Elementos Pré-textuais}}{17}{chapter.5}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Formatação de Elementos Textuais}}{23}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Seção Secundária}{23}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Seção Terciária}{23}{subsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.1.1}Seção Quaternária}{24}{subsubsection.6.1.1.1}%
-\contentsline {paragraph}{\numberline {6.1.1.1.1}Seção Quinária}{24}{paragraph.6.1.1.1.1}%
-\contentsline {section}{\numberline {6.2}Formatação de Tabelas}{24}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Formatação de Figuras}{25}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Formatação de Equações e Fórmulas}{26}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Formatação de Códigos Fonte}{28}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Formatação de Citações}{29}{section.6.6}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Formatação de Elementos Textuais}}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Seção Secundária}{19}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Seção Terciária}{19}{subsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.1.1}Seção Quaternária}{20}{subsubsection.6.1.1.1}%
+\contentsline {paragraph}{\numberline {6.1.1.1.1}Seção Quinária}{20}{paragraph.6.1.1.1.1}%
+\contentsline {section}{\numberline {6.2}Formatação de Tabelas}{20}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Formatação de Figuras}{21}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Formatação de Equações e Fórmulas}{22}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Formatação de Códigos Fonte}{24}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Formatação de Citações}{25}{section.6.6}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase []{Formatação de Elementos Pós-textuais}}{31}{chapter.7}%
+\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase []{Formatação de Elementos Pós-textuais}}{27}{chapter.7}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {8}\MakeTextUppercase []{Conclusões}}{32}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Análises}{32}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Trabalhos Futuros}{33}{section.8.2}%
+\contentsline {chapter}{\chapternumberline {8}\MakeTextUppercase []{Conclusões}}{28}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Análises}{28}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Trabalhos Futuros}{29}{section.8.2}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{36}{section*.32}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{32}{section*.23}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setcounter {tocdepth}{0}
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
@@ -57,18 +52,18 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Demonstração do Teorema Loren Ipsum}}{40}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Demonstração do Teorema Loren Ipsum}}{36}{appendix.A}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Visão Geral de Indução Estrutural}}{42}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Princípio da Boa Ordenação}{42}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Indução em Listas}{42}{section.B.2}%
-\contentsline {subsection}{\numberline {B.2.1}Estudo de Caso: Tamanho da Lista}{43}{subsection.B.2.1}%
-\contentsline {subsection}{\numberline {B.2.2}Estudo de Caso: Pesquisa em Lista}{43}{subsection.B.2.2}%
-\contentsline {section}{\numberline {B.3}Indução em Árvores}{44}{section.B.3}%
-\contentsline {subsection}{\numberline {B.3.1}Estudo de Caso: Cálculo de Profundidade}{44}{subsection.B.3.1}%
-\contentsline {subsection}{\numberline {B.3.2}Estudo de Caso: Pesquisa em Árvore}{45}{subsection.B.3.2}%
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Visão Geral de Indução Estrutural}}{38}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Princípio da Boa Ordenação}{38}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Indução em Listas}{38}{section.B.2}%
+\contentsline {subsection}{\numberline {B.2.1}Estudo de Caso: Tamanho da Lista}{39}{subsection.B.2.1}%
+\contentsline {subsection}{\numberline {B.2.2}Estudo de Caso: Pesquisa em Lista}{39}{subsection.B.2.2}%
+\contentsline {section}{\numberline {B.3}Indução em Árvores}{40}{section.B.3}%
+\contentsline {subsection}{\numberline {B.3.1}Estudo de Caso: Cálculo de Profundidade}{40}{subsection.B.3.1}%
+\contentsline {subsection}{\numberline {B.3.2}Estudo de Caso: Pesquisa em Árvore}{41}{subsection.B.3.2}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
@@ -76,4 +71,4 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Exemplo de lombada}}{47}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Exemplo de lombada}}{43}{appendix.anexochapback.1}%

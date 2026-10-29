@@ -398,9 +398,19 @@ da linha. Esses acessórios são chamados de enrijecedores à flexão e possuem 
 próxima do ponto de conexão e envolvem o cabo submarino, de modo que o atravessa o centro do enrijecedor. 
 
 % Importancia do dimensionamento do enrijecedor.
-D
+Dada a função de suavização da curvatura na região de topo, o enrijecedor à flexão desempenha um papel crucial 
+para a segurança estrutural da linha flexível, sendo bastante presente em projetos que envolvam cabos submarinos.
+Ademais, por se tratar de um componente que dependendo das condições de operação pode ser bem exigente e específico,
+seu custo é bem elevado e pode representar um custo determinante para a execução ou não de um projeto. Portanto, 
+o dimensionamento correto dos enrijecedores é apreciado tanto do ponto de vista da engenharia, por conta de sua 
+relevância estrutural, quanto do ponto de vista econômico, devido a sua relevância e criticidade.
 
-% Propriedades mecânicas do enrijecedor.
+% Características do enrijecedor.
+Justificada a importância dos enrijecedores, ainda se faz necessário compreender como suas propriedades mecânicas 
+devem atender os requisitos funcionais do sistema enrijecedor e linha flexível. São feitos de poliuretano -- um 
+material polimérico de elevada resistência mecânica, resistência abrasiva e capacidade de absorvação de impactos 
+\cite{Balmoral?} --, possuem um inserto metálico no seu interior para permitir a união com outros acessórios importantes do 
+sistema de fixação da linha flexível e são usinados para adquirir a forma cônica adequada.
 
 % A importância de simular o comportamento estrutural do enrijecedor à flexão.
 
@@ -414,53 +424,53 @@ D
 
 
 
-\begin{itemize}
-  \item Contextualização da indústria offshore e a importância das linhas flexíveis.
-  \item Problema de pesquisa: necessidade de enrijecedores à flexão para risers flexíveis.
-  \item Aprofundamento do problema: desafios na caracterização viscoelástica de poliuretanos e dimensionamento de enrijecedores.
-  \item Análise global e inputs do problema (cargas submetidas).
-  \item Apresentação de ferramentas e métodos numéricos relevantes para o desenvolvimento da análise estrutural do \emph{bend stiffener}.
-  \begin{itemize}
-    \item Softwares de análise estrutural e simulação numérica como OrcaBend.
-    \item Linguagens de programação utilizadas para implementação de modelos matemáticos como Python e MATLAB.
-    \item Métodos numéricos aplicados à análise de estruturas viscoelásticas, incluindo método de diferenças finitas (FDM), Runge-Kutta e método da perturbação.
-  \end{itemize}
-  \item Apresentação das séries de Prony como ferramenta fundamental para desenvolvimento da formulação matemática e implementação computacional da análise estrutural do \emph{bend stiffener}.
-\end{itemize}
+% \begin{itemize}
+%   \item Contextualização da indústria offshore e a importância das linhas flexíveis.
+%   \item Problema de pesquisa: necessidade de enrijecedores à flexão para risers flexíveis.
+%   \item Aprofundamento do problema: desafios na caracterização viscoelástica de poliuretanos e dimensionamento de enrijecedores.
+%   \item Análise global e inputs do problema (cargas submetidas).
+%   \item Apresentação de ferramentas e métodos numéricos relevantes para o desenvolvimento da análise estrutural do \emph{bend stiffener}.
+%   \begin{itemize}
+%     \item Softwares de análise estrutural e simulação numérica como OrcaBend.
+%     \item Linguagens de programação utilizadas para implementação de modelos matemáticos como Python e MATLAB.
+%     \item Métodos numéricos aplicados à análise de estruturas viscoelásticas, incluindo método de diferenças finitas (FDM), Runge-Kutta e método da perturbação.
+%   \end{itemize}
+%   \item Apresentação das séries de Prony como ferramenta fundamental para desenvolvimento da formulação matemática e implementação computacional da análise estrutural do \emph{bend stiffener}.
+% \end{itemize}
 
-\section{Como inserir códigos fonte no documento}
-\label{sec:inserir-codigo-fonte}
+% \section{Como inserir códigos fonte no documento}
+% \label{sec:inserir-codigo-fonte}
 
-Exemplo de uso da classe \texttt{ifes8} para elaboração de trabalhos acadêmicos de acordo com as normas do Ifes e como inserir linhas de código fonte no documento.
+% Exemplo de uso da classe \texttt{ifes8} para elaboração de trabalhos acadêmicos de acordo com as normas do Ifes e como inserir linhas de código fonte no documento.
 
-\vspace{\baselineskip}
-\begin{lstlisting}[language={[LaTeX]TeX}]
-  \documentclass[times,english,brazil]{ifes8}  
-\end{lstlisting}
+% \vspace{\baselineskip}
+% \begin{lstlisting}[language={[LaTeX]TeX}]
+%   \documentclass[times,english,brazil]{ifes8}  
+% \end{lstlisting}
 
-\section{Uma Seção para Testar Listas Não Ordenadas}
+% \section{Uma Seção para Testar Listas Não Ordenadas}
 
-\begin{itemize}
-\item Primeiro item.
-\item Segundo item.
-  \begin{itemize}
-  \item Primeiro sub-item.
-  \item Segundo sub-item.
-    \begin{itemize}
-    \item Primeiro sub-sub-item.
-    \item Segundo sub-sub-item.
-    \item Terceiro sub-sub-item.
-      \begin{itemize}
-      \item Primeiro item do subnível 4.
-      \item Segundo item do subnível 4.
-      \end{itemize}
-    \item Quarto sub-sub-item.
-    \end{itemize}
-  \item Terceiro sub-item.
-  \end{itemize}
-\item Terceiro item.
-\item Quarto item.
-\end{itemize}
+% \begin{itemize}
+% \item Primeiro item.
+% \item Segundo item.
+%   \begin{itemize}
+%   \item Primeiro sub-item.
+%   \item Segundo sub-item.
+%     \begin{itemize}
+%     \item Primeiro sub-sub-item.
+%     \item Segundo sub-sub-item.
+%     \item Terceiro sub-sub-item.
+%       \begin{itemize}
+%       \item Primeiro item do subnível 4.
+%       \item Segundo item do subnível 4.
+%       \end{itemize}
+%     \item Quarto sub-sub-item.
+%     \end{itemize}
+%   \item Terceiro sub-item.
+%   \end{itemize}
+% \item Terceiro item.
+% \item Quarto item.
+% \end{itemize}
 
 % ----------------------------------------------------------------------
 % Pedro

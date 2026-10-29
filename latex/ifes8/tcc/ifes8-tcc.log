@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.24)  27 OCT 2026 19:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.24)  29 OCT 2026 19:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1544,31 +1544,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 219--224
 
 ] [6
 
-] (ifes8-tcc.lof) [7
-
-] (ifes8-tcc.lot) [8
-
-] (ifes8-tcc.loq
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-.
-
-(C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-) [9
-
-]
-[10
-
-
-] [11
-
-
-] [12
+] [7
 
 
 {C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/
@@ -1577,18 +1553,32 @@ Users/pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] (i
 fes8-tcc.toc
 
 LaTeX Font Warning: Font shape `T1/lmr/b/it' in size <12> not available
-(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 38.
+(Font)              Font shape `T1/lmr/b/sl' tried instead on input line 33.
 
-) [13
+) [8
 
 
 ]
 Cap\'{\i }tulo 1.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-67.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
+07.
 (C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [9
+
+
+{C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
+23.
+
+(C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
 (C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
@@ -1619,94 +1609,90 @@ File: lstlang3.sty 2025/11/14 1.11b listings language file
 (C:\Users\pedro\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-[14
-
-
-{C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [
-15]
+[10] [11]
 Cap\'{\i }tulo 2.
-[16
+[12
 
 ]
 
-LaTeX Warning: Citation `caire' on page 17 undefined on input line 466.
+LaTeX Warning: Citation `caire' on page 13 undefined on input line 506.
 
-[17]
+[13]
 Cap\'{\i }tulo 3.
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 484.
+(blindtext)                 on input line 524.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 489.
+(blindtext)                 on input line 529.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 494.
+(blindtext)                 on input line 534.
 
-[18
+[14
 
-] [19]
+] [15]
 Cap\'{\i }tulo 4.
-[20
+[16
 
 ]
 Cap\'{\i }tulo 5.
-[21
+[17
 
-] [22]
+] [18]
 Cap\'{\i }tulo 6.
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 582.
+(blindtext)                 on input line 622.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 587.
+(blindtext)                 on input line 627.
 
-[23
+[19
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 592.
+(blindtext)                 on input line 632.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 597.
+(blindtext)                 on input line 637.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 693.
+(Font)              <10> on input line 733.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 693.
+(Font)              <7> on input line 733.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 693.
-[24]
-Underfull \hbox (badness 1552) in paragraph at lines 739--741
+(Font)              <5> on input line 733.
+[20]
+Underfull \hbox (badness 1552) in paragraph at lines 779--781
 \T1/lmr/m/n/12 (+20) sunshine. Howe-ver, the
  []
 
 
-Underfull \hbox (badness 3514) in paragraph at lines 739--741
+Underfull \hbox (badness 3514) in paragraph at lines 779--781
 \T1/lmr/m/n/12 (+20) strong bre-eze will bring
  []
 
 
-Underfull \hbox (badness 1107) in paragraph at lines 741--744
+Underfull \hbox (badness 1107) in paragraph at lines 781--784
 []|\T1/lmr/m/n/12 (+20) Cloudy with rain, across
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 741--744
+Underfull \hbox (badness 10000) in paragraph at lines 781--784
 \T1/lmr/m/n/12 (+20) many northern re-gi-ons.
  []
 
 
-Underfull \hbox (badness 2707) in paragraph at lines 741--744
+Underfull \hbox (badness 2707) in paragraph at lines 781--784
 \T1/lmr/m/n/12 (+20) Clear spells across most
  []
 
@@ -1714,17 +1700,17 @@ Underfull \hbox (badness 2707) in paragraph at lines 741--744
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 790.
+(Font)              <17.28> on input line 830.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[25]
+[21]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[26] [27] [28]
+[22] [23] [24]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 918.
+put line 958.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1733,98 +1719,89 @@ Package microtype Info: Character `029' is missing
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 949.
+nput line 989.
 
-[29] [30]
+[25] [26]
 Cap\'{\i }tulo 7.
-[31
+[27
 
 ]
 Cap\'{\i }tulo 8.
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1039.
+(blindtext)                 on input line 1079.
 
-[32
+[28
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1043.
+(blindtext)                 on input line 1083.
 
-[33] [34] (ifes8-tcc.bbl [35]
+[29] [30] (ifes8-tcc.bbl [31]
 bibitemlist
-[36
+[32
 
-] [37]) [38] [39
+] [33]) [34] [35
 
 ]
 AP\^ENDICE A.
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1065.
+(blindtext)                 on input line 1105.
 
-[40
+[36
 
-] [41]
+] [37]
 AP\^ENDICE B.
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1073.
+(blindtext)                 on input line 1113.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1077.
+(blindtext)                 on input line 1117.
 
-[42
+[38
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1081.
+(blindtext)                 on input line 1121.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1085.
+(blindtext)                 on input line 1125.
 
-[43]
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1089.
-
+[39]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1093.
+(blindtext)                 on input line 1129.
 
-[44]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1097.
+(blindtext)                 on input line 1133.
 
-[45] [46
+[40]
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 1137.
+
+[41] [42
 
 ]
 ANEXO A.
-<pics/normas-ifes-apendice-d.png, id=574, 544.0325pt x 770.88pt>
+<pics/normas-ifes-apendice-d.png, id=534, 544.0325pt x 770.88pt>
 File: pics/normas-ifes-apendice-d.png Graphic file (type png)
 <use pics/normas-ifes-apendice-d.png>
 Package pdftex.def Info: pics/normas-ifes-apendice-d.png  used on input line 11
-07.
+47.
 (pdftex.def)             Requested size: 435.2266pt x 616.70485pt.
-[47
+[43
 
  <./pics/normas-ifes-apendice-d.png>]
-\tf@lof=\write5
-\openout5 = `ifes8-tcc.lof'.
-
-\tf@lot=\write6
-\openout6 = `ifes8-tcc.lot'.
-
-\tf@loq=\write7
-\openout7 = `ifes8-tcc.loq'.
-
-\tf@toc=\write8
-\openout8 = `ifes8-tcc.toc'.
+\tf@toc=\write5
+\openout5 = `ifes8-tcc.toc'.
 
 
 
@@ -1840,11 +1817,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 35686 strings out of 467871
- 639403 string characters out of 5418375
- 1426190 words of memory out of 5000000
- 63541 multiletter control sequences out of 15000+600000
- 702586 words of font info for 184 fonts, out of 8000000 for 9000
+ 35642 strings out of 467871
+ 638639 string characters out of 5418375
+ 1424735 words of memory out of 5000000
+ 63518 multiletter control sequences out of 15000+600000
+ 702897 words of font info for 187 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,12n,121p,1056b,2438s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmb10.pfb
@@ -1863,9 +1840,9 @@ s/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/User
 s/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users
 /pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users
 /pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on ifes8-tcc.pdf (50 pages, 603639 bytes).
+Output written on ifes8-tcc.pdf (46 pages, 596729 bytes).
 PDF statistics:
- 793 PDF objects out of 1000 (max. 8388607)
- 227 named destinations out of 1000 (max. 500000)
- 44264 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 732 PDF objects out of 1000 (max. 8388607)
+ 209 named destinations out of 1000 (max. 500000)
+ 44224 words of extra memory for PDF output out of 51595 (max. 10000000)
 
