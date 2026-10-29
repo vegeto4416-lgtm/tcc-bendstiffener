@@ -1,14 +1,15 @@
 # Fdb version 4
-["bibtex ifes8-tcc"] 1793052706.44782 "ifes8-tcc.aux" "ifes8-tcc.bbl" "ifes8-tcc" 1793052720.53661 0
+["bibtex ifes8-tcc"] 1793139737.1905 "ifes8-tcc.aux" "ifes8-tcc.bbl" "ifes8-tcc" 1793139821.45813 0
   "./referencias.bib" 1790531836 20151 d7fa6cca5cdf26ca8938c6d40b045b14 ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/bibtex/bib/abntex2/abntex2-options.bib" 1543103229 5396 4eb260dac60f150ae608d45252853090 ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/bibtex/bst/abntex2/abntex2-alf.bst" 1543103230 60064 0819ac8568f9a482510a46e3a8a6f605 ""
-  "ifes8-tcc.aux" 1793052717 26960 035f067cc4a019e605c6d9c129ddf9a6 "pdflatex"
+  "ifes8-tcc.aux" 1793139813 26891 ab867d3d55bdfeff00e8228ad94b0dce "pdflatex"
   (generated)
   "ifes8-tcc.bbl"
   "ifes8-tcc.blg"
   (rewritten before read)
-["pdflatex"] 1793052707.31184 "c:/Pedro/GitHub/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex" "ifes8-tcc.pdf" "ifes8-tcc" 1793052720.53843 0
+["pdflatex"] 1793139787.62112 "C:/Pedro/GitHub/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex" "ifes8-tcc.pdf" "ifes8-tcc" 1793139821.46214 0
+  "C:/Pedro/GitHub/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex" 1793139504 42291 ca50fa8992cbd2161cf5f84005433326 ""
   "C:/Users/pedro/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1792868605 81107 70b8516c68c2e617189c5e44bfd16b96 ""
   "C:/Users/pedro/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1792868377 13333488 20b090d7d1bdbf1be5179546b62ce0a0 ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -30,7 +31,6 @@
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr7.tfm" 1256929440 12064 09aa3eeac96bf141d673bb1b0385ce55 ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr8.tfm" 1256929440 12064 9b9ade9f64cb32ce1d9a88d21fbd5c2d ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr9.tfm" 1256929440 12084 b7f5e4c003de6f57f07c7e9fee73a37c ""
-  "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmri10.tfm" 1256929440 17148 9556e1b5f936b77a796f68d2d559ba99 ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmri12.tfm" 1256929440 17144 271aaf9ebb339934b04110dc5211fba4 ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmtt10.tfm" 1256929440 1372 2ef2c2b492b3c4cd7879fe083abbb061 ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmtt12.tfm" 1256929440 1368 6a60e6a5e029141041d64d339b87e533 ""
@@ -66,7 +66,6 @@
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb" 1256929440 121145 00b210fbe9efd7ce850c04e64670de9a ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb" 1256929440 122174 a2d5e73f396ddbeb3bdf5c79aea0993d ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb" 1256929440 121065 ba8daf2228d9e511988917831f1e22e9 ""
-  "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb" 1256929440 112593 fda2373ba4420af33949610de4c28fe8 ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb" 1256929440 109265 e6c7d377db6dfccd4a123fb26da8cffb ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb" 1256929440 27863 09ce3735688ffde955e72da27c95b61a ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb" 1256929440 27941 d1f5d03f61a46c3fcc3a2ba904ddda52 ""
@@ -251,15 +250,14 @@
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/pedro/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "c:/Pedro/GitHub/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex" 1793052694 44682 42f10701544500c69a8751f7ee4bf6af ""
   "configlistings.tex" 1790531836 1830 5494d1df46a936de8c2ed960edc9815e ""
-  "ifes8-tcc.aux" 1793052717 26960 035f067cc4a019e605c6d9c129ddf9a6 "pdflatex"
-  "ifes8-tcc.bbl" 1793052707 10400 26c33f2a5954ab2a528e43b3adb03866 "bibtex ifes8-tcc"
-  "ifes8-tcc.lof" 1793052717 679 5bb13eda6bd8db3a54c957b44b975658 "pdflatex"
-  "ifes8-tcc.loq" 1793052717 143 52482f66349a1b124999820ec25cd907 "pdflatex"
-  "ifes8-tcc.lot" 1793052717 443 d9c020e95f3001808010bd2af308ed91 "pdflatex"
-  "ifes8-tcc.tex" 1793052694 44682 42f10701544500c69a8751f7ee4bf6af ""
-  "ifes8-tcc.toc" 1793052717 6252 7da499e123b1999b1a676397d3e237b8 "pdflatex"
+  "ifes8-tcc.aux" 1793139813 26891 ab867d3d55bdfeff00e8228ad94b0dce "pdflatex"
+  "ifes8-tcc.bbl" 1793139737 10400 26c33f2a5954ab2a528e43b3adb03866 "bibtex ifes8-tcc"
+  "ifes8-tcc.lof" 1793139814 679 b5d36015941af500148c5c815625aa35 "pdflatex"
+  "ifes8-tcc.loq" 1793139814 143 3ce3038c1e6e4a1a2dfa2004150839b1 "pdflatex"
+  "ifes8-tcc.lot" 1793139814 443 fb5770cf673704c529d57d39f1904718 "pdflatex"
+  "ifes8-tcc.tex" 1793139504 42291 ca50fa8992cbd2161cf5f84005433326 ""
+  "ifes8-tcc.toc" 1793139814 6265 0661b5b5c08659060e531615cadce3b6 "pdflatex"
   "ifes8.cls" 1790531836 21013 1a3bd060baa2c85ed394421d47b1578b ""
   "pics/normas-ifes-apendice-d.png" 1790531836 84581 0ab3db894c190c03823a85aee405775e ""
   (generated)
