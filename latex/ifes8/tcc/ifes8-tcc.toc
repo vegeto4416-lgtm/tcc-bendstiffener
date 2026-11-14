@@ -9,11 +9,11 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{10}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {1}Introdução}{10}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Objetivo Geral}{13}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Objetivos Específicos}{13}{section.1.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Referencial Teórico}}{14}{chapter.2}%
+\contentsline {chapter}{\chapternumberline {2}Referencial Teórico}{14}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Flexão}{14}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Vigas e Tipos de Carregamento}{14}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Força Cortante e Momento Fletor}{15}{subsection.2.1.2}%
@@ -38,7 +38,7 @@
 \contentsline {subsection}{\numberline {2.4.7}Integração no domínio do tempo e variáveis internas viscoelásticas}{39}{subsection.2.4.7}%
 \contentsline {subsection}{\numberline {2.4.8}Reconstrução da resposta em fase e no domínio do tempo}{39}{subsection.2.4.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Metodologia}}{41}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}Metodologia}{41}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Premissas Adotadas}{43}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Caracterização do Material}{46}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Dados Experimentais}{46}{subsection.3.2.1}%
@@ -66,7 +66,7 @@
 \contentsline {subsection}{\numberline {3.7.2}Enrijecedores Selecionados e Adaptações}{67}{subsection.3.7.2}%
 \contentsline {subsection}{\numberline {3.7.3}Procedimento de Simulação e Comparação}{69}{subsection.3.7.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Resultados e Discussão}}{71}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {4}Resultados e Discussão}{71}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Validação do Programa}{71}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Reprodução do Comportamento de Relaxação}{71}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Reprodução da Resposta Estrutural}{71}{subsection.4.1.2}%
@@ -74,7 +74,7 @@
 \contentsline {subsection}{\numberline {4.2.1}Resultados Obtidos}{71}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Comparação dos Resultados}{71}{subsection.4.2.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclusão}}{72}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {5}Conclusão}{72}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Trabalhos Futuros}{72}{section.5.1}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
@@ -86,7 +86,7 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Demonstração do Teorema Loren Ipsum}}{76}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}Demonstração do Teorema Loren Ipsum}{76}{appendix.A}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
@@ -94,4 +94,4 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Exemplo de lombada}}{78}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}Exemplo de lombada}{78}{appendix.anexochapback.1}%
