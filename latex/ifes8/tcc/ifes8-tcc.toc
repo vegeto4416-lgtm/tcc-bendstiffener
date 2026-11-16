@@ -23,67 +23,69 @@
 \contentsline {section}{\numberline {2.2}Viscoelasticidade}{21}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Fluência e Relaxação de Tensão}{22}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Modelos Mecânicos}{23}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Equação Constitutiva na Forma Integral}{24}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Resposta em Regime Harmônico}{26}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Limites de Aplicação da Teoria Linear}{27}{subsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.6}Rigidez}{28}{subsection.2.2.6}%
-\contentsline {section}{\numberline {2.3}Equações Diferenciais}{30}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Terminologia e Classificação}{30}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Problemas de Valor Inicial e de Valor de Contorno}{31}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Equações Lineares de Primeira Ordem}{32}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Sistemas de Equações Lineares de Primeira Ordem}{33}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Aplicação ao Sistema Linha Flexível-Enrijecedor}{35}{subsection.2.3.5}%
-\contentsline {section}{\numberline {2.4}Métodos Numéricos}{39}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Representação viscoelástica por série de Prony}{40}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Expansão perturbativa em harmônicos}{41}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Formulação das equações diferenciais ordinárias}{42}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Método do tiro}{43}{subsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.4.5}Integração das equações diferenciais pelo método de Runge-Kutta de quarta ordem}{44}{subsection.2.4.5}%
-\contentsline {subsection}{\numberline {2.4.6}Localização de raízes pelo método de Newton e pelo método de Illinois}{45}{subsection.2.4.6}%
-\contentsline {subsection}{\numberline {2.4.7}Integração no domínio do tempo e variáveis internas viscoelásticas}{47}{subsection.2.4.7}%
-\contentsline {subsection}{\numberline {2.4.8}Reconstrução da resposta em fase e no domínio do tempo}{47}{subsection.2.4.8}%
+\contentsline {subsection}{\numberline {2.2.3}Equação Constitutiva na Forma Integral}{25}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Resposta em Regime Harmônico}{27}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Limites de Aplicação da Teoria Linear}{28}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Princípio da Superposição Modificado}{28}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Rigidez}{29}{subsection.2.2.7}%
+\contentsline {section}{\numberline {2.3}Equações Diferenciais}{31}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Terminologia e Classificação}{31}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Problemas de Valor Inicial e de Valor de Contorno}{32}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Equações Lineares de Primeira Ordem}{34}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Sistemas de Equações Lineares de Primeira Ordem}{34}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Aplicação ao Sistema Linha Flexível-Enrijecedor}{36}{subsection.2.3.5}%
+\contentsline {section}{\numberline {2.4}Métodos Numéricos}{41}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Representação viscoelástica por série de Prony}{41}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Ajuste de curvas por mínimos quadrados}{42}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Expansão perturbativa em harmônicos}{43}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Formulação das equações diferenciais ordinárias}{44}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Método do tiro}{45}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}Integração das equações diferenciais pelo método de Runge-Kutta de quarta ordem}{47}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.7}Localização de raízes pelo método de Newton e pelo método de Illinois}{48}{subsection.2.4.7}%
+\contentsline {subsection}{\numberline {2.4.8}Integração no domínio do tempo e variáveis internas viscoelásticas}{49}{subsection.2.4.8}%
+\contentsline {subsection}{\numberline {2.4.9}Reconstrução da resposta em fase e no domínio do tempo}{50}{subsection.2.4.9}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}Metodologia}{49}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Premissas Adotadas}{52}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Caracterização do Material}{54}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Dados Experimentais}{54}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Ajuste dos Termos da Série de Prony}{55}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Identificação das Funções de Relaxação}{56}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Parâmetros Utilizados no Modelo Linear}{58}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Avaliação do Ajuste}{58}{subsection.3.2.5}%
-\contentsline {section}{\numberline {3.3}Equacionamento do Sistema Linha Flexível-Enrijecedor}{59}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Caracterização do Sistema}{59}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Relações Trigonométricas}{62}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Equilíbrio de Forças e Momentos}{63}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Condições de Contorno}{66}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Equações de Governo para Viscoelasticidade Linear}{66}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Formulação no Domínio do Tempo}{66}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Resposta Harmônica e Aplicação do Método da Perturbação}{67}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Sistema de Equações no Domínio da Frequência}{69}{subsection.3.4.3}%
-\contentsline {section}{\numberline {3.5}Reconstrução da Resposta}{72}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Reconstrução dos Campos de Ângulo e Curvatura}{72}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Reconstrução da Geometria Deformada}{74}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Envelopes, Deformações e Pontos Críticos}{74}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Verificações da Reconstrução e Organização dos Resultados}{75}{subsection.3.5.4}%
-\contentsline {section}{\numberline {3.6}Validação da Solução}{76}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Estudo de Caso}{77}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Material, ambiente e linha flexível}{77}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Enrijecedores Selecionados e Adaptações}{77}{subsection.3.7.2}%
-\contentsline {subsection}{\numberline {3.7.3}Procedimento de Simulação e Comparação}{80}{subsection.3.7.3}%
+\contentsline {chapter}{\chapternumberline {3}Metodologia}{52}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Premissas Adotadas}{55}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Caracterização do Material}{57}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Dados Experimentais}{57}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Ajuste dos Termos da Série de Prony}{58}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Identificação das Funções de Relaxação}{59}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Parâmetros Utilizados no Modelo Linear}{61}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Avaliação do Ajuste}{61}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Equacionamento do Sistema Linha Flexível-Enrijecedor}{62}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Caracterização do Sistema}{62}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Relações Trigonométricas}{65}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Equilíbrio de Forças e Momentos}{66}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Condições de Contorno}{69}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Equações de Governo para Viscoelasticidade Linear}{69}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Formulação no Domínio do Tempo}{69}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Resposta Harmônica e Aplicação do Método da Perturbação}{70}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Sistema de Equações no Domínio da Frequência}{72}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Reconstrução da Resposta}{75}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Reconstrução dos Campos de Ângulo e Curvatura}{75}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Reconstrução da Geometria Deformada}{77}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Envelopes, Deformações e Pontos Críticos}{77}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Verificações da Reconstrução e Organização dos Resultados}{78}{subsection.3.5.4}%
+\contentsline {section}{\numberline {3.6}Validação da Solução}{79}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Estudo de Caso}{80}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Material, ambiente e linha flexível}{80}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Enrijecedores Selecionados e Adaptações}{80}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}Procedimento de Simulação e Comparação}{83}{subsection.3.7.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}Resultados e Discussão}{81}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Validação do Programa}{81}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Reprodução do Comportamento de Relaxação}{81}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Reprodução da Resposta Estrutural}{81}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Solução do Estudo de Caso}{81}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Resultados Obtidos}{81}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Comparação dos Resultados}{81}{subsection.4.2.2}%
+\contentsline {chapter}{\chapternumberline {4}Resultados e Discussão}{84}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Validação do Programa}{84}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Reprodução do Comportamento de Relaxação}{84}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Reprodução da Resposta Estrutural}{84}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Solução do Estudo de Caso}{84}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Resultados Obtidos}{84}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Comparação dos Resultados}{84}{subsection.4.2.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}Conclusão}{82}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Trabalhos Futuros}{82}{section.5.1}%
+\contentsline {chapter}{\chapternumberline {5}Conclusão}{85}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Trabalhos Futuros}{85}{section.5.1}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{83}{section*.37}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{86}{section*.38}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setcounter {tocdepth}{0}
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
@@ -91,7 +93,7 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}Demonstração do Teorema Loren Ipsum}{86}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}Demonstração do Teorema Loren Ipsum}{89}{appendix.A}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
@@ -99,4 +101,4 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}Exemplo de lombada}{88}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}Exemplo de lombada}{91}{appendix.anexochapback.1}%

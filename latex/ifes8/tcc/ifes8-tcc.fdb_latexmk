@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex ifes8-tcc"] 1794682380.29161 "ifes8-tcc.aux" "ifes8-tcc.bbl" "ifes8-tcc" 1794682383.4025 0
+["bibtex ifes8-tcc"] 1794860325.1564 "ifes8-tcc.aux" "ifes8-tcc.bbl" "ifes8-tcc" 1794860328.35213 0
   "./referencias.bib" 1794681175 6149 76e10ff3b200885985a1b1668ba68308 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/bibtex/bib/abntex2/abntex2-options.bib" 1543103229 5396 4eb260dac60f150ae608d45252853090 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/bibtex/bst/abntex2/abntex2-alf.bst" 1543103230 60064 0819ac8568f9a482510a46e3a8a6f605 ""
-  "ifes8-tcc.aux" 1794682382 53137 213ea84cddae1eb91e3474def3a3bb35 "pdflatex"
+  "ifes8-tcc.aux" 1794860327 54654 485241bcd7326422f32b107bb9810705 "pdflatex"
   (generated)
   "ifes8-tcc.bbl"
   "ifes8-tcc.blg"
   (rewritten before read)
-["pdflatex"] 1794682380.64995 "c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex" "ifes8-tcc.pdf" "ifes8-tcc" 1794682383.4032 0
+["pdflatex"] 1794860325.44529 "c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex" "ifes8-tcc.pdf" "ifes8-tcc" 1794860328.35282 0
   "C:/Users/Usuario/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1794682375 82705 9cc9f144eacd499bc23a611703921467 ""
   "C:/Users/Usuario/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1200.pk" 1794682379 24152 744dcefd876af669aa524a7f85bc2fe8 ""
   "C:/Users/Usuario/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1791239507 13374037 163eb37a9695bdd1ef8ec714132270f0 ""
@@ -247,12 +247,12 @@
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex" 1794682365 204885 49ed14cbb95b5ada6c164a55a7dcb0d4 ""
+  "c:/Users/Usuario/Downloads/IFES/Repos/tcc-bendstiffener/latex/ifes8/tcc/ifes8-tcc.tex" 1794860319 213363 bfc8d90f99aa1133429497868d2d9859 ""
   "configlistings.tex" 1790457967 1830 5494d1df46a936de8c2ed960edc9815e ""
-  "ifes8-tcc.aux" 1794682382 53137 213ea84cddae1eb91e3474def3a3bb35 "pdflatex"
-  "ifes8-tcc.bbl" 1794682380 4672 955e8427bfd93afb5b780d30fad17e9e "bibtex ifes8-tcc"
-  "ifes8-tcc.tex" 1794682365 204885 49ed14cbb95b5ada6c164a55a7dcb0d4 ""
-  "ifes8-tcc.toc" 1794682382 8959 cf68665bc773d051eb171639cceb285a "pdflatex"
+  "ifes8-tcc.aux" 1794860327 54654 485241bcd7326422f32b107bb9810705 "pdflatex"
+  "ifes8-tcc.bbl" 1794860325 4672 955e8427bfd93afb5b780d30fad17e9e "bibtex ifes8-tcc"
+  "ifes8-tcc.tex" 1794860319 213363 bfc8d90f99aa1133429497868d2d9859 ""
+  "ifes8-tcc.toc" 1794860327 9179 86c929e21e74e85fc5fb48ca9075e533 "pdflatex"
   "ifes8.cls" 1794681175 21356 0e8844d5be9c791a0e8fdc036529dbf1 ""
   "pics/Bend stiffener, installation expo_windjounal_haracop.jpeg" 1793642850 495835 ffc96349acaf1ce39e0525ccf4c586c6 ""
   "pics/caire2011-elemento-infinitesimal.png" 1794681175 27506 e44f8c4d259857a6830b2ee4a39c06b5 ""

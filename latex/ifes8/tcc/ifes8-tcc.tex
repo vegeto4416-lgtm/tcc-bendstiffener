@@ -1043,7 +1043,9 @@ são a função de relaxação $G(t)$ e a função de fluência $J(t)$, definida
 \end{equation}
 
 em que $\varepsilon_0$ é a deformação constante imposta no ensaio de relaxação e
-$\sigma_0$ é a tensão constante imposta no ensaio de fluência. Essas funções cumprem,
+$\sigma_0$ é a tensão constante imposta no ensaio de fluência. Como $\sigma$ e $\varepsilon$ são tensão e deformação normais, $G(t)$ é um módulo de
+relaxação longitudinal, e não o módulo de cisalhamento, e a letra $G$ segue a notação de
+\citeonline{Caire2011}. Essas funções cumprem,
 para o material viscoelástico linear, o papel que o módulo de elasticidade cumpre para o
 sólido elástico \cite{Caire2005}.
 
@@ -1162,6 +1164,59 @@ apresentada na Subseção~\ref{subsec:serie-prony}.
   \nota{As funções $G(t)$ e $J(t)$ do sólido linear padrão foram reescritas
     explicitamente a partir de sua equação constitutiva.}
 \end{table}
+
+O modelo de Maxwell generalizado associa em paralelo uma mola isolada, de módulo
+$G_{\infty}$, e $N$ elementos de Maxwell, cada um formado por uma mola $G_m$ e um
+amortecedor $\mu_m$ em série (Figura~\ref{fig:maxwell-generalizado}). Como os ramos estão
+em paralelo, a tensão total é a soma das tensões dos ramos e, sob deformação constante, a
+função de relaxação é a soma das relaxações individuais: a mola isolada contribui com o
+valor de longo prazo $G_{\infty}$, e o ramo $m$, com $G_m\,e^{-t/\tau_m}$, em que
+$\tau_m = \mu_m/G_m$. O resultado é a série de Prony da
+Equação~(\ref{eq:prony-relaxacao}) \cite{Caire2011}, de modo que essa série corresponde à
+relaxação de um modelo de Maxwell generalizado, do qual o sólido linear padrão é o caso
+$N = 1$. Cada termo representa uma escala de tempo de relaxação distinta.
+
+\begin{figure}[h]
+  \centering
+  \caption{Modelo de Maxwell generalizado: uma mola isolada, de módulo $G_{\infty}$, em
+    paralelo com $N$ elementos de Maxwell, cada um formado por uma mola $G_m$ e um
+    amortecedor $\mu_m$ em série.}
+  \label{fig:maxwell-generalizado}
+  \begin{tikzpicture}[x=1cm,y=1cm,line cap=round,>=stealth,
+      mola/.pic={\draw (0,0) -- (0.3,0) -- (0.4,0.22) -- (0.6,-0.22) -- (0.8,0.22)
+        -- (1.0,-0.22) -- (1.2,0.22) -- (1.3,0) -- (1.6,0);},
+      amort/.pic={\draw (0,0) -- (0.5,0); \draw (1.0,0.25) -- (0.5,0.25)
+        -- (0.5,-0.25) -- (1.0,-0.25); \draw (0.85,0.17) -- (0.85,-0.17);
+        \draw (0.85,0) -- (1.6,0);}]
+    % barramentos
+    \draw[very thick] (0,0.7) -- (0,-3.4);
+    \draw[very thick] (7.2,0.7) -- (7.2,-3.4);
+    % mola isolada
+    \draw (0,0) -- (2.8,0);
+    \pic at (2.8,0) {mola};
+    \draw (4.4,0) -- (7.2,0);
+    \node at (3.6,0.5) {$G_{\infty}$};
+    % ramo 1
+    \draw (0,-1.2) -- (1.2,-1.2);
+    \pic at (1.2,-1.2) {mola};
+    \draw (2.8,-1.2) -- (3.8,-1.2);
+    \pic at (3.8,-1.2) {amort};
+    \draw (5.4,-1.2) -- (7.2,-1.2);
+    \node at (2.0,-0.7) {$G_1$};
+    \node at (4.6,-0.7) {$\mu_1$};
+    % reticencias
+    \node at (3.6,-1.95) {$\vdots$};
+    % ramo N
+    \draw (0,-2.8) -- (1.2,-2.8);
+    \pic at (1.2,-2.8) {mola};
+    \draw (2.8,-2.8) -- (3.8,-2.8);
+    \pic at (3.8,-2.8) {amort};
+    \draw (5.4,-2.8) -- (7.2,-2.8);
+    \node at (2.0,-2.3) {$G_N$};
+    \node at (4.6,-2.3) {$\mu_N$};
+  \end{tikzpicture}
+  \fonte{Elaborada pelos autores.}
+\end{figure}
 
 \subsection{Equação Constitutiva na Forma Integral}
 \label{sub:forma-integral}
@@ -1308,10 +1363,45 @@ amorfos, em uma faixa de temperatura, mostram comportamento linear somente para
 deformações abaixo de cerca de 1\%, e polímeros cristalinos, para deformações ainda
 menores \cite{Caire2005}. Quando essa faixa é excedida, são necessárias teorias
 não lineares, como as de Leaderman e de Green-Rivlin e o princípio da superposição
-modificado, descritas por \citeonline{Caire2011}. A adequação da hipótese
+modificado, descritas por \citeonline{Caire2011}; este último é apresentado na
+Subseção~\ref{sub:psm}. A adequação da hipótese
 linear ao poliuretano nas condições estudadas, bem como o seu enquadramento nas premissas
 do modelo (Seção~\ref{sec:premissas-adotadas}), deve, portanto, ser verificada com os
 ensaios de caracterização.
+
+\subsection{Princípio da Superposição Modificado}
+\label{sub:psm}
+
+Na viscoelasticidade linear, a tensão resultante de uma história de deformação é a
+superposição das respostas a saltos de deformação, e cada resposta é proporcional ao
+tamanho do salto. Fora do regime linear, essa proporcionalidade deixa de valer. O princípio
+da superposição modificado (PSM) mantém a ideia de superpor as respostas aos saltos, mas
+descreve a resposta a cada salto por uma função não linear da deformação e do tempo
+decorrido desde sua aplicação \cite{Caire2011}. Fazendo o número de saltos tender ao
+infinito, a soma se transforma em uma integral e obtém-se a forma constitutiva de
+\citeonline{PipkinRogers1968}. Para representar a dependência não linear da tensão em
+relação à deformação, expande-se a resposta em um polinômio de quarta ordem na
+deformação, com uma função de relaxação $G_k(t)$ para cada potência $\varepsilon^k$
+\cite{Caire2011}:
+
+\begin{equation}
+  \label{eq:ve-psm}
+  \sigma(t) = \sum_{k=1}^{4} G_k(t)\,\varepsilon(0)^k
+  + \int_0^t \Big[G_1(t-\tau) + 2G_2(t-\tau)\,\varepsilon(\tau)
+  + 3G_3(t-\tau)\,\varepsilon(\tau)^2 + 4G_4(t-\tau)\,\varepsilon(\tau)^3\Big]
+  \frac{\partial \varepsilon(\tau)}{\partial \tau}\,\mathrm{d}\tau.
+\end{equation}
+
+Quando $G_2 = G_3 = G_4 = 0$, a Equação~(\ref{eq:ve-psm}) se reduz à primeira forma da
+Equação~(\ref{eq:ve-relaxacao-integral}), e $G_1(t)$ é a função de relaxação linear. Em um
+ensaio de relaxação, com deformação constante $\varepsilon_i$ imposta em $t = 0$, o termo
+integral se anula e a tensão é $\sigma_i(t) = \sum_{k=1}^{4} G_k(t)\,\varepsilon_i^k$
+\cite{Caire2011}. Essa relação permite obter as funções $G_k(t)$ ajustando as curvas de
+tensão medidas para diferentes níveis de deformação, e cada $G_k(t)$ pode ser descrita por
+uma série de Prony com os mesmos tempos de relaxação \cite{Caire2011}. A identificação dos
+coeficientes a partir dos ensaios é apresentada na
+Subseção~\ref{sec:identificacao-funcoes-relaxacao}. A formulação estrutural deste trabalho
+utiliza apenas a parcela linear, $G_1(t)$ (Subseção~\ref{sec:parametros-material-linear}).
 
 \subsection{Rigidez}
 \label{sub:rigidez}
@@ -1781,22 +1871,22 @@ de $\phi$, que por sua vez depende de $k$ pela Equação~(\ref{eq:geo-phi}), ess
 integração não fornece a solução em forma fechada.
  
 No caso viscoelástico com carregamento harmônico, \citeonline{Caire2011}
-escreve a força e o ângulo de topo como $F(t) = F_0 + \varepsilon F_0 \sin\omega t$ e
+escreve a força e o ângulo de topo como $F(t) = F_0 + \epsilon F_0 \sin\omega t$ e
 $\phi_L(t) = \phi_{0L} + \alpha\,\phi_{0L}\sin(\omega t + \gamma)$, em que $F_0$ e
-$\phi_{0L}$ são os valores médios, $\varepsilon$ e $\alpha$ são pequenos parâmetros de
+$\phi_{0L}$ são os valores médios, $\epsilon$ e $\alpha$ são pequenos parâmetros de
 perturbação, $\omega$ é a frequência e $\gamma$ é a diferença de fase. Cada grandeza
 $\chi(s,t)$, com $\chi$ representando $\phi$, $k$ ou $V$, é expandida em uma série de
-perturbação até a terceira ordem em $\varepsilon$ e $\alpha$ \cite{Caire2011}:
+perturbação até a terceira ordem em $\epsilon$ e $\alpha$ \cite{Caire2011}:
 
 \begin{equation}
   \label{eq:base-perturbativa}
-  \chi(s,t) = \sum_{i=0}^{29} \chi_i(s)\,\Psi_i(\varepsilon, \alpha, \omega t),
+  \chi(s,t) = \sum_{i=0}^{29} \chi_i(s)\,b_i(t;\epsilon,\alpha),
 \end{equation}
 
-em que as trinta parcelas $\Psi_i$ são produtos de potências de $\varepsilon$ e $\alpha$
+em que as trinta parcelas $b_i$ são produtos de potências de $\epsilon$ e $\alpha$
 por $\sin(n\omega t)$ e $\cos(n\omega t)$, com $n = 1, 2, 3$. Por exemplo,
-$\Psi_0 = 1$, $\Psi_1 = \varepsilon\sin\omega t$ e $\Psi_2 = \varepsilon\cos\omega t$.
-Assim, a dependência temporal fica concentrada nas funções $\Psi_i$, conhecidas, e as
+$b_0 = 1$, $b_1 = \epsilon\sin\omega t$ e $b_2 = \epsilon\cos\omega t$.
+Assim, a dependência temporal fica concentrada nas funções $b_i$, conhecidas, e as
 incógnitas passam a ser as funções $\chi_i(s)$, que dependem somente de $s$.
  
 A relação entre momento fletor e curvatura de cada coeficiente é escrita em forma
@@ -1969,7 +2059,7 @@ uma solução analítica não está disponível ou apresenta limitações
 práticas.
 
 Neste trabalho, são empregados métodos de aproximação por séries,
-integração numérica de equações diferenciais ordinárias, localização
+ajuste de curvas por mínimos quadrados, integração numérica de equações diferenciais ordinárias, localização
 de raízes e solução de problemas de valor de contorno. A implementação
 é dividida em duas abordagens complementares: uma formulação no
 domínio da frequência, baseada em uma expansão perturbativa em
@@ -1994,7 +2084,8 @@ em que $G(t)$ é o módulo de relaxação ao longo do tempo, $G_{\infty}$
 é o módulo longitudinal em regime de longo prazo, $G_m$ representa
 a contribuição de cada termo da série, $\tau_m$ é o respectivo tempo
 de relaxação e $N$ corresponde ao número de termos utilizados na
-aproximação.
+aproximação. Essa série corresponde à relaxação de um modelo de Maxwell generalizado,
+apresentado na Subseção~\ref{sub:modelos-mecanicos}.
 
 A representação por uma soma de exponenciais permite descrever
 diferentes escalas temporais de relaxação do material. Cada termo
@@ -2047,6 +2138,53 @@ Assim, a dependência da resposta em relação à frequência é incorporada
 à formulação mecânica sem a necessidade de representar diretamente
 todo o histórico temporal nessa etapa da solução.
 
+\subsection{Ajuste de curvas por mínimos quadrados}
+\label{subsec:minimos-quadrados}
+
+Os parâmetros da série de Prony e das funções de relaxação são obtidos a partir de dados
+experimentais por regressão. Dado um conjunto de $n$ pontos $(t_i, y_i)$ e um modelo
+$\hat{y}(t;\mathbf{p})$ que depende de um vetor de parâmetros $\mathbf{p}$, o método dos
+mínimos quadrados determina os parâmetros que minimizam a soma ponderada dos quadrados
+dos resíduos, conforme Chapra e Canale (2011):
+
+\begin{equation}
+  S(\mathbf{p}) = \sum_{i=1}^{n} w_i\left[y_i - \hat{y}(t_i;\mathbf{p})\right]^2,
+  \label{eq:minimos-quadrados}
+\end{equation}
+
+em que $w_i \geq 0$ são pesos que permitem atribuir maior ou menor importância a cada
+ponto.
+
+Quando o modelo é linear nos parâmetros, como em uma regressão polinomial ou na série de
+Prony com os tempos de relaxação fixados, a minimização conduz a um sistema linear, as
+equações normais,
+
+\begin{equation}
+  \mathbf{A}^{\mathsf{T}}\mathbf{W}\mathbf{A}\,\mathbf{p}
+  = \mathbf{A}^{\mathsf{T}}\mathbf{W}\,\mathbf{y},
+  \label{eq:equacoes-normais}
+\end{equation}
+
+em que $A_{ij}$ é a derivada do modelo no ponto $t_i$ em relação ao parâmetro $p_j$ e
+$\mathbf{W} = \mathrm{diag}(w_i)$. Na prática, a solução é obtida por algoritmos baseados
+em fatorações da matriz $\mathbf{A}$, e não pela formação explícita das equações normais,
+por terem melhor comportamento numérico. Também é possível impor restrições aos
+parâmetros, como a não negatividade dos coeficientes $G_m$, que representam parcelas de
+módulo e têm, por isso, significado físico; o problema continua sendo de minimização, mas
+exige algoritmos específicos para parâmetros limitados.
+
+Quando o modelo é não linear nos parâmetros, como na série de Prony com os tempos de
+relaxação $\tau_m$ também desconhecidos, a minimização é iterativa: a cada passo, o modelo
+é linearizado em torno da estimativa atual e calcula-se uma correção, de forma análoga ao
+método de Newton apresentado na Subseção~\ref{subsec:metodo-tiro}. Os métodos de região de
+confiança limitam o tamanho do passo a uma região em que a linearização é considerada
+confiável, o que melhora a convergência quando as estimativas iniciais estão distantes da
+solução e permite impor limites inferiores e superiores aos parâmetros. A qualidade do
+ajuste é avaliada por medidas dos resíduos, como a raiz do erro quadrático médio, o erro
+absoluto médio e o coeficiente de determinação, definidos na
+Subseção~\ref{sec:avaliacao-ajuste-material}. A aplicação desses métodos ao ajuste dos
+termos da série de Prony é descrita na Subseção~\ref{sec:ajuste-prony}.
+
 \subsection{Expansão perturbativa em harmônicos}
 \label{subsec:expansao-perturbativa}
 
@@ -2062,12 +2200,12 @@ por uma expansão da forma
 \begin{equation}
   u(s,t) =
   u_0(s,t) +
-  \varepsilon u_1(s,t) +
-  \varepsilon^2 u_2(s,t) + \cdots,
+  \epsilon u_1(s,t) +
+  \epsilon^2 u_2(s,t) + \cdots,
   \label{eq:expansao-perturbativa}
 \end{equation}
 
-em que $\varepsilon$ representa um parâmetro de perturbação e os
+em que $\epsilon$ representa um parâmetro de perturbação e os
 termos $u_j$ correspondem às diferentes ordens da aproximação.
 
 No modelo implementado, a formulação também considera o parâmetro
@@ -2253,6 +2391,13 @@ em que $0 < \lambda \leq 1$ é o fator de amortecimento. Seu valor
 é ajustado de modo a favorecer a redução do resíduo entre
 iterações, evitando correções excessivamente grandes que possam
 comprometer a convergência.
+
+Quando as estimativas iniciais estão distantes da solução, a iteração de Newton pode não
+convergir mesmo com amortecimento. Nesses casos, recorre-se à continuação: resolve-se
+primeiro um problema mais brando, por exemplo com carregamento reduzido, e a solução
+obtida é usada como estimativa inicial do problema seguinte, com o parâmetro de
+carregamento aumentado gradualmente até o valor desejado. Quando o parâmetro variado é o
+carregamento, o procedimento é denominado continuação em carga.
 
 O método do tiro, portanto, permite determinar as condições
 iniciais necessárias para que a solução integrada satisfaça as
@@ -2863,7 +3008,8 @@ deformação. Em um material viscoelástico linear, dobrar a deformação de um 
 relaxação dobra a tensão em todos os instantes. Quando essa proporcionalidade não ocorre,
 uma única função linear não descreve toda a família de curvas.
 
-O princípio da superposição modificado (PSM) fornece uma forma de representar a memória
+O princípio da superposição modificado (PSM), apresentado na
+Subseção~\ref{sub:psm}, fornece uma forma de representar a memória
 do material sem exigir essa proporcionalidade. Na representação integral de
 \citeonline{PipkinRogers1968}, a resposta depende das deformações aplicadas anteriormente,
 e essa dependência pode ser não linear. Para a identificação a partir dos ensaios de
@@ -2927,7 +3073,8 @@ a parcela linear, associada a $G_1(t)$. Assim:
 \end{equation}
 
 No programa de solução, $G_{01}$ é utilizado como módulo de longo prazo, $G_{m1}$ como
-contribuições de relaxação e $\tau_m$ como tempos característicos. Embora se utilize a letra
+contribuições de relaxação e $\tau_m$ como tempos característicos, que correspondem a $G_{\infty}$, $G_m$ e $\tau_m$
+da série de Prony da Equação~\eqref{eq:prony-relaxacao}. Embora se utilize a letra
 $G$, nesta identificação a função relaciona tensão e deformação longitudinais nos ensaios
 de tração, não sendo identificada como módulo de cisalhamento.
 
