@@ -16,6 +16,8 @@
 \usepackage{blindtext}          % para gerar texto aleatório (dummy text)
 \usepackage{tikz}
 \usetikzlibrary[topaths]
+% 16/11/2026 - Forma de decisao para explicitar a convergencia no fluxograma.
+\usetikzlibrary{shapes.geometric}
 \usepackage{mathtools}
 \usepackage{xcolor}
 \usepackage{algorithm}
@@ -395,7 +397,7 @@ O arranjo esquemático da Figura~\ref{fig:arranjo-tipico-souza} permite identifi
 do enrijecedor envolvendo a linha flexível e os componentes de sua fixação. O corpo
 polimérico proporciona a transição de rigidez, enquanto os componentes metálicos fazem
 a ligação com a estrutura de suporte. Trata-se de uma representação simplificada,
-reproduzida por \citeonline{Souza2008}, e não de um detalhamento construtivo de
+e não de um detalhamento construtivo de
 todos os arranjos utilizados em serviço.
 
 % Análise global e local.
@@ -411,7 +413,8 @@ desenvolvimento de uma análise local.
   \caption{Arranjo típico de um enrijecedor à flexão e seus componentes de fixação.}
   \label{fig:arranjo-tipico-souza}
   \includegraphics[width=0.85\textwidth]{pics/souza2008-arranjo-tipico.png}
-  \fonte{Lane et al. (1995), reproduzido em \citeonline{Souza2008}.}
+  % 17/11/2026 - Credito atribuido aos autores originais da figura.
+  \fonte{\citeonline{Lane1995}.}
 \end{figure}
 
 % % Mais detalhes sobre o poliuretano para entrar no tema de viscoelasticidade.
@@ -524,47 +527,49 @@ viscoelásticos a partir de dados de ensaios de relaxação.
 \chapter{Referencial Teórico}
 \label{cha:referencial-teorico}
 
-Nesse capítulo apresenta-se o referencial teórico que fundamenta o desenvolvimento do trabalho, 
-abordando conceitos essenciais relacionados à viscoelasticidade, poliuretanos, enrijecedores à 
-flexão e modelos constitutivos utilizados na análise estrutural de \emph{risers} flexíveis.
-Ademais, explicitam-se os conceitos básicos sobre equações diferenciais, métodos numéricos e 
-modelos constitutivos utilizados na solução destas. Por fim, são discutidos os conceitos de 
-séries de Prony e sua aplicação na caracterização viscoelástica de materiais poliméricos, 
-com ênfase em poliuretanos.
+% 17/11/2026 - Organizacao do referencial pelo raciocinio necessario ao problema.
+O dimensionamento do enrijecedor depende de relacionar três aspectos: a distribuição
+dos esforços, a resposta do poliuretano ao longo do tempo e a solução do equilíbrio
+da estrutura deformada. Este capítulo constrói essa relação a partir da flexão de
+vigas e da viscoelasticidade, até chegar ao problema de contorno e aos métodos
+numéricos empregados. O objetivo é estabelecer como as propriedades do material e
+da geometria participam do cálculo da curvatura, principal grandeza utilizada na
+avaliação do conjunto.
 
 % ---------------------------------------------------------------------
 
 \section{Flexão}
 \label{sec:flexao}
 
-A flexão é o modo de solicitação em que um elemento estrutural, ao ser submetido a
-carregamentos transversais ao seu eixo, desenvolve esforços internos que tendem a
-curvá-lo. Do ponto de vista do projeto mecânico, qualquer peça apoiada e sujeita a
-esforços transversais ao seu comprimento comporta-se como uma viga, de modo que o
-estudo da flexão se confunde com o estudo das vigas \cite{Norton2013}. Como o
-enrijecedor à flexão e a linha flexível por ele envolvida trabalham essencialmente sob
-esse regime, esta seção reúne os conceitos de cargas, esforços internos, tensões e
-deflexões em vigas que fundamentam a formulação desenvolvida nos capítulos seguintes.
+% 17/11/2026 - Mecanica da flexao ligada ao acessorio, com fontes complementares.
+A função do enrijecedor não é impedir que a linha se curve, mas distribuir essa
+curvatura sem concentrá-la excessivamente junto à fixação. Para compreender esse
+papel, é necessário relacionar o momento fletor à rigidez da seção. A teoria de
+vigas oferece essa relação, enquanto a modelagem do acessório acrescenta a variação
+de geometria ao longo do comprimento e o equilíbrio da configuração deformada
+\cite{Norton2013,Souza2008}. Os conceitos a seguir são apresentados como etapas
+dessa passagem, da viga elástica ao conjunto linha flexível-enrijecedor.
 
 \subsection{Vigas e Tipos de Carregamento}
 \label{sub:vigas-carregamentos}
 
-Segundo \citeonline{Norton2013}, uma viga é qualquer elemento que suporta um
+Uma viga é um elemento que suporta um
 carregamento transversal ao longo de seu eixo e que também pode suportar carregamentos
 na direção axial. A classificação das vigas é feita em função da forma como são
 vinculadas, conforme ilustrado na Figura~\ref{fig:tipos-vigas}:
 
 \begin{itemize}
-  \item \textbf{viga biapoiada:} apoiada por pinos ou apoios estreitos em cada
+  \item \textbf{Viga biapoiada:} apoiada por pinos ou apoios estreitos em cada
   extremidade;
-  \item \textbf{viga engastada:} fixa em uma extremidade e livre na outra;
-  \item \textbf{viga biapoiada com extremidade em balanço:} biapoiada, mas projetando-se
+  \item \textbf{Viga engastada:} fixa em uma extremidade e livre na outra;
+  \item \textbf{Viga biapoiada com extremidade em balanço:} biapoiada, mas projetando-se
   além de um de seus apoios;
-  \item \textbf{viga indeterminada (hiperestática):} possui mais apoios do que o
+  \item \textbf{Viga indeterminada (hiperestática):} possui mais apoios do que o
   necessário para o equilíbrio estático, de modo que suas reações não podem ser obtidas
   apenas pelas equações de equilíbrio.
 \end{itemize}
 
+% 17/11/2026 - Esquema autoral com identificadores alinhados entre os paineis.
 \begin{figure}[h]
   \centering
   \caption{Tipos usuais de vigas quanto aos vínculos: (a) biapoiada; (b) engastada;
@@ -587,7 +592,7 @@ vinculadas, conforme ilustrado na Figura~\ref{fig:tipos-vigas}:
       \draw[very thick] (0,0) -- (4,0);
       \draw[thick] (0,-0.5) -- (0,0.5);
       \foreach \y in {-0.45,-0.25,-0.05,0.15,0.35}{\draw (0,\y) -- (-0.2,\y-0.2);}
-      \node[anchor=east] at (-0.5,0) {(b)};
+      \node[anchor=east] at (-0.7,-0.1) {(b)};
     \end{scope}
     % ---------- (c) balanço ----------
     \begin{scope}[shift={(0,1.5)}]
@@ -608,10 +613,10 @@ vinculadas, conforme ilustrado na Figura~\ref{fig:tipos-vigas}:
       \draw (4,0) circle (0.1);
       \draw (4,-0.1) -- (3.75,-0.5) -- (4.25,-0.5) -- cycle;
       \draw (3.6,-0.5) -- (4.4,-0.5);
-      \node[anchor=east] at (-0.5,0) {(d)};
+      \node[anchor=east] at (-0.7,-0.1) {(d)};
     \end{scope}
   \end{tikzpicture}
-  \fonte{Adaptado de \citeonline{Norton2013}.}
+  \fonte{Autoria própria.}
 \end{figure}
 
 A viga engastada, em particular, é a idealização adotada neste trabalho para o conjunto
@@ -619,20 +624,22 @@ enrijecedor e linha flexível, conforme as premissas apresentadas no
 Capítulo~\ref{sec:metodologia}, uma vez que o engaste modela a fixação da estrutura
 na região de topo.
 
+% 17/11/2026 - Continuidade da explicacao sem nova chamada para a mesma fonte.
 As cargas aplicadas a uma viga podem ser forças concentradas, forças distribuídas ao
 longo de parte do comprimento ou do comprimento total, e momentos concentrados. Essas
 cargas dão origem tanto a forças cortantes quanto a momentos fletores na viga, de
 modo que a análise dos esforços internos consiste em determinar a magnitude e a
-distribuição desses esforços ao longo do comprimento \cite{Norton2013}. Em
+distribuição desses esforços ao longo do comprimento. Em
 geral, as vigas são tratadas como sistemas estáticos, ainda que vibrações e acelerações
-possam provocar carregamento dinâmico \cite{Norton2013}.
+possam provocar carregamento dinâmico.
 
 \subsection{Força Cortante e Momento Fletor}
 \label{sub:cortante-momento}
 
-Seja $q(x)$ a função que descreve o carregamento distribuído ao longo do eixo $x$ da
-viga. A força cortante $V(x)$ e o momento fletor $M(x)$ relacionam-se com $q(x)$ por
-\cite{Norton2013}:
+% 16/11/2026 - Atribuicao conjunta das relacoes de equilibrio e sintese para o projeto.
+Seguindo a convenção apresentada por \citeonline{Norton2013}, seja $q(x)$ a função
+que descreve o carregamento distribuído ao longo do eixo $x$ da viga. A força
+cortante $V(x)$ e o momento fletor $M(x)$ relacionam-se com $q(x)$ por:
 
 \begin{equation}
   \label{eq:q-V-M}
@@ -644,31 +651,37 @@ segunda vez, o momento fletor:
 
 \begin{align}
   V(x) &= \int q(x)\,\mathrm{d}x + C_1, \label{eq:V-integral}\\
-  M(x) &= \int V(x)\,\mathrm{d}x + C_1 x + C_2, \label{eq:M-integral}
+  M(x) &= \int V(x)\,\mathrm{d}x + C_2, \label{eq:M-integral}
 \end{align}
 
 em que $C_1$ e $C_2$ são constantes de integração, determinadas pelas condições de
-contorno do problema \cite{Norton2013}. Em termos geométricos, a
+contorno do problema. Em termos geométricos, a
 diferença entre as forças cortantes em dois pontos quaisquer é igual à área sob a curva
 do carregamento distribuído entre eles, e a diferença entre os momentos fletores em dois
-pontos é igual à área sob a curva da força cortante \cite{Norton2013}.
+pontos é igual à área sob a curva da força cortante.
 
 Quanto à convenção de sinais, adota-se o momento fletor positivo quando ele coloca
 a parte superior da viga em compressão e a parte inferior em tração, e a força
-cortante positiva quando provoca uma rotação horária na seção em que atua
-\cite{Norton2013}. Os valores máximos absolutos
+cortante positiva quando provoca uma rotação horária na seção em que atua.
+Os valores máximos absolutos
 de $V$ e $M$ são os de maior interesse, pois determinam as tensões críticas na viga.
 Como $V$ é a derivada de $M$, o momento fletor atinge um máximo ou um mínimo nas
-seções em que a força cortante se anula \cite{Norton2013}. Nas vigas
+seções em que a força cortante se anula. Nas vigas
 engastadas com carga na extremidade livre, a força cortante não se anula ao longo do
 comprimento e o momento máximo ocorre no engaste, que é a seção crítica do projeto.
 
 Para carregamentos formados por parcelas discretas, possivelmente descontínuas ao longo
 do comprimento, é conveniente representar $q(x)$ por funções de singularidade, que
 permitem escrever uma única expressão válida em toda a viga e facilitam a solução
-computacional \cite{Norton2013}. Sob pequenas deflexões, vale também a
+computacional. Sob pequenas deflexões, vale também a
 superposição de efeitos, de modo que casos combinados podem ser resolvidos somando-se
-as soluções de casos individuais \cite{Norton2013}.
+as soluções de casos individuais. Essa superposição exige que o problema
+seja linear; não pode ser estendida diretamente ao equilíbrio com rotações finitas.
+
+Para o dimensionamento do enrijecedor, essas relações mostram por que não basta
+conhecer a força aplicada: é necessário acompanhar sua distribuição em esforços
+internos e considerar a rigidez de cada seção. Uma mesma distribuição de momentos
+pode produzir curvaturas diferentes quando o perfil ou o material é alterado.
 
 \subsection{Tensões Normais de Flexão}
 \label{sub:tensoes-flexao}
@@ -677,24 +690,30 @@ Embora raramente uma viga real esteja sujeita à flexão pura, esse caso é o po
 partida para o desenvolvimento da teoria das tensões de flexão. Considere-se a viga
 biapoiada da Figura~\ref{fig:flexao-pura}, com duas cargas idênticas aplicadas
 simetricamente. No trecho entre as cargas a força cortante é nula e o momento
-fletor é constante, caracterizando a flexão pura \cite{Norton2013}.
+fletor é constante, caracterizando a flexão pura.
 
 A dedução das tensões nesse regime baseia-se nas seguintes hipóteses
 \cite{Norton2013}:
 
 \begin{enumerate}
-  \item o segmento analisado está distante das cargas aplicadas e dos vínculos externos;
-  \item a viga é carregada em um plano de simetria;
-  \item as seções transversais permanecem planas e perpendiculares à linha neutra
+  \item O segmento analisado está distante das cargas aplicadas e dos vínculos externos;
+  \item A viga é carregada em um plano de simetria;
+  \item As seções transversais permanecem planas e perpendiculares à linha neutra
   durante a flexão;
-  \item o material é homogêneo e obedece à lei de Hooke;
-  \item as tensões permanecem abaixo do limite elástico e as deflexões são pequenas;
-  \item o segmento está sujeito à flexão pura, sem cargas axiais ou cortantes;
-  \item a viga é inicialmente reta.
+  \item O material é homogêneo e obedece à lei de Hooke;
+  \item As tensões permanecem abaixo do limite elástico e as deflexões são pequenas;
+  \item O segmento está sujeito à flexão pura, sem cargas axiais ou cortantes;
+  \item A viga é inicialmente reta.
 \end{enumerate}
 
-Essas hipóteses são as da teoria clássica de vigas de Euler-Bernoulli, adotada nas
-premissas deste trabalho (Capítulo~\ref{sec:metodologia}).
+% 16/11/2026 - Separacao entre a deducao em flexao pura e as hipoteses do modelo adotado.
+Essas condições delimitam a dedução introdutória para uma viga elástica em flexão pura;
+não são todas adotadas no modelo deste trabalho. Da teoria de Euler-Bernoulli,
+mantém-se a hipótese de que as seções permanecem planas e perpendiculares ao eixo
+deformado. A metodologia inclui a força de tração no equilíbrio, admite rotações
+finitas e utiliza uma lei viscoelástica para o poliuretano. Por isso, a hipótese
+cinemática da viga não deve ser confundida com pequenas deflexões, ausência de
+esforço axial ou resposta elástica instantânea.
 
 \begin{figure}[h]
   \centering
@@ -734,15 +753,15 @@ premissas deste trabalho (Capítulo~\ref{sec:metodologia}).
       \node[anchor=east] at (-0.6,0) {(c)};
     \end{scope}
   \end{tikzpicture}
-  \fonte{Adaptado de \citeonline{Norton2013}.}
+  \fonte{Autoria própria.}
 \end{figure}
 
 Quando o momento fletor é aplicado, o segmento se curva: as fibras de um dos lados
 encurtam-se e ficam em compressão, as do lado oposto alongam-se e ficam em tração,
 enquanto a linha neutra mantém o comprimento original. Para que as seções
 permaneçam planas, a deformação varia linearmente com a distância à linha neutra, e,
-sob a lei de Hooke, o mesmo ocorre com a tensão normal, que é nula na linha neutra
-\cite{Norton2013}. Essa relação conduz à conhecida fórmula da tensão de
+sob a lei de Hooke, o mesmo ocorre com a tensão normal, que é nula na linha neutra.
+Essa relação conduz à conhecida fórmula da tensão de
 flexão:
 
 \begin{equation}
@@ -750,10 +769,11 @@ flexão:
   \sigma_x = -\frac{M y}{I},
 \end{equation}
 
+% 16/11/2026 - Mantida a fonte da deducao, sem repeti-la a cada definicao.
 em que $M$ é o momento fletor na seção considerada, $I$ é o momento de inércia da área
 da seção transversal em relação à linha neutra, que passa pelo centroide da seção
 em uma viga reta, e $y$ é a distância da linha neutra ao ponto onde a tensão é
-calculada \cite{Norton2013}. O sinal negativo resulta da convenção de sinais
+calculada. O sinal negativo resulta da convenção de sinais
 adotada.
 
 A tensão máxima ocorre nas fibras externas, onde $y = c$:
@@ -765,7 +785,7 @@ A tensão máxima ocorre nas fibras externas, onde $y = c$:
 
 sendo $c$ a distância da linha neutra à fibra externa, tomada como positiva tanto
 na parte superior quanto na inferior. Essas duas distâncias só são iguais em seções
-simétricas em relação à linha neutra \cite{Norton2013}. Uma forma alternativa
+simétricas em relação à linha neutra. Uma forma alternativa
 frequentemente empregada é
 
 \begin{equation}
@@ -773,7 +793,7 @@ frequentemente empregada é
   \sigma_{max} = \frac{M}{Z}, \qquad Z = \frac{I}{c},
 \end{equation}
 
-em que $Z$ é o módulo de resistência da seção \cite{Norton2013}. A
+em que $Z$ é o módulo de resistência da seção. A
 Figura~\ref{fig:distribuicao-tensao} ilustra a distribuição linear da tensão normal ao
 longo da altura da seção.
 
@@ -801,11 +821,11 @@ longo da altura da seção.
     \node[anchor=west] at (7.3,-2.0) {tração};
     \node at (6,2.5) {$\sigma_x$};
   \end{tikzpicture}
-  \fonte{Adaptado de \citeonline{Norton2013}.}
+  \fonte{Autoria própria.}
 \end{figure}
 
 O momento de inércia $I$ depende exclusivamente da geometria da seção. Para um
-retângulo de largura $b$ e altura $h$, $I = b h^3/12$ \cite{Norton2013}; para
+retângulo de largura $b$ e altura $h$, $I = b h^3/12$; para
 uma seção circular maciça de diâmetro $d$, $I = \pi d^4/64$, e para uma seção
 anular de diâmetros externo $D$ e interno $d$, $I = \pi (D^4 - d^4)/64$. A dependência
 de $I$ com a quarta potência do diâmetro explica por que pequenas variações de
@@ -814,8 +834,8 @@ projeto de elementos de seção variável como o enrijecedor.
 
 As Equações~(\ref{eq:sigma-flexao}) a (\ref{eq:sigma-Z}), embora deduzidas para
 flexão pura, também podem ser utilizadas quando há outros carregamentos além do
-momento fletor, desde que a deformação por cisalhamento seja desprezível
-\cite{Norton2013}.
+momento fletor, desde que sejam respeitadas as hipóteses da teoria e
+as demais parcelas de tensão sejam consideradas separadamente.
 
 No caso de vigas curvas, isto é, de elementos com curvatura inicial significativa,
 como ganchos e grampos, a linha neutra se desloca em direção ao centro de curvatura
@@ -828,11 +848,12 @@ desenvolvido aqui.
 \subsection{Tensões de Cisalhamento na Flexão}
 \label{sub:cisalhamento-flexao}
 
+% 16/11/2026 - Fonte reunida na abertura da relacao de cisalhamento.
 Na situação mais comum, a viga está submetida simultaneamente a força cortante e a
 momento fletor. Como o momento varia com $x$ quando $V \neq 0$, as tensões normais nas
 duas faces de um elemento da viga são diferentes, e o equilíbrio exige uma tensão de
-cisalhamento compensatória \cite{Norton2013}. A tensão de cisalhamento
-a uma distância $y_1$ da linha neutra é dada por \cite{Norton2013}:
+cisalhamento compensatória. Conforme \citeonline{Norton2013}, a tensão de cisalhamento
+a uma distância $y_1$ da linha neutra é dada por:
 
 \begin{equation}
   \label{eq:tau-flexao}
@@ -851,8 +872,8 @@ Como $Q$ se anula na fibra externa e é máximo na linha neutra, a tensão de
 cisalhamento devida à força cortante é nula na superfície e máxima na linha neutra,
 ao contrário da tensão normal de flexão, que é nula na linha neutra e máxima na
 superfície. Por isso, a combinação das duas tensões em um elemento qualquer da seção
-raramente origina um estado de tensão pior do que o das fibras externas
-\cite{Norton2013}. A Tabela~\ref{tab:tau-max} apresenta os valores máximos
+deve ser avaliada de acordo com o carregamento e a geometria.
+A Tabela~\ref{tab:tau-max} apresenta os valores máximos
 da tensão de cisalhamento para algumas seções usuais, sendo $A$ a área da seção.
 
 \begin{table}[h]
@@ -871,7 +892,7 @@ da tensão de cisalhamento para algumas seções usuais, sendo $A$ a área da se
       \bottomrule
     \end{tabular}
   \end{center}
-  \fonte{Adaptado de \citeonline{Norton2013}.}
+  \fonte{Autoria própria.}
   \nota{Para a seção circular oca, considera-se parede de espessura inferior a,
     aproximadamente, um décimo do raio externo.}
 \end{table}
@@ -896,11 +917,11 @@ nas quais a inclusão do cisalhamento teve pouca influência na distribuição d
 Além disso, a hipótese de Euler-Bernoulli não deve ser confundida com a aproximação de
 pequenas rotações utilizada na equação de deflexão apresentada a seguir.
 
+% 16/11/2026 - Integracao das citacoes e delimitacao do exemplo de rigidez constante.
 Além das tensões, o projetista deve considerar a deflexão, pois, mesmo com tensões
 bem abaixo dos níveis de falha do material, as deflexões elásticas podem causar
-interferências e desalinhamentos em um sistema \cite{Norton2013}. A deflexão
-por flexão é obtida a partir da equação da viga
-\cite{Norton2013}:
+interferências e desalinhamentos em um sistema. Para pequenas deflexões, a formulação
+elástica relaciona o momento à deflexão por \cite{Norton2013}:
 
 \begin{equation}
   \label{eq:viga-EI}
@@ -909,14 +930,12 @@ por flexão é obtida a partir da equação da viga
 
 em que $y(x)$ é a deflexão, $E$ é o módulo de elasticidade do material e $I$ é o
 momento de inércia da seção. O produto $E I$ é a rigidez à flexão da viga. A
-Equação~(\ref{eq:viga-EI}) é válida somente para pequenas deflexões e não inclui o
-efeito da força cortante, que em vigas longas é normalmente desprezado, a menos que a
-razão entre comprimento e altura seja inferior a, aproximadamente, 10
-\cite{Norton2013}.
+Equação~(\ref{eq:viga-EI}) utiliza a aproximação de pequenas inclinações e não inclui
+a deformação por cisalhamento. Isso não retira a força cortante das equações de
+equilíbrio; apenas restringe a descrição da deformação.
 
-Derivando-se a Equação~(\ref{eq:viga-EI}) duas vezes e integrando-se duas vezes,
-obtém-se o conjunto de equações que descreve o comportamento da viga
-\cite{Norton2013}:
+Para $EI$ constante, derivando-se a Equação~(\ref{eq:viga-EI}) duas vezes e
+integrando-se duas vezes, obtém-se o conjunto:
 
 \begin{align}
   \frac{q}{E I} &= \frac{\mathrm{d}^4 y}{\mathrm{d}x^4}, \label{eq:viga-q}\\
@@ -927,57 +946,66 @@ obtém-se o conjunto de equações que descreve o comportamento da viga
 \end{align}
 
 em que $\theta$ é a rotação da seção. O único parâmetro de material nessas equações é o
-módulo de elasticidade $E$, que define a rigidez do material \cite{Norton2013}.
+módulo de elasticidade $E$, que define a rigidez do material.
 A determinação da função de deflexão é, portanto, um exercício de integração: a função
 de carregamento $q$ é normalmente conhecida e as constantes de integração são obtidas
-a partir das condições de contorno da configuração particular da viga
-\cite{Norton2013}. Para uma viga engastada em $x = 0$, por exemplo, as
+a partir das condições de contorno da configuração particular da viga.
+Para uma viga engastada em $x = 0$, por exemplo, as
 condições de contorno são deflexão e rotação nulas no engaste, $y(0) = 0$ e
-$\theta(0) = 0$, e momento fletor e força cortante nulos na extremidade livre.
+$\theta(0) = 0$. Na extremidade livre, momento e cortante são nulos somente
+quando não há momento ou força ali aplicados.
 
 Quando a seção transversal varia ao longo do comprimento, o produto $E I$ deixa de
 ser constante e passa a ser uma função $E I(x)$. Nesse caso, é necessário construir
-a função $M/EI$ a partir do diagrama de momento antes de integrar, e a integração
-deve ser feita por trechos para considerar as variações de $I$
-\cite{Norton2013}. Esse é o caso do enrijecedor à flexão, cuja geometria
-cônica faz com que $I$ decresça com $x$. Além disso, ao se considerar o
-comportamento viscoelástico do poliuretano, o módulo de elasticidade $E$ deixa de ser
-uma constante e passa a depender do tempo, conforme discutido na
-Seção~\ref{sec:viscoelasticidade} e na Subseção~\ref{sub:rigidez}.
+a função $M/EI$ considerando a variação de $I$ e respeitando eventuais mudanças
+de expressão entre trechos. Esse é o caso do enrijecedor, cuja redução de diâmetro
+altera a rigidez ao longo do eixo.
+
+% 17/11/2026 - Sintese da passagem da viga elastica ao problema viscoelastico.
+O modelo elástico permite identificar o papel da geometria, mas ainda não descreve
+a memória do poliuretano. Para acrescentá-la, não basta substituir $E$ por um
+módulo que varie com o tempo: é preciso relacionar o esforço à história de
+deformação. Essa é a passagem desenvolvida na Seção~\ref{sec:viscoelasticidade}
+e aplicada à flexão na Subseção~\ref{sub:rigidez}.
 
 % ---------------------------------------------------------------------
 
 \section{Viscoelasticidade}
 \label{sec:viscoelasticidade}
 
-Em um sólido elástico linear, a tensão é proporcional à deformação e independe do
-tempo, relação expressa pela lei de Hooke, $\sigma = E\,\varepsilon$, em que $E$ é o
-módulo de elasticidade \cite{Caire2005}. Diversos materiais, porém, apresentam
-tensão e deformação dependentes do tempo; essa característica é denominada
-viscoelasticidade e é bastante comum, à temperatura ambiente, em materiais poliméricos
-como o poliuretano \cite{Caire2005}. Esta seção apresenta os fenômenos de
-fluência e relaxação, os modelos mecânicos que os descrevem, a equação constitutiva
-na forma integral, a resposta em regime harmônico e os limites da teoria linear. Em
-seguida, na Subseção~\ref{sub:rigidez}, esses conceitos são aplicados à rigidez à flexão
-do conjunto linha flexível-enrijecedor. As funções constitutivas são tratadas aqui
-em sua forma geral; sua representação por série de Prony é apresentada na
-Subseção~\ref{subsec:serie-prony} e o procedimento de ajuste aos dados experimentais, na
-Seção~\ref{sec:caracterizacao-do-material}.
+% 17/11/2026 - Argumentacao centrada na memoria, apoiada por fontes complementares.
+Na lei de Hooke, $\sigma=E\,\varepsilon$, a tensão é determinada pela deformação
+atual e por um módulo constante. Essa descrição não representa, por si só, a
+evolução observada em um polímero quando uma carga ou deformação é mantida.
+A viscoelasticidade acrescenta a dependência da resposta em relação ao tempo
+e ao histórico de solicitação, aspecto relevante tanto para caracterizar o
+material quanto para calcular os esforços no acessório
+\cite{Pagliosa2004,Caire2011}.
+
+Para desenvolver essa ideia, parte-se de duas situações controladas, fluência
+e relaxação, e passa-se à representação de uma história de deformação qualquer.
+Os modelos mecânicos ajudam a interpretar essa passagem; a formulação integral
+permite utilizá-la no cálculo estrutural. A série de Prony
+(Subseção~\ref{subsec:serie-prony}) e o ajuste experimental
+(Seção~\ref{sec:caracterizacao-do-material}) estabelecem a ligação entre
+essa descrição e os parâmetros utilizados nas simulações.
 
 \subsection{Fluência e Relaxação de Tensão}
 \label{sub:fluencia-relaxacao}
 
-A resposta mecânica de um sólido viscoelástico reúne aspectos de um sólido elástico e de
-um fluido viscoso \cite{Caire2005}. Quando uma tensão é aplicada
+% 17/11/2026 - Conceitos desenvolvidos em continuidade, sem repetir a atribuicao inicial.
+A resposta mecânica de um sólido viscoelástico reúne aspectos de um sólido elástico
+e de um fluido viscoso. Quando uma tensão é aplicada
 instantaneamente e mantida constante, observa-se uma deformação instantânea,
 característica de um sólido elástico, seguida de uma deformação continuada a taxa não
-constante, denominada fluência \cite{Caire2005}. De modo análogo, quando uma
+constante, denominada fluência. De modo análogo, quando uma
 deformação é imposta em $t = 0$ e mantida constante, a tensão sofre um salto e decai
 gradualmente com o tempo, fenômeno denominado relaxação de tensão. Sólidos elásticos
 mantêm a tensão constante e não apresentam essa característica, enquanto fluidos
-newtonianos relaxam a tensão instantaneamente \cite{Caire2005}. A
+newtonianos relaxam a tensão instantaneamente. A
 Figura~\ref{fig:fluencia-relaxacao} ilustra as duas respostas.
 
+% 17/11/2026 - Paineis em ordem de leitura: relaxacao acima e fluencia abaixo.
 \begin{figure}[h]
   \centering
   \caption{Respostas características de um material viscoelástico: relaxação de tensão,
@@ -986,16 +1014,16 @@ Figura~\ref{fig:fluencia-relaxacao} ilustra as duas respostas.
   \label{fig:fluencia-relaxacao}
   \begin{tikzpicture}[x=1cm,y=1cm,line cap=round,>=stealth]
     % ---------- (a) deformacao imposta (relaxacao) ----------
-    \begin{scope}[shift={(0,3.6)}]
+    \begin{scope}[shift={(0,4)}]
       \draw[->] (0,0) -- (4.2,0) node[right] {$t$};
       \draw[->] (0,0) -- (0,2.3) node[above] {$\varepsilon$};
       \draw[very thick] (0,1.4) -- (3.9,1.4);
       \draw[dotted] (0,0) -- (0,1.4);
       \node[anchor=east] at (0,1.4) {$\varepsilon_0$};
-      \node[anchor=north west] at (0.1,2.3) {(a)};
+      \node at (2,-0.55) {(a)};
     \end{scope}
     % ---------- (b) tensao resultante ----------
-    \begin{scope}[shift={(0,0)}]
+    \begin{scope}[shift={(7.5,4)}]
       \draw[->] (0,0) -- (4.2,0) node[right] {$t$};
       \draw[->] (0,0) -- (0,2.6) node[above] {$\sigma$};
       \draw[very thick,domain=0:3.9,samples=40,smooth,variable=\x]
@@ -1003,19 +1031,19 @@ Figura~\ref{fig:fluencia-relaxacao} ilustra as duas respostas.
       \draw[dashed] (0,0.9) -- (3.9,0.9);
       \node[anchor=east] at (0,2.1) {$\varepsilon_0 G(0)$};
       \node[anchor=east] at (0,0.9) {$\varepsilon_0 G_{\infty}$};
-      \node[anchor=north west] at (0.1,2.6) {(b)};
+      \node at (2,-0.55) {(b)};
     \end{scope}
     % ---------- (c) tensao imposta (fluencia) ----------
-    \begin{scope}[shift={(8,3.6)}]
+    \begin{scope}[shift={(0,0)}]
       \draw[->] (0,0) -- (4.2,0) node[right] {$t$};
       \draw[->] (0,0) -- (0,2.3) node[above] {$\sigma$};
       \draw[very thick] (0,1.4) -- (3.9,1.4);
       \draw[dotted] (0,0) -- (0,1.4);
       \node[anchor=east] at (0,1.4) {$\sigma_0$};
-      \node[anchor=north west] at (0.1,2.3) {(c)};
+      \node at (2,-0.55) {(c)};
     \end{scope}
     % ---------- (d) deformacao resultante ----------
-    \begin{scope}[shift={(8,0)}]
+    \begin{scope}[shift={(7.5,0)}]
       \draw[->] (0,0) -- (4.2,0) node[right] {$t$};
       \draw[->] (0,0) -- (0,2.6) node[above] {$\varepsilon$};
       \draw[very thick,domain=0:3.9,samples=40,smooth,variable=\x]
@@ -1023,18 +1051,17 @@ Figura~\ref{fig:fluencia-relaxacao} ilustra as duas respostas.
       \draw[dashed] (0,2.0) -- (3.9,2.0);
       \node[anchor=east] at (0,0.8) {$\sigma_0 J(0)$};
       \node[anchor=east] at (0,2.0) {$\sigma_0 J_{\infty}$};
-      \node[anchor=north west] at (0.1,2.6) {(d)};
+      \node at (2,-0.55) {(d)};
     \end{scope}
   \end{tikzpicture}
-  \fonte{Adaptado de \citeonline{Caire2005}.}
+  \fonte{Autoria própria.}
 \end{figure}
 
 Os ensaios usuais para caracterizar essa resposta são o de fluência, em que se aplicam
 tensões constantes a corpos de prova e se mede a deformação ao longo do tempo, e o de
-relaxação, em que se impõem deformações constantes e se mede a tensão \cite{Caire2005}.
+relaxação, em que se impõem deformações constantes e se mede a tensão.
 No caso do comportamento viscoelástico linear, as funções que caracterizam o material
 são a função de relaxação $G(t)$ e a função de fluência $J(t)$, definidas por
-\cite{Caire2005}
 
 \begin{equation}
   \label{eq:ve-G-J}
@@ -1047,12 +1074,14 @@ $\sigma_0$ é a tensão constante imposta no ensaio de fluência. Como $\sigma$ 
 relaxação longitudinal, e não o módulo de cisalhamento, e a letra $G$ segue a notação de
 \citeonline{Caire2011}. Essas funções cumprem,
 para o material viscoelástico linear, o papel que o módulo de elasticidade cumpre para o
-sólido elástico \cite{Caire2005}.
+sólido elástico. Para o presente trabalho, isso permite passar da observação de que
+a tensão diminui para uma função que quantifica essa redução e pode alimentar
+o modelo estrutural.
 
 A viscoelasticidade é linear quando vale o princípio da superposição linear: a resposta
 a uma história de tensão multiplicada por uma constante $C$ é a resposta original
 multiplicada por $C$, e a resposta à soma de duas histórias de tensão, a segunda
-aplicada com atraso $t_1$, é a soma das respostas individuais \cite{Caire2005}.
+aplicada com atraso $t_1$, é a soma das respostas individuais.
 Denotando por $\mathcal{E}[\,\cdot\,]$ a deformação resultante de um histórico de tensão,
 
 \begin{align}
@@ -1065,20 +1094,20 @@ Denotando por $\mathcal{E}[\,\cdot\,]$ a deformação resultante de um históric
 \subsection{Modelos Mecânicos}
 \label{sub:modelos-mecanicos}
 
-Para simular as propriedades de estruturas poliméricas, recorre-se a modelos mecânicos
-formados por dois elementos fundamentais: a mola linear, que representa o sólido
-elástico, $\sigma = E\,\varepsilon$, e o amortecedor linear, que representa o fluido
-viscoso, $\sigma = \mu\,\dot{\varepsilon}$, em que $\mu$ é a viscosidade e o ponto
-indica derivada em relação ao tempo \cite{Caire2005}. Cada combinação desses
-elementos conduz a uma equação constitutiva com operador diferencial linear, e os modelos
-diferem apenas na forma das funções $G(t)$ e $J(t)$. Embora alguns sejam mais
-representativos, nenhum deles fornece, por si só, uma previsão adequada da resposta
-viscoelástica do poliuretano, e por isso o procedimento adequado é ajustar a função $G(t)$
-ou $J(t)$ a dados experimentais do material específico \cite{Caire2005}.
+% 17/11/2026 - Modelos interpretados como construcao do raciocinio, com apoio de Pagliosa.
+Associar molas e amortecedores permite visualizar como a resposta instantânea e a
+evolução no tempo podem coexistir. A mola linear, $\sigma=E\,\varepsilon$,
+representa a parcela elástica, e o amortecedor linear,
+$\sigma=\mu\,\dot{\varepsilon}$, a parcela viscosa, sendo $\mu$ a viscosidade.
+As associações a seguir mostram que a disposição desses elementos muda a forma
+da relaxação e da fluência \cite{Pagliosa2004}. Sua utilidade não é substituir
+os ensaios, mas oferecer uma representação cujos parâmetros possam ser ajustados
+ao material estudado.
 
+% 16/11/2026 - Citacoes agrupadas por modelo e interpretacao das respostas calculadas.
 No modelo de Maxwell, uma mola e um amortecedor são associados em série: a tensão é a
 mesma nos dois elementos e a deformação total é a soma das deformações individuais, de
-modo que \cite{Caire2005}
+modo que
 
 \begin{equation}
   \label{eq:ve-maxwell}
@@ -1087,16 +1116,15 @@ modo que \cite{Caire2005}
 
 Em um ensaio de relaxação, com $\dot{\varepsilon} = 0$, a tensão decai
 exponencialmente, $\sigma(t) = \sigma_0\,e^{-t/\tau_R}$, com tempo de relaxação
-$\tau_R = \mu/E$, e a função de relaxação resulta em $G(t) = E\,e^{-t/\tau_R}$
-\cite{Caire2005}. Em um ensaio de fluência, com $\dot{\sigma} = 0$, obtém-se
+$\tau_R = \mu/E$, e a função de relaxação resulta em $G(t) = E\,e^{-t/\tau_R}$.
+Em um ensaio de fluência, com $\dot{\sigma} = 0$, obtém-se
 $\varepsilon(t) = \sigma_0\left(1/E + t/\mu\right)$ e, portanto,
-$J(t) = \left(1 + t/\tau_R\right)/E$ \cite{Caire2005}. A deformação cresce
+$J(t) = \left(1 + t/\tau_R\right)/E$. A deformação cresce
 linearmente, sem limite, como em um fluido, razão pela qual o modelo não representa o
-comportamento observado em polímeros reais \cite{Caire2005}.
+comportamento de um sólido que apresenta fluência limitada.
 
 No modelo de Kelvin-Voigt, a mola e o amortecedor são associados em paralelo: a
-deformação é a mesma nos dois elementos e a tensão é a soma das tensões individuais
-\cite{Caire2005},
+deformação é a mesma nos dois elementos e a tensão é a soma das tensões individuais,
 
 \begin{equation}
   \label{eq:ve-kelvin}
@@ -1106,13 +1134,13 @@ deformação é a mesma nos dois elementos e a tensão é a soma das tensões in
 Sob tensão constante $\sigma_0$, a integração da Equação~(\ref{eq:ve-kelvin}) fornece
 $\varepsilon(t) = \left(\sigma_0/E\right)\left(1 - e^{-t/\tau_C}\right)$, em que
 $\tau_C = \mu/E$ é o tempo de retardo, de modo que
-$J(t) = \left(1 - e^{-t/\tau_C}\right)/E$ \cite{Caire2005}. Sob deformação
+$J(t) = \left(1 - e^{-t/\tau_C}\right)/E$. Sob deformação
 constante, porém, a equação se reduz a $\sigma = E\,\varepsilon$, isto é, a tensão
 permanece constante e o material responde como um sólido elástico, o que torna o modelo
-inadequado como representação geral do comportamento viscoelástico \cite{Caire2005}.
+inadequado para descrever a redução gradual da tensão observada nos ensaios de relaxação.
 
 O modelo do sólido linear padrão é formado por um elemento de Maxwell, com mola $E_m$ e
-amortecedor $\mu$, associado em paralelo a uma mola $E_a$ \cite{Caire2005}. A
+amortecedor $\mu$, associado em paralelo a uma mola $E_a$. A
 equação constitutiva resultante é
 
 \begin{equation}
@@ -1122,47 +1150,64 @@ equação constitutiva resultante é
 \end{equation}
 
 e sua resposta de relaxação é $G(t) = E_a + E_m\,e^{-t/\tau_R}$, com
-$\tau_R = \mu/E_m$ \cite{Caire2005}. Para fluência, a função
+$\tau_R = \mu/E_m$. Para fluência, a função
 $J(t)$ parte de $J(0) = 1/(E_a + E_m)$ e tende a $J(\infty) = 1/E_a$ com tempo de retardo
-$\tau_C = \mu\,(E_a + E_m)/(E_a E_m)$ \cite{Caire2005}. Esse é o modelo mais
-simples capaz de representar, de forma aproximada, todas as características observadas
-no comportamento de sólidos viscoelásticos, e pode ser usado na falta de dados
-experimentais \cite{Caire2005}. A Tabela~\ref{tab:modelos-mecanicos} reúne as
+$\tau_C = \mu\,(E_a + E_m)/(E_a E_m)$. Diferentemente dos dois modelos anteriores,
+essa associação combina relaxação até uma tensão não nula e fluência limitada.
+A Tabela~\ref{tab:modelos-mecanicos} reúne as
 equações dos três modelos. A relaxação do sólido linear padrão, com um único termo
 exponencial somado a um valor de longo prazo, é o caso mais simples da série de Prony
 apresentada na Subseção~\ref{subsec:serie-prony}.
 
-\begin{table}[h]
+% 17/11/2026 - Modelos separados em blocos, com uma relacao por linha.
+\begin{table}[!htbp]
   \caption{Equações constitutivas e funções de relaxação e de fluência de modelos
     mecânicos viscoelásticos lineares.}
   \label{tab:modelos-mecanicos}
-  \begin{center}
-    \footnotesize
-    \begin{tabular}{p{2.2cm}p{4.6cm}p{3.0cm}p{4.2cm}}
+  \centering
+  \begingroup
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{}p{2.7cm}@{\hspace{0.7cm}}p{12cm}@{}}
       \toprule
-      Modelo & Equação constitutiva & Relaxação $G(t)$ & Fluência $J(t)$ \\
+      \textbf{Modelo} & \textbf{Equação constitutiva e respostas no tempo} \\
       \midrule
-      Maxwell
-        & $\dot{\varepsilon} = \dfrac{\dot{\sigma}}{E} + \dfrac{\sigma}{\mu}$
-        & $E\,e^{-t/\tau_R}$, $\tau_R = \dfrac{\mu}{E}$
-        & $\dfrac{1}{E}\left(1 + \dfrac{t}{\tau_R}\right)$ \\[3ex]
-      Kelvin-Voigt
-        & $\sigma = E\,\varepsilon + \mu\,\dot{\varepsilon}$
-        & Não relaxa: $\sigma = E\,\varepsilon$
-        & $\dfrac{1}{E}\left(1 - e^{-t/\tau_C}\right)$, $\tau_C = \dfrac{\mu}{E}$ \\[3ex]
-      Sólido linear padrão
-        & $\dfrac{\dot{\sigma}}{E_m} + \dfrac{\sigma}{\mu} =
-           \left(1 + \dfrac{E_a}{E_m}\right)\dot{\varepsilon} + \dfrac{E_a}{\mu}\,\varepsilon$
-        & $E_a + E_m\,e^{-t/\tau_R}$, $\tau_R = \dfrac{\mu}{E_m}$
-        & $J_{\infty} - \left(J_{\infty} - J_0\right)e^{-t/\tau_C}$, com
-          $J_0 = \dfrac{1}{E_a + E_m}$, $J_{\infty} = \dfrac{1}{E_a}$ e
-          $\tau_C = \dfrac{\mu\,(E_a + E_m)}{E_a E_m}$ \\
+      \raggedright \textbf{Maxwell}
+        & \(\begin{aligned}[t]
+          \dot{\varepsilon}
+            &=\frac{\dot{\sigma}}{E}+\frac{\sigma}{\mu},
+              \qquad \tau_R=\frac{\mu}{E},\\[1ex]
+          G(t)&=E\,e^{-t/\tau_R},\\[1ex]
+          J(t)&=\frac{1}{E}\left(1+\frac{t}{\tau_R}\right).
+        \end{aligned}\) \\[1.5ex]
+      \midrule
+      \raggedright \textbf{Kelvin-Voigt}
+        & \(\begin{aligned}[t]
+          \sigma&=E\,\varepsilon+\mu\,\dot{\varepsilon},
+            \qquad \tau_C=\frac{\mu}{E},\\[1ex]
+          \text{Relaxação: }&\sigma=E\,\varepsilon
+            \text{ para }t>0\text{, sem decaimento gradual},\\[1ex]
+          J(t)&=\frac{1}{E}\left(1-e^{-t/\tau_C}\right).
+        \end{aligned}\) \\[1.5ex]
+      \midrule
+      \raggedright \textbf{Sólido linear padrão}
+        & \(\begin{aligned}[t]
+          \frac{\dot{\sigma}}{E_m}+\frac{\sigma}{\mu}
+            &=\left(1+\frac{E_a}{E_m}\right)\dot{\varepsilon}
+              +\frac{E_a}{\mu}\,\varepsilon,\\[1ex]
+          G(t)&=E_a+E_m\,e^{-t/\tau_R},\\[1ex]
+          J(t)&=J_{\infty}-(J_{\infty}-J_0)e^{-t/\tau_C},\\[1ex]
+          \tau_R&=\frac{\mu}{E_m},\qquad
+            \tau_C=\frac{\mu(E_a+E_m)}{E_a E_m}.
+        \end{aligned}\) \\[1ex]
       \bottomrule
     \end{tabular}
-  \end{center}
+    \par
+  \endgroup
+  \smallskip
   \fonte{Adaptado de \citeonline{Caire2005}.}
-  \nota{As funções $G(t)$ e $J(t)$ do sólido linear padrão foram reescritas
-    explicitamente a partir de sua equação constitutiva.}
+  \nota{No sólido linear padrão, $J_0=1/(E_a+E_m)$ e $J_{\infty}=1/E_a$.
+    Suas funções de relaxação e fluência foram obtidas a partir da equação constitutiva.}
 \end{table}
 
 O modelo de Maxwell generalizado associa em paralelo uma mola isolada, de módulo
@@ -1172,10 +1217,11 @@ em paralelo, a tensão total é a soma das tensões dos ramos e, sob deformaçã
 função de relaxação é a soma das relaxações individuais: a mola isolada contribui com o
 valor de longo prazo $G_{\infty}$, e o ramo $m$, com $G_m\,e^{-t/\tau_m}$, em que
 $\tau_m = \mu_m/G_m$. O resultado é a série de Prony da
-Equação~(\ref{eq:prony-relaxacao}) \cite{Caire2011}, de modo que essa série corresponde à
+Equação~(\ref{eq:prony-relaxacao}), de modo que essa série corresponde à
 relaxação de um modelo de Maxwell generalizado, do qual o sólido linear padrão é o caso
 $N = 1$. Cada termo representa uma escala de tempo de relaxação distinta.
 
+% 17/11/2026 - Desenho autoral; a fundamentacao do modelo permanece atribuida no texto.
 \begin{figure}[h]
   \centering
   \caption{Modelo de Maxwell generalizado: uma mola isolada, de módulo $G_{\infty}$, em
@@ -1215,24 +1261,24 @@ $N = 1$. Cada termo representa uma escala de tempo de relaxação distinta.
     \node at (2.0,-2.3) {$G_N$};
     \node at (4.6,-2.3) {$\mu_N$};
   \end{tikzpicture}
-  \fonte{Elaborada pelos autores.}
+  \fonte{Autoria própria.}
 \end{figure}
 
 \subsection{Equação Constitutiva na Forma Integral}
 \label{sub:forma-integral}
 
+% 16/11/2026 - Fonte integrada a deducao e interpretacao da memoria.
 Os modelos mecânicos descrevem a resposta por meio de equações diferenciais. Uma forma
 mais geral, que utiliza diretamente a função de relaxação $G(t)$ ou a de fluência $J(t)$
 obtida experimentalmente, é a equação constitutiva na forma integral, deduzida a partir
-do princípio da superposição de Boltzmann \cite{Caire2011}. Se uma deformação
+do princípio da superposição de Boltzmann \cite{Pagliosa2004}. Se uma deformação
 $\varepsilon(\tau) = \varepsilon_0\,1(\tau)$, com $1(\tau)$ a função degrau unitário, é
 aplicada ao material, a tensão resultante é $\sigma(t) = \varepsilon_0\,G(t)$. Uma
 história de deformação arbitrária, com variação suave no tempo, pode ser aproximada por
 uma sucessão de saltos de deformação, e, segundo o princípio da superposição de
-Boltzmann, a tensão total é a soma das respostas individuais a cada salto
-\cite{Caire2011}. Fazendo o número de saltos tender ao infinito, a soma se
-transforma em uma integral e obtém-se, para uma história de deformação $\varepsilon(\tau)$
-\cite{Caire2011},
+Boltzmann, a tensão total é a soma das respostas individuais a cada salto.
+Fazendo o número de saltos tender ao infinito, a soma se
+transforma em uma integral e obtém-se, para uma história de deformação $\varepsilon(\tau)$,
 
 \begin{align}
   \sigma(t) &= \varepsilon(0)\,G(t)
@@ -1247,7 +1293,7 @@ em que a segunda igualdade resulta de integração por partes e é a forma empre
 formulação do enrijecedor (Subseção~\ref{sub:rigidez}). Como a tensão em um instante
 depende de toda a história de deformação anterior, a integral representa a memória do
 material. Procedimento análogo, partindo de um histórico de tensão, fornece a resposta de
-deformação em função da função de fluência \cite{Caire2011}:
+deformação em função da função de fluência:
 
 \begin{equation}
   \label{eq:ve-fluencia-integral}
@@ -1257,7 +1303,7 @@ deformação em função da função de fluência \cite{Caire2011}:
 
 O ensaio costuma fornecer apenas uma das duas funções, de relaxação ou de fluência, e, se
 a formulação utiliza a outra, é necessário convertê-las. Substituindo-se um histórico de
-tensão degrau na equação de relaxação, obtém-se a relação \cite{Caire2011}
+tensão degrau na equação de relaxação, obtém-se a relação
 
 \begin{equation}
   \label{eq:ve-relacao-G-J}
@@ -1265,9 +1311,9 @@ tensão degrau na equação de relaxação, obtém-se a relação \cite{Caire201
 \end{equation}
 
 que pode ser resolvida numericamente para a função desconhecida, e da qual decorrem
-$G(0)\,J(0) = 1$ e $G(\infty)\,J(\infty) = 1$ \cite{Caire2011}. Neste trabalho
+$G(0)\,J(0) = 1$ e $G(\infty)\,J(\infty) = 1$. Neste trabalho
 adota-se a função de relaxação, decomposta em uma parcela independente do tempo e uma
-parcela decrescente \cite{Caire2011},
+parcela decrescente,
 
 \begin{equation}
   \label{eq:ve-G-decomposicao}
@@ -1280,13 +1326,21 @@ $G(0) = G_{\infty} + \sum_{m} G_m$. O sólido linear padrão da
 Subseção~\ref{sub:modelos-mecanicos}, com $G_{\infty} = E_a$ e um termo de amplitude
 $E_m$, é o caso particular com $N = 1$.
 
+Essa descrição esclarece uma diferença importante para a análise estrutural:
+conhecer a deformação atual não é suficiente para determinar a tensão. Dois
+instantes com a mesma deformação podem apresentar tensões diferentes se tiverem
+sido precedidos por histórias distintas. É essa memória, e não apenas uma
+mudança de valor do módulo elástico, que a formulação deve conservar.
+
 \subsection{Resposta em Regime Harmônico}
 \label{sub:regime-harmonico}
 
-Em muitas aplicações de engenharia, a estrutura viscoelástica é submetida a
-carregamentos harmônicos por longos períodos, e é mais conveniente reescrever as
-equações diretamente no domínio da frequência \cite{Caire2011}. Considere-se o
-histórico de deformação
+% 17/11/2026 - Escolha do dominio da frequencia motivada pela resposta procurada.
+Quando o carregamento se repete, pode interessar mais o ciclo permanente do que
+a evolução desde o primeiro instante. Nesse caso, a integral de memória pode ser
+reescrita em termos da frequência, reunindo a amplitude e a defasagem da resposta.
+Essa é a descrição utilizada na análise harmônica do enrijecedor
+\cite{Caire2011}. Considere-se o histórico de deformação
 
 \begin{equation}
   \label{eq:ve-def-harmonica}
@@ -1294,10 +1348,9 @@ histórico de deformação
 \end{equation}
 
 em que $\varepsilon_0$ é o valor médio, $\Delta\varepsilon$ é a amplitude da variação em
-torno dele e $\omega$ é a frequência de carregamento \cite{Caire2011}.
+torno dele e $\omega$ é a frequência angular de carregamento.
 Substituindo-se a Equação~(\ref{eq:ve-def-harmonica}) na Equação~(\ref{eq:ve-relaxacao-integral})
-e considerando $t \to \infty$, de modo que a parcela transitória desapareça, a tensão
-depende apenas da frequência \cite{Caire2011}:
+e considerando $t \to \infty$, de modo que a parcela transitória desapareça, obtém-se:
 
 \begin{align}
   \sigma(t) &= \varepsilon_0\,G_{\infty}
@@ -1310,7 +1363,7 @@ depende apenas da frequência \cite{Caire2011}:
 \end{align}
 
 com $\tan\delta(\omega) = G''(\omega)/G'(\omega)$. Os módulos $G'(\omega)$ e $G''(\omega)$ são
-os limites, para $t \to \infty$, de \cite{Caire2011}
+definidos, nesse regime, por
 
 \begin{align}
   G'(\omega) &= G(0) + \int_0^{\infty} \cos(\omega\tau)\,
@@ -1323,11 +1376,11 @@ os limites, para $t \to \infty$, de \cite{Caire2011}
 e são denominados módulo de armazenamento e módulo de perda, respectivamente. Para a série
 de Prony, essas integrais conduzem às expressões das Equações~(\ref{eq:modulo-armazenamento})
 e (\ref{eq:modulo-perda}). A resposta de tensão a uma deformação senoidal oscila na mesma
-frequência $\omega$, com uma diferença de fase $\delta(\omega)$ em relação à deformação
-\cite{Caire2011}. Para um histórico cossenoidal,
+frequência $\omega$, com uma diferença de fase $\delta(\omega)$ em relação à deformação.
+Para um histórico cossenoidal,
 $\varepsilon(t) = \varepsilon_0 + \Delta\varepsilon\cos\omega t$, tem-se
 $\sigma(t) = \varepsilon_0\,G_{\infty} + \Delta\varepsilon\left[G'(\omega)\cos\omega t
-- G''(\omega)\sin\omega t\right]$ \cite{Caire2011}.
+- G''(\omega)\sin\omega t\right]$.
 
 O módulo de armazenamento está associado à parcela da resposta em fase com a deformação,
 isto é, ao armazenamento e à recuperação de energia elástica, e o módulo de perda, à
@@ -1341,33 +1394,101 @@ de volume durante um ciclo de deformação é
 \end{equation}
 
 em que apenas o módulo de perda aparece, pois a parcela associada a $G'(\omega)$ se anula
-no ciclo \cite{Caire2011}. Como o enrijecedor está sujeito a carregamentos
-oscilatórios durante a operação, ele dissipa energia por seu comportamento viscoelástico,
-e o efeito dessa dissipação sobre a curvatura e a deformação ao longo do comprimento deve
-ser avaliado no projeto \cite{Caire2011}.
+no ciclo. Para o enrijecedor, a consequência é que a resposta
+não é caracterizada apenas pela intensidade da curvatura: a defasagem também
+participa da relação entre deformação e esforço. A formulação em frequência
+reúne essas duas informações e evita acompanhar todo o histórico quando
+o interesse está no ciclo permanente.
 
 \subsection{Limites de Aplicação da Teoria Linear}
 \label{sub:limites-linear}
 
-A relativa simplicidade da viscoelasticidade linear leva a que muitos componentes
-poliméricos sejam modelados por ela, mas uma grande parte dos polímeros apresenta
-comportamento não linear mesmo para pequenas tensões, deformações e tempos, e o uso da
-teoria linear em um material fortemente não linear pode causar erros graves de análise e
-projeto \cite{Caire2011}. Um material é considerado linear se a tensão é
-proporcional à deformação para um dado tempo e se o princípio da superposição é válido
-\cite{Caire2011}. A validade da teoria depende das condições de ensaio e é
-bastante afetada pela temperatura, pela umidade e pela taxa de deformação, e a transição
-do comportamento linear para o não linear é progressiva, sem um procedimento padrão bem
-definido para determiná-la \cite{Caire2011}. Como ordem de grandeza, polímeros
-amorfos, em uma faixa de temperatura, mostram comportamento linear somente para
-deformações abaixo de cerca de 1\%, e polímeros cristalinos, para deformações ainda
-menores \cite{Caire2005}. Quando essa faixa é excedida, são necessárias teorias
-não lineares, como as de Leaderman e de Green-Rivlin e o princípio da superposição
-modificado, descritas por \citeonline{Caire2011}; este último é apresentado na
-Subseção~\ref{sub:psm}. A adequação da hipótese
-linear ao poliuretano nas condições estudadas, bem como o seu enquadramento nas premissas
-do modelo (Seção~\ref{sec:premissas-adotadas}), deve, portanto, ser verificada com os
-ensaios de caracterização.
+% 17/11/2026 - Limite constitutivo discutido por seu significado, sem limiar generico.
+A hipótese linear exige proporcionalidade entre tensão e deformação e validade
+da superposição. Sua adequação depende das condições de ensaio, especialmente
+da intensidade e da duração do carregamento e da temperatura
+\cite{Pagliosa2004,Caire2011}. Por isso, não é suficiente classificar o
+poliuretano como viscoelástico: é preciso verificar se a mesma função de
+relaxação representa os diferentes níveis de deformação na faixa de interesse.
+Se a função necessária para descrever os ensaios muda com essa intensidade,
+a aproximação linear precisa ser limitada ou substituída por uma formulação
+não linear, como a apresentada na Subseção~\ref{sub:psm}.
+
+% 16/11/2026 - Distincao entre validade constitutiva e limite de projeto.
+O limite de validade da teoria linear não deve ser confundido com uma deformação
+admissível de projeto. O primeiro indica a faixa em que a lei constitutiva aproxima
+adequadamente o material; o segundo é um critério adotado para verificar o componente.
+Assim, admitir uma deformação de até 15\% não demonstra que o poliuretano seja linear
+até esse valor. Da mesma forma, extrair apenas a parcela linear de um ajuste não linear
+é uma aproximação do modelo, e não uma comprovação experimental de linearidade.
+A utilização dessa parcela no presente trabalho e as limitações correspondentes são
+delimitadas na Subseção~\ref{sec:parametros-material-linear}.
+
+% 17/11/2026 - Ilustracao conceitual, sem atribuir um limite numerico ao poliuretano.
+A Figura~\ref{fig:linearidade-material} ilustra essa distinção por duas formas de
+observar um ensaio ideal de relaxação. Em um mesmo instante, a tensão de um
+material linear é proporcional à deformação imposta; uma resposta não linear
+pode se aproximar dessa reta para pequenas deformações e se afastar dela
+à medida que a deformação aumenta. Ao dividir a tensão de cada ensaio pela
+respectiva deformação constante, as curvas do material linear coincidem:
+obtém-se a mesma função $G(t)$. No exemplo não linear, essa razão depende
+do nível de deformação, de modo que as curvas não coincidem.
+
+\begin{figure}[!htbp]
+  \centering
+  \caption{Comparação esquemática entre respostas lineares e não lineares:
+    (a) tensão em função da deformação em um instante fixo;
+    (b) tensão dividida pela deformação em dois ensaios de relaxação.}
+  \label{fig:linearidade-material}
+  \begin{tikzpicture}[x=1cm,y=1cm,>=stealth,line cap=round,
+      every node/.style={font=\small},
+      linear/.style={very thick},
+      naolinear/.style={very thick,dashed},
+      niveldois/.style={very thick,densely dotted}]
+    \begin{scope}
+      \draw[->] (0,0) -- (4,0) node[right] {$\varepsilon$};
+      \draw[->] (0,0) -- (0,3.2) node[above] {$\sigma(t^*)$};
+      \draw[linear,domain=0:3.3,samples=60,variable=\x]
+        plot ({\x},{1.8*(\x/3.3)});
+      \draw[naolinear,domain=0:3.3,samples=60,variable=\x]
+        plot ({\x},{1.8*(\x/3.3)+0.9*(\x/3.3)^3});
+      \node at (1.8,-0.5) {(a)};
+      \draw[linear] (0,-1.1) -- (0.65,-1.1);
+      \node[anchor=west] at (0.85,-1.1) {Linear};
+      \draw[naolinear] (0,-1.65) -- (0.65,-1.65);
+      \node[anchor=west] at (0.85,-1.65) {Não linear};
+    \end{scope}
+    \begin{scope}[shift={(7.5,0)}]
+      \draw[->] (0,0) -- (4,0) node[right] {$t$};
+      \draw[->] (0,0) -- (0,3.2) node[above] {$\sigma/\varepsilon$};
+      \draw[linear,domain=0:3.3,samples=60,variable=\x]
+        plot ({\x},{0.6+1.2*exp(-\x/0.8)});
+      \draw[naolinear,domain=0:3.3,samples=60,variable=\x]
+        plot ({\x},{0.6+1.2*exp(-\x/0.8)+0.25*(0.4+0.5*exp(-\x/1.4))});
+      \draw[niveldois,domain=0:3.3,samples=60,variable=\x]
+        plot ({\x},{0.6+1.2*exp(-\x/0.8)+0.4+0.5*exp(-\x/1.4)});
+      \node at (1.8,-0.5) {(b)};
+      \node at (1.8,3) {$\varepsilon_2>\varepsilon_1>0$};
+      \draw[linear] (-0.3,-1.1) -- (0.35,-1.1);
+      \node[anchor=west] at (0.55,-1.1) {Linear: $\varepsilon_1$ e $\varepsilon_2$};
+      \draw[naolinear] (-0.3,-1.65) -- (0.35,-1.65);
+      \node[anchor=west] at (0.55,-1.65) {Não linear: $\varepsilon_1$};
+      \draw[niveldois] (-0.3,-2.2) -- (0.35,-2.2);
+      \node[anchor=west] at (0.55,-2.2) {Não linear: $\varepsilon_2$};
+    \end{scope}
+  \end{tikzpicture}
+  \fonte{Autoria própria.}
+  \nota{Curvas ilustrativas, sem ajuste aos ensaios do poliuretano e sem escala
+    quantitativa. Não representam um limite experimental de linearidade.}
+\end{figure}
+
+A coincidência ilustrada no painel (b) é uma verificação de proporcionalidade
+nos ensaios de relaxação, não uma comprovação isolada da superposição para
+qualquer história de carregamento. Os esquemas também mostram que linearidade
+não significa uma tensão constante ou uma curva de relaxação reta no tempo.
+Não se marca uma deformação de transição entre os regimes, pois esse limite
+precisa ser avaliado experimentalmente e não pode ser deduzido do limite
+de projeto de 15\%.
 
 \subsection{Princípio da Superposição Modificado}
 \label{sub:psm}
@@ -1377,12 +1498,11 @@ superposição das respostas a saltos de deformação, e cada resposta é propor
 tamanho do salto. Fora do regime linear, essa proporcionalidade deixa de valer. O princípio
 da superposição modificado (PSM) mantém a ideia de superpor as respostas aos saltos, mas
 descreve a resposta a cada salto por uma função não linear da deformação e do tempo
-decorrido desde sua aplicação \cite{Caire2011}. Fazendo o número de saltos tender ao
-infinito, a soma se transforma em uma integral e obtém-se a forma constitutiva de
-\citeonline{PipkinRogers1968}. Para representar a dependência não linear da tensão em
-relação à deformação, expande-se a resposta em um polinômio de quarta ordem na
-deformação, com uma função de relaxação $G_k(t)$ para cada potência $\varepsilon^k$
-\cite{Caire2011}:
+decorrido desde sua aplicação. A representação integral de
+\citeonline{PipkinRogers1968} dá suporte a essa extensão. Na particularização
+empregada por \citeonline{Caire2011}, a dependência em relação à deformação é
+representada por um polinômio de quarta ordem, com uma função de relaxação
+$G_k(t)$ para cada potência $\varepsilon^k$:
 
 \begin{equation}
   \label{eq:ve-psm}
@@ -1395,10 +1515,10 @@ deformação, com uma função de relaxação $G_k(t)$ para cada potência $\var
 Quando $G_2 = G_3 = G_4 = 0$, a Equação~(\ref{eq:ve-psm}) se reduz à primeira forma da
 Equação~(\ref{eq:ve-relaxacao-integral}), e $G_1(t)$ é a função de relaxação linear. Em um
 ensaio de relaxação, com deformação constante $\varepsilon_i$ imposta em $t = 0$, o termo
-integral se anula e a tensão é $\sigma_i(t) = \sum_{k=1}^{4} G_k(t)\,\varepsilon_i^k$
-\cite{Caire2011}. Essa relação permite obter as funções $G_k(t)$ ajustando as curvas de
+integral se anula e a tensão é $\sigma_i(t) = \sum_{k=1}^{4} G_k(t)\,\varepsilon_i^k$.
+Essa relação permite obter as funções $G_k(t)$ ajustando as curvas de
 tensão medidas para diferentes níveis de deformação, e cada $G_k(t)$ pode ser descrita por
-uma série de Prony com os mesmos tempos de relaxação \cite{Caire2011}. A identificação dos
+uma série de Prony com os mesmos tempos de relaxação. A identificação dos
 coeficientes a partir dos ensaios é apresentada na
 Subseção~\ref{sec:identificacao-funcoes-relaxacao}. A formulação estrutural deste trabalho
 utiliza apenas a parcela linear, $G_1(t)$ (Subseção~\ref{sec:parametros-material-linear}).
@@ -1406,16 +1526,17 @@ utiliza apenas a parcela linear, $G_1(t)$ (Subseção~\ref{sec:parametros-materi
 \subsection{Rigidez}
 \label{sub:rigidez}
 
+% 16/11/2026 - Relacao momento-curvatura atribuida em conjunto e interpretada para a secao.
 Na Seção~\ref{sec:flexao}, a rigidez à flexão foi tratada como o produto $EI$, com módulo
 de elasticidade $E$ constante. Quando parte da seção é de material viscoelástico, como
 o poliuretano do enrijecedor, essa rigidez deixa de ser constante e passa a depender do
 tempo ou da frequência. Considera-se, como hipótese simplificadora, que a resposta
 viscoelástica é simétrica em tração e compressão; nesse caso, o eixo neutro passa pelo
-centroide da área da seção para qualquer instante \cite{Caire2011}, premissa
+centroide da área da seção para qualquer instante, premissa
 adotada na Seção~\ref{sec:premissas-adotadas}. Sendo $\eta$ a distância ao eixo
 neutro, a deformação é proporcional à curvatura, $\varepsilon(\eta, s, t) = \eta\,k(s,t)$,
 e o equilíbrio de momentos na seção, somando-se as contribuições do duto flexível
-(índice $PIPE$) e do enrijecedor (índice $BS$), é \cite{Caire2011}
+(índice $PIPE$) e do enrijecedor (índice $BS$), é
 
 \begin{equation}
   \label{eq:ve-M-tensoes}
@@ -1437,7 +1558,7 @@ comprimento para o duto, obtém-se a relação entre momento fletor e curvatura
 em que $I_{BS}(s) = \int_{A_{BS}} \eta^2\,\mathrm{d}A$ é o segundo momento de área do
 enrijecedor e $s$ é a coordenada ao longo do eixo. Em $t = 0$ a integral se anula e a
 relação é a do caso linear elástico, com $G(0)$ no papel do módulo de elasticidade do
-enrijecedor \cite{Caire2011}. Para uma curvatura imposta e mantida constante, a integral
+enrijecedor. Para uma curvatura imposta e mantida constante, a integral
 resulta em $\left[G(t) - G(0)\right]k$, e a Equação~(\ref{eq:ve-M-k}) se reduz a
 
 \begin{equation}
@@ -1452,16 +1573,18 @@ pelo formato cônico do enrijecedor, a rigidez é função do tempo e da posiç�
 Derivando-se a Equação~(\ref{eq:ve-M-k}) em relação a $s$ e utilizando a relação de
 equilíbrio entre momento e cortante, obtém-se uma equação integro-diferencial de
 equilíbrio em $k$, que, somada às equações geométricas do sistema, forma um sistema de
-quatro equações integro-diferenciais para o problema de valor de contorno
-\cite{Caire2011}. Sua solução no domínio do tempo, mesmo para regime
-permanente harmônico, tem custo computacional muito alto, o que motiva a formulação no
-domínio da frequência \cite{Caire2011}. A formulação no domínio do tempo, com
+quatro equações para o problema de valor de contorno, com a memória presente na
+relação constitutiva. A avaliação direta do histórico a cada instante pode
+aumentar o custo da solução, enquanto a descrição em frequência dispensa
+esse acompanhamento quando se procura apenas o ciclo permanente.
+A formulação no domínio do tempo, com
 variáveis internas, é tratada na Subseção~\ref{subsec:integracao-temporal}, e a
 formulação harmônica é desenvolvida a seguir.
 
+% 16/11/2026 - Mantida a interpretacao fisica; montagem global concentrada na metodologia.
 No regime harmônico, a curvatura é escrita como uma soma de componentes constantes e
 senoidais e cossenoidais de frequências $\omega$, $2\omega$ e $3\omega$, conforme a
-expansão em perturbação da Subseção~\ref{sub:edo-enrijecedor}. Para uma componente de
+expansão em perturbação da Subseção~\ref{subsec:expansao-perturbativa}. Para uma componente de
 frequência $n\omega$, com curvatura $k(s,t) = k_s\sin n\omega t + k_c\cos n\omega t$, a
 aplicação das respostas às histórias senoidal e cossenoidal da
 Subseção~\ref{sub:regime-harmonico} ao material do enrijecedor fornece as componentes do
@@ -1478,8 +1601,8 @@ momento
   \begin{bmatrix} k_s \\ k_c \end{bmatrix},
 \end{equation}
 
-que é o bloco $\mathbf{EI}_n$ da Equação~(\ref{eq:bloco-EI}), com os coeficientes $C_1$ e
-$C_2$ das Equações~(\ref{eq:C1}) e (\ref{eq:C2}) \cite{Caire2011}. O
+em que os termos fora da diagonal representam a defasagem entre momento e curvatura
+\cite{Caire2011}. O
 coeficiente $C_1 = EI_{PIPE} + G'(n\omega)\,I_{BS}(s)$ é a rigidez em fase com a
 curvatura, e o coeficiente $C_2 = G''(n\omega)\,I_{BS}(s)$ é a rigidez defasada, associada à
 dissipação. Os dois são, respectivamente, a parte real e a parte imaginária de uma rigidez
@@ -1494,44 +1617,47 @@ em que $G^{*} = G' + i\,G''$ é o módulo complexo da Equação~(\ref{eq:modulo-
 Como o duto contribui apenas com rigidez elástica, a razão $C_2/C_1$ é menor que
 $G''/G'$: o fator de perda da seção composta é menor que o do poliuretano isolado. Os
 termos de frequência nula, associados aos valores médios, utilizam o módulo relaxado, e o
-coeficiente correspondente é $C_0(s) = EI_{PIPE} + G_{\infty}\,I_{BS}(s)$
-(Equação~(\ref{eq:C0})) \cite{Caire2011}. A dependência de $C_1$ e $C_2$ em relação a
+coeficiente correspondente é $C_0(s) = EI_{PIPE} + G_{\infty}\,I_{BS}(s)$.
+A dependência de $C_1$ e $C_2$ em relação a
 $\omega$ vem dos módulos $G'$ e $G''$, e a dependência de todos em relação a $s$ vem de
 $I_{BS}(s)$. Resultam, assim, os coeficientes variáveis do sistema de equações
-diferenciais discutido na Seção~\ref{sec:equacoes-diferenciais}.
+diferenciais discutido na Seção~\ref{sec:equacoes-diferenciais}. A montagem da matriz
+global de rigidez e a distinção entre acoplamento de fase e acoplamento geométrico são
+apresentadas na Subseção~\ref{sec:governo-linear-frequencia}.
 
 % ---------------------------------------------------------------------
 
+% 16/11/2026 - Chamadas de Zill unificadas no volume 2 da edicao ja cadastrada.
 \section{Equações Diferenciais}
 \label{sec:equacoes-diferenciais}
 
-O comportamento mecânico estudado neste trabalho, desde a deflexão de uma viga até o
-equilíbrio do conjunto linha flexível-enrijecedor, é descrito por equações que
-relacionam uma função desconhecida às suas derivadas. Esta seção apresenta, com base em
-\citeonline{Zill2001v1,Zill2001v2}, a terminologia, os problemas de valor inicial e de
-contorno, os resultados de existência e unicidade e a teoria de equações e sistemas
-lineares de primeira ordem. Em seguida, mostra-se como esses conceitos se aplicam ao
-sistema de equações do enrijecedor formulado por \citeonline{Caire2005,Caire2011}. Os
-métodos numéricos empregados na solução são tratados na
-Seção~\ref{sec:metodos-numericos}.
+% 17/11/2026 - Abertura orientada pelas incognitas e pelas condicoes do problema.
+Conhecer a lei do material e os esforços não determina, de imediato, a forma
+deformada do conjunto. É necessário encontrar funções que satisfaçam, ao mesmo
+tempo, a geometria, o equilíbrio e as condições nas extremidades. As equações
+diferenciais expressam essas relações locais, enquanto as condições de contorno
+selecionam a resposta compatível com a fixação e com o carregamento.
+As subseções seguintes apresentam essa estrutura matemática e sua aplicação
+ao enrijecedor, preparando a solução numérica da Seção~\ref{sec:metodos-numericos}.
  
 \subsection{Terminologia e Classificação}
 \label{sub:edo-classificacao}
  
+% 16/11/2026 - Definicoes agrupadas sob a mesma fonte, com ligacao ao problema mecanico.
 Uma equação que contém as derivadas ou diferenciais de uma ou mais variáveis
 dependentes em relação a uma ou mais variáveis independentes é denominada equação
-diferencial \cite{Zill2001v1}. Essas equações são classificadas segundo o tipo, a
+diferencial \cite{Zill2001v2}. Essas equações são classificadas segundo o tipo, a
 ordem e a linearidade. Quanto ao tipo, a equação é ordinária (EDO) quando contém apenas
 derivadas ordinárias em relação a uma única variável independente, e parcial (EDP)
-quando envolve derivadas parciais em relação a duas ou mais variáveis independentes
-\cite{Zill2001v1}. No regime harmônico permanente adotado neste trabalho, a
+quando envolve derivadas parciais em relação a duas ou mais variáveis independentes.
+No regime harmônico permanente adotado neste trabalho, a
 dependência temporal é representada por funções harmônicas conhecidas
 (Subseção~\ref{sub:edo-enrijecedor}), de modo que a única variável independente das
 incógnitas é o comprimento de arco ao longo do eixo do conjunto e o problema se reduz a
 EDOs.
  
-A ordem da equação é a da derivada de maior ordem que nela aparece
-\cite{Zill2001v1}. Uma EDO de ordem $n$ pode ser escrita, em forma geral, como
+A ordem da equação é a da derivada de maior ordem que nela aparece.
+Uma EDO de ordem $n$ pode ser escrita, em forma geral, como
 
 \begin{equation}
   \label{eq:edo-geral}
@@ -1539,7 +1665,7 @@ A ordem da equação é a da derivada de maior ordem que nela aparece
 \end{equation}
 
 em que $y(x)$ é a variável dependente e $y^{(n)}$ é a derivada de ordem $n$ em relação a
-$x$ \cite{Zill2001v1}. A equação é linear quando pode ser escrita na forma
+$x$. A equação é linear quando pode ser escrita na forma
 
 \begin{equation}
   \label{eq:edo-linear-n}
@@ -1548,25 +1674,26 @@ $x$ \cite{Zill2001v1}. A equação é linear quando pode ser escrita na forma
 
 isto é, quando a variável dependente e todas as suas derivadas aparecem no primeiro grau
 e cada coeficiente depende apenas da variável independente. Uma equação que não é linear
-é denominada não linear \cite{Zill2001v1}. A equação da viga,
+é denominada não linear. A equação da viga,
 Equação~(\ref{eq:viga-q}), é um exemplo de EDO linear de quarta ordem: para $EI$
 constante, tem-se $a_4 = EI$, os demais coeficientes nulos e $g(x) = q(x)$.
  
 Uma solução de uma EDO em um intervalo $I$ é uma função com pelo menos $n$ derivadas
-que, substituída na equação, a reduz a uma identidade em todo o intervalo
-\cite{Zill2001v1}. Em geral, uma equação diferencial admite infinitas soluções:
+que, substituída na equação, a reduz a uma identidade em todo o intervalo.
+Em geral, uma equação diferencial admite infinitas soluções:
 a resolução de uma equação de ordem $n$ conduz a uma família a $n$ parâmetros, e a
-escolha de valores para os parâmetros fornece soluções particulares
-\cite{Zill2001v1}. Quando toda solução no intervalo pode ser obtida dessa
+escolha de valores para os parâmetros fornece soluções particulares.
+Quando toda solução no intervalo pode ser obtida dessa
 família, ela é denominada solução geral, designação que, na prática, é aplicada apenas
-às equações lineares \cite{Zill2001v1}. As equações não lineares, com exceção de
+às equações lineares. As equações não lineares, com exceção de
 algumas de primeira ordem, são em geral difíceis ou impossíveis de resolver em termos
-de funções elementares \cite{Zill2001v1}, o que justifica o recurso a métodos
+de funções elementares, o que justifica o recurso a métodos
 numéricos quando a equação do problema é não linear.
  
 \subsection{Problemas de Valor Inicial e de Valor de Contorno}
 \label{sub:pvi-pvc}
  
+% 16/11/2026 - Fontes mantidas nos resultados centrais de existencia e unicidade.
 Dada uma equação de primeira ordem, o problema de encontrar a solução que satisfaz uma
 condição especificada em um ponto $x_0$,
 
@@ -1575,15 +1702,14 @@ condição especificada em um ponto $x_0$,
   \frac{\mathrm{d}y}{\mathrm{d}x} = f(x, y), \qquad y(x_0) = y_0,
 \end{equation}
 
-é denominado problema de valor inicial (PVI) \cite{Zill2001v1}. A questão
+é denominado problema de valor inicial (PVI). A questão
 fundamental é saber se existe solução e se ela é única. Segundo o teorema de Picard, se
 $f(x, y)$ e $\partial f/\partial y$ são contínuas em uma região retangular $R$ do
 plano $xy$ que contém o ponto $(x_0, y_0)$ em seu interior, então existe um intervalo
 centrado em $x_0$ no qual o PVI (\ref{eq:pvi-1}) possui uma única solução
-\cite{Zill2001v1}. Essas condições são suficientes, mas não necessárias, e a
+\cite{Zill2001v2}. Essas condições são suficientes, mas não necessárias, e a
 existência da solução não implica que ela possa ser escrita em termos de funções
-elementares; nesses casos, aproximações podem ser obtidas por métodos numéricos
-\cite{Zill2001v1}.
+elementares; nesses casos, aproximações podem ser obtidas por métodos numéricos.
  
 Para uma EDO linear de ordem $n$, o PVI consiste em resolver a
 Equação~(\ref{eq:edo-linear-n}) sujeita a $n$ condições prescritas em um mesmo ponto
@@ -1594,12 +1720,12 @@ $x_0$:
   y(x_0) = y_0, \quad y'(x_0) = y_1, \quad \ldots, \quad y^{(n-1)}(x_0) = y_{n-1},
 \end{equation}
 
-em que $y_0, y_1, \ldots, y_{n-1}$ são constantes \cite{Zill2001v1}. Se os
+em que $y_0, y_1, \ldots, y_{n-1}$ são constantes. Se os
 coeficientes $a_i(x)$ e a função $g(x)$ são contínuos em um intervalo $I$ e
-$a_n(x) \neq 0$ em $I$, existe uma única solução do PVI em $I$
-\cite{Zill2001v1}. Tanto a continuidade quanto a condição $a_n(x) \neq 0$ são
+$a_n(x) \neq 0$ em $I$, existe uma única solução do PVI em $I$.
+Tanto a continuidade quanto a condição $a_n(x) \neq 0$ são
 importantes: se $a_n(x)$ se anula em algum ponto do intervalo, a solução do PVI pode
-não ser única ou nem mesmo existir \cite{Zill2001v1}.
+não ser única ou nem mesmo existir.
  
 Um problema distinto surge quando as condições são especificadas em pontos diferentes.
 Para uma equação linear de segunda ordem, por exemplo, resolver
@@ -1610,13 +1736,12 @@ Para uma equação linear de segunda ordem, por exemplo, resolver
 \end{equation}
 
 é um problema de valor de contorno (PVC), e as condições $y(a) = y_0$ e $y(b) = y_1$
-são denominadas condições de contorno \cite{Zill2001v1}. Outras condições são
+são denominadas condições de contorno. Outras condições são
 possíveis, como as impostas às derivadas $y'(a)$ e $y'(b)$, e todas são casos
 particulares das condições gerais $\alpha_1 y(a) + \beta_1 y'(a) = \gamma_1$ e
-$\alpha_2 y(b) + \beta_2 y'(b) = \gamma_2$ \cite{Zill2001v1}. Diferentemente
+$\alpha_2 y(b) + \beta_2 y'(b) = \gamma_2$. Diferentemente
 do PVI, mesmo quando as hipóteses do teorema de existência e unicidade para equações
-lineares são satisfeitas, um PVC pode ter várias soluções, uma única solução ou nenhuma
-\cite{Zill2001v1}.
+lineares são satisfeitas, um PVC pode ter várias soluções, uma única solução ou nenhuma.
  
 O cálculo da deflexão de vigas, visto na Subseção~\ref{sub:deflexao-vigas}, é um
 problema desse tipo: a equação de quarta ordem exige quatro condições, impostas nas duas
@@ -1624,12 +1749,19 @@ extremidades da viga, como deslocamento e rotação nulos no engaste e momento f
 força cortante nulos na extremidade livre. Do mesmo modo, o sistema de equações do
 enrijecedor, apresentado na Subseção~\ref{sub:edo-enrijecedor}, é um PVC, pois suas
 condições são impostas nas extremidades $s = 0$ e $s = L$.
+
+Essa distinção tem uma consequência prática: integrar uma equação a partir de
+uma estimativa inicial não garante que o contorno na outra extremidade seja
+atendido. No método do tiro, a integração e a correção dessa estimativa precisam
+atuar em conjunto. Além disso, a convergência para uma solução não demonstra,
+por si só, que não existam outras soluções do problema de contorno.
  
 \subsection{Equações Lineares de Primeira Ordem}
 \label{sub:edo-linear-1}
  
+% 16/11/2026 - Fonte reunida na apresentacao do metodo do fator integrante.
 Para $n = 1$, a Equação~(\ref{eq:edo-linear-n}) torna-se uma equação linear de primeira
-ordem \cite{Zill2001v1}, que, dividida pelo coeficiente $a_1(x)$, assume a forma
+ordem \cite{Zill2001v2}, que, dividida pelo coeficiente $a_1(x)$, assume a forma
 
 \begin{equation}
   \label{eq:linear-1}
@@ -1646,7 +1778,6 @@ Equações desse tipo admitem sempre um fator de integração,
 
 que, ao multiplicar a Equação~(\ref{eq:linear-1}), transforma o primeiro membro na
 derivada do produto $\mu(x)\,y$. Integrando-se ambos os membros, obtém-se
-\cite{Zill2001v1}
 
 \begin{equation}
   \label{eq:solucao-linear-1}
@@ -1656,7 +1787,7 @@ derivada do produto $\mu(x)\,y$. Integrando-se ambos os membros, obtém-se
 
 em que $c$ é uma constante arbitrária. Como $P(x)$ e $f(x)$ são contínuas, essa família
 contém todas as soluções da equação no intervalo, o PVI correspondente tem solução única
-e não existem soluções singulares \cite{Zill2001v1}. Por isso a
+e não existem soluções singulares. Por isso a
 Equação~(\ref{eq:solucao-linear-1}) é a solução geral da equação. Essa é a estrutura que
 as equações de curvatura do enrijecedor assumem, com $P$ determinado pela variação da
 rigidez ao longo do comprimento (Subseção~\ref{sub:edo-enrijecedor}).
@@ -1664,6 +1795,7 @@ rigidez ao longo do comprimento (Subseção~\ref{sub:edo-enrijecedor}).
 \subsection{Sistemas de Equações Lineares de Primeira Ordem}
 \label{sub:sistemas-lineares}
  
+% 16/11/2026 - Atribuicoes consolidadas para sistemas lineares e sua solucao.
 Uma equação de ordem superior pode ser reescrita como um sistema de equações de primeira
 ordem, adotando-se como novas variáveis a função e suas derivadas até a ordem $n - 1$
 \cite{Zill2001v2}. A deflexão da viga é um exemplo direto: as
@@ -1687,11 +1819,10 @@ $\theta = y'$, $M/EI = y''$ e $V/EI = y'''$ e, para $EI$ constante,
 \end{equation}
 
 Essa redução é o que permite aplicar a problemas de ordem superior os algoritmos
-numéricos, que são estabelecidos em sua maioria para equações de primeira ordem
-\cite{Zill2001v2}.
+numéricos, que são estabelecidos em sua maioria para equações de primeira ordem.
  
 Um sistema linear de primeira ordem com $n$ variáveis dependentes pode ser escrito em
-forma matricial \cite{Zill2001v2}, aqui adaptada à variável independente $x$:
+forma matricial, aqui adaptada à variável independente $x$:
 
 \begin{equation}
   \label{eq:sistema-nh}
@@ -1710,47 +1841,66 @@ homogêneos. O sistema é homogêneo quando $\mathbf{F} = \mathbf{0}$:
 O PVI consiste em resolver a Equação~(\ref{eq:sistema-nh}) sujeita a
 $\mathbf{X}(x_0) = \mathbf{X}_0$; se os elementos de $\mathbf{A}(x)$ e $\mathbf{F}(x)$
 são contínuos em um intervalo $I$ que contém $x_0$, existe uma única solução do PVI em
-$I$ \cite{Zill2001v2}. A Tabela~\ref{tab:existencia-unicidade} reúne os três
+$I$. A Tabela~\ref{tab:existencia-unicidade} reúne os três
 resultados de existência e unicidade apresentados nesta seção. Todos se referem a
 problemas de valor inicial: para um PVC, como o do enrijecedor, eles não garantem, por
 si sós, a existência ou a unicidade da solução.
  
-\begin{table}[h]
+% 17/11/2026 - Separacao visual dos tres problemas e leitura sem justificacao estreita.
+\begin{table}[!htbp]
   \caption{Condições suficientes para existência e unicidade de solução de problemas de
     valor inicial.}
   \label{tab:existencia-unicidade}
-  \begin{center}
-    \begin{tabular}{p{4.2cm}p{6.2cm}p{3.6cm}}
+  \centering
+  \begingroup
+    \small
+    \renewcommand{\arraystretch}{1.35}
+    \setlength{\parskip}{0pt}
+    \begin{tabular}{@{}p{3.1cm}@{\hspace{0.6cm}}p{7cm}@{\hspace{0.6cm}}p{3.8cm}@{}}
       \toprule
-      Problema & Hipóteses & Conclusão \\
+      \textbf{Problema} & \textbf{Condições suficientes} & \textbf{Garantia} \\
       \midrule
-      PVI de primeira ordem, Equação~(\ref{eq:pvi-1})
-        & $f$ e $\partial f/\partial y$ contínuas em um retângulo $R$ que contém
-          $(x_0, y_0)$ em seu interior
-        & Solução única em um intervalo centrado em $x_0$ \\[1ex]
-      PVI linear de ordem $n$, Equações~(\ref{eq:edo-linear-n}) e (\ref{eq:pvi-n})
-        & $a_i(x)$ e $g(x)$ contínuas em $I$, com $a_n(x) \neq 0$ em $I$
-        & Solução única em $I$ \\[1ex]
-      PVI para sistema linear, Equação~(\ref{eq:sistema-nh})
-        & Elementos de $\mathbf{A}(x)$ e $\mathbf{F}(x)$ contínuos em $I \ni x_0$
-        & Solução única em $I$ \\
+      \raggedright \textbf{Primeira ordem}\par\smallskip
+        Equação~(\ref{eq:pvi-1})
+        & \raggedright $f$ e $\partial f/\partial y$ contínuas em um retângulo
+          que contém $(x_0,y_0)$ em seu interior.
+        & \raggedright Solução única em uma vizinhança de $x_0$.
+          \tabularnewline[1.2em]
+      \midrule
+      \raggedright \textbf{Linear (ordem $n$)}\par\smallskip
+        Equações~(\ref{eq:edo-linear-n}) e (\ref{eq:pvi-n})
+        & \raggedright Coeficientes $a_i(x)$ e termo $g(x)$ contínuos em $I$,
+          com $a_n(x)\neq0$ em todo o intervalo.
+        & \raggedright Solução única em todo o intervalo $I$.
+          \tabularnewline[1.2em]
+      \midrule
+      \raggedright \textbf{Sistema linear}\par\smallskip
+        Equação~(\ref{eq:sistema-nh})
+        & \raggedright Elementos de $\mathbf A(x)$ e $\mathbf F(x)$
+          contínuos em um intervalo $I$ que contém $x_0$.
+        & \raggedright Solução única em todo o intervalo $I$.
+          \tabularnewline[0.6em]
       \bottomrule
     \end{tabular}
-  \end{center}
-  \fonte{Adaptado de \citeonline{Zill2001v1} e \citeonline{Zill2001v2}.}
+    \par
+  \endgroup
+  \smallskip
+  \fonte{Adaptado de \citeonline{Zill2001v2}.}
+  \nota{Todos os casos são problemas de valor inicial. A primeira garantia
+    é local; as duas seguintes abrangem o intervalo $I$ das hipóteses.}
 \end{table}
  
 Para o sistema homogêneo, vale o princípio da superposição: toda combinação linear de
-vetores solução é também solução \cite{Zill2001v2}. Um conjunto de $n$ vetores
+vetores solução é também solução. Um conjunto de $n$ vetores
 solução linearmente independentes é denominado conjunto fundamental, e sempre existe um
 em um intervalo em que $\mathbf{A}(x)$ é contínua; a solução geral é a combinação linear
 $\mathbf{X}_c = c_1\mathbf{X}_1 + c_2\mathbf{X}_2 + \cdots + c_n\mathbf{X}_n$, em que os
-$c_i$ são constantes arbitrárias \cite{Zill2001v2}. A solução geral do sistema
+$c_i$ são constantes arbitrárias. A solução geral do sistema
 não homogêneo é $\mathbf{X} = \mathbf{X}_c + \mathbf{X}_p$, sendo $\mathbf{X}_p$ qualquer
-solução particular da Equação~(\ref{eq:sistema-nh}) \cite{Zill2001v2}.
+solução particular da Equação~(\ref{eq:sistema-nh}).
  
 Reunindo-se os vetores de um conjunto fundamental como colunas, obtém-se uma matriz
-fundamental $\boldsymbol{\Phi}(x)$ \cite{Zill2001v2}, que satisfaz
+fundamental $\boldsymbol{\Phi}(x)$, que satisfaz
 
 \begin{equation}
   \label{eq:matriz-fundamental}
@@ -1761,7 +1911,7 @@ fundamental $\boldsymbol{\Phi}(x)$ \cite{Zill2001v2}, que satisfaz
 em que $\mathbf{C}$ é a matriz coluna das constantes. Substituindo-se $\mathbf{C}$ por
 uma matriz coluna de funções $\mathbf{U}(x)$, o método de variação dos parâmetros fornece
 a solução particular $\mathbf{X}_p = \boldsymbol{\Phi}\int \boldsymbol{\Phi}^{-1}
-\mathbf{F}\,\mathrm{d}x$ e, portanto, a solução geral \cite{Zill2001v2}
+\mathbf{F}\,\mathrm{d}x$ e, portanto, a solução geral
 
 \begin{equation}
   \label{eq:var-parametros}
@@ -1769,22 +1919,28 @@ a solução particular $\mathbf{X}_p = \boldsymbol{\Phi}\int \boldsymbol{\Phi}^{
   + \boldsymbol{\Phi}(x) \int \boldsymbol{\Phi}^{-1}(x)\,\mathbf{F}(x)\,\mathrm{d}x.
 \end{equation}
 
-Os métodos baseados em autovalores e autovetores apresentados por
-\citeonline{Zill2001v2} aplicam-se a matrizes $\mathbf{A}$ de coeficientes
-constantes. Quando os elementos de $\mathbf{A}$ variam com a variável independente, como
-ocorre no enrijecedor, em geral não se dispõe de uma matriz fundamental em forma
-fechada, o que é um motivo adicional para o uso de métodos numéricos.
+% 17/11/2026 - Sintese: a forma matricial organiza a solucao, mas nao elimina sua dificuldade.
+Essas expressões mostram a estrutura da solução, mas utilizá-las exige conhecer
+a matriz fundamental. Os procedimentos usuais baseados em autovalores e autovetores
+tratam matrizes $\mathbf A$ constantes. No enrijecedor, a seção muda com a posição,
+e o sistema completo inclui termos geométricos não lineares. Assim, escrever as
+equações na forma de um sistema de primeira ordem é útil para organizar as
+incógnitas e aplicar um integrador, mas não significa dispor de uma solução
+analítica pronta.
  
 \subsection{Aplicação ao Sistema Linha Flexível-Enrijecedor}
 \label{sub:edo-enrijecedor}
  
-O conjunto linha flexível-enrijecedor submetido à força de topo $F$ é representado por
+% 17/11/2026 - Idealizacao apoiada em trabalhos convergentes, sem citacoes a cada passo.
+O conjunto linha flexível-enrijecedor submetido à força de topo $F$ pode ser
+representado, no caso elástico, por
 uma viga esbelta engastada que sofre grandes deslocamentos, trabalha em flexão e possui
 seção variável ao longo do comprimento, em razão do formato cônico do enrijecedor
-\cite{Caire2005}. Seja $s$ o comprimento de arco medido a partir da extremidade
+\cite{Caire2005,Souza2008}.
+A viga é inicialmente reta. Seja $s$ o comprimento de arco medido a partir da extremidade
 engastada, com $0 \le s \le L$. As coordenadas cartesianas $x(s)$ e $y(s)$ do eixo
 deformado e o ângulo de inclinação $\phi(s)$ da tangente em relação ao eixo $x$ se
-relacionam com a curvatura $k(s)$ por \cite{Caire2005}
+relacionam com a curvatura $k(s)$ por
 
 \begin{align}
   \frac{\mathrm{d}x}{\mathrm{d}s} &= \cos\phi(s), \label{eq:geo-x}\\
@@ -1796,6 +1952,7 @@ em que, nesta subseção, $x$ e $y$ designam as coordenadas do eixo deformado
 (Figura~\ref{fig:esquema-enrijecedor}), e não a variável independente e a deflexão das
 subseções anteriores.
  
+% 17/11/2026 - Esquema geometrico autoral, distinto das fontes da formulacao.
 \begin{figure}[h]
   \centering
   \caption{Esquema do sistema linha flexível-enrijecedor sob a força de topo $F$: o eixo
@@ -1830,17 +1987,17 @@ subseções anteriores.
     \draw[->] (-1.6,-1.8) -- (-0.6,-1.8) node[right] {$x$};
     \draw[->] (-1.6,-1.8) -- (-1.6,-0.8) node[above] {$y$};
   \end{tikzpicture}
-  \fonte{Adaptado de \citeonline{Caire2005}.}
+  \fonte{Autoria própria.}
 \end{figure}
  
 Pelo equilíbrio, o momento fletor $M(s)$ e a força cortante $V(s)$ se relacionam por
-$\mathrm{d}M/\mathrm{d}s = V$ \cite{Caire2011} e, pela teoria de Euler-Bernoulli
+$\mathrm{d}M/\mathrm{d}s = V$ e, pela teoria de Euler-Bernoulli
 com material linear elástico, $M = EI(s)\,k$, em que a rigidez à flexão do conjunto é a
 soma das parcelas da linha e do enrijecedor, $EI(s) = EI_{\mathrm{linha}} +
-EI_{BS}(s)$ \cite{Caire2005}. Para a força de topo atuando na direção da tangente
-à extremidade, caso que corresponde a $\alpha = 0$ na notação de \citeonline{Caire2005},
+EI_{BS}(s)$. Para a força de topo atuando na direção da tangente
+à extremidade, caso que corresponde a $\alpha = 0$,
 tem-se $V(s) = -F\sin\!\big(\phi_L - \phi(s)\big)$ e a derivação de $M = EI(s)\,k$ em
-relação a $s$ conduz a \cite{Caire2005}
+relação a $s$ conduz a
 
 \begin{equation}
   \label{eq:dk-ds-estatica}
@@ -1849,7 +2006,7 @@ relação a $s$ conduz a \cite{Caire2005}
   + F\sin\!\big(\phi_L - \phi(s)\big)\right],
 \end{equation}
 
-sujeita às condições de contorno \cite{Caire2005}
+sujeita às condições de contorno
 
 \begin{equation}
   \label{eq:cc-estatica}
@@ -1858,8 +2015,8 @@ sujeita às condições de contorno \cite{Caire2005}
 
 As Equações~(\ref{eq:geo-x}) a (\ref{eq:geo-phi}) e (\ref{eq:dk-ds-estatica}) formam um
 sistema de quatro EDOs não lineares de primeira ordem nas incógnitas $x$, $y$, $\phi$ e
-$k$, com quatro condições impostas em $s = 0$ e $s = L$, isto é, um PVC
-\cite{Caire2005}. A não linearidade provém dos termos $\cos\phi$, $\sin\phi$ e
+$k$, com quatro condições impostas em $s = 0$ e $s = L$, isto é, um PVC.
+A não linearidade provém dos termos $\cos\phi$, $\sin\phi$ e
 $\sin(\phi_L - \phi)$, razão pela qual o princípio da superposição e a solução geral
 das subseções anteriores não se aplicam ao sistema completo. A
 Equação~(\ref{eq:dk-ds-estatica}), porém, é linear em $k$ e tem a forma da
@@ -1870,201 +2027,39 @@ $\mathrm{d}M/\mathrm{d}s = V$, relação de equilíbrio da qual se partiu. Como 
 de $\phi$, que por sua vez depende de $k$ pela Equação~(\ref{eq:geo-phi}), essa
 integração não fornece a solução em forma fechada.
  
-No caso viscoelástico com carregamento harmônico, \citeonline{Caire2011}
-escreve a força e o ângulo de topo como $F(t) = F_0 + \epsilon F_0 \sin\omega t$ e
-$\phi_L(t) = \phi_{0L} + \alpha\,\phi_{0L}\sin(\omega t + \gamma)$, em que $F_0$ e
-$\phi_{0L}$ são os valores médios, $\epsilon$ e $\alpha$ são pequenos parâmetros de
-perturbação, $\omega$ é a frequência e $\gamma$ é a diferença de fase. Cada grandeza
-$\chi(s,t)$, com $\chi$ representando $\phi$, $k$ ou $V$, é expandida em uma série de
-perturbação até a terceira ordem em $\epsilon$ e $\alpha$ \cite{Caire2011}:
-
-\begin{equation}
-  \label{eq:base-perturbativa}
-  \chi(s,t) = \sum_{i=0}^{29} \chi_i(s)\,b_i(t;\epsilon,\alpha),
-\end{equation}
-
-em que as trinta parcelas $b_i$ são produtos de potências de $\epsilon$ e $\alpha$
-por $\sin(n\omega t)$ e $\cos(n\omega t)$, com $n = 1, 2, 3$. Por exemplo,
-$b_0 = 1$, $b_1 = \epsilon\sin\omega t$ e $b_2 = \epsilon\cos\omega t$.
-Assim, a dependência temporal fica concentrada nas funções $b_i$, conhecidas, e as
-incógnitas passam a ser as funções $\chi_i(s)$, que dependem somente de $s$.
- 
-A relação entre momento fletor e curvatura de cada coeficiente é escrita em forma
-matricial como $\mathbf{M} = \mathbf{EI}\,\mathbf{k}$, com $\mathbf{EI}$ uma matriz
-diagonal em blocos, formada por blocos escalares $\mathbf{EI}_0 = [C_0]$ e por blocos
-$2 \times 2$ do tipo
-
-\begin{equation}
-  \label{eq:bloco-EI}
-  \mathbf{EI}_n =
-  \begin{bmatrix}
-    C_1(s, n\omega) & -C_2(s, n\omega) \\
-    C_2(s, n\omega) & C_1(s, n\omega)
-  \end{bmatrix},
-\end{equation}
-
-associados à frequência $n\omega$ \cite{Caire2011}. Os coeficientes são
-
-\begin{align}
-  C_0(s) &= EI_{\mathrm{pipe}} + G(\infty)\,I_{BS}(s), \label{eq:C0}\\
-  C_1(s, n\omega) &= EI_{\mathrm{pipe}} + G'(n\omega)\,I_{BS}(s), \label{eq:C1}\\
-  C_2(s, n\omega) &= G''(n\omega)\,I_{BS}(s), \label{eq:C2}
-\end{align}
-
-em que $EI_{\mathrm{pipe}}$ é a rigidez à flexão da linha, $I_{BS}(s)$ é o segundo
-momento de área do enrijecedor, $G(\infty)$ é o módulo de relaxação para tempo infinito
-e $G'$ e $G''$ são os módulos de armazenamento e de perda, definidos na
-Seção~\ref{sec:viscoelasticidade} \cite{Caire2011}.
- 
-Combinando-se $\mathrm{d}\mathbf{M}/\mathrm{d}s = \mathbf{V}$ com $\mathbf{M} =
-\mathbf{EI}\,\mathbf{k}$, obtém-se para cada bloco
-\cite{Caire2011}
-
-\begin{equation}
-  \label{eq:dk-ds-matricial}
-  \frac{\mathrm{d}\mathbf{k}}{\mathrm{d}s}
-  = -\,\mathbf{EI}^{-1}\frac{\mathrm{d}\mathbf{EI}}{\mathrm{d}s}\,\mathbf{k}
-  + \mathbf{EI}^{-1}\mathbf{V},
-\end{equation}
-
-que explicitada resulta, para os coeficientes $i \in \{0, 5, 8, 11\}$ e para cada par
-$(i, i+1)$ associado à frequência $n\omega$, em \cite{Caire2011}
-
-\begin{align}
-  \frac{\mathrm{d}k_i}{\mathrm{d}s} &= -E_0(s)\,k_i(s) + D_0(s)\,V_i(s),
-    \label{eq:bloco-escalar}\\
-  \frac{\mathrm{d}}{\mathrm{d}s}
-  \begin{bmatrix} k_i \\ k_{i+1} \end{bmatrix}
-  &= -\begin{bmatrix} E_1 & -E_2 \\ E_2 & E_1 \end{bmatrix}
-  \begin{bmatrix} k_i \\ k_{i+1} \end{bmatrix}
-  + \begin{bmatrix} D_1 & -D_2 \\ D_2 & D_1 \end{bmatrix}
-  \begin{bmatrix} V_i \\ V_{i+1} \end{bmatrix},
-    \label{eq:bloco-par}
-\end{align}
-
-com $E_j = E_j(s, n\omega)$ e $D_j = D_j(s, n\omega)$, dados por
-
-\begin{align}
-  D_0 &= \frac{1}{C_0}, \quad
-  D_1 = \frac{C_1}{C_1^2 + C_2^2}, \quad
-  D_2 = -\frac{C_2}{C_1^2 + C_2^2}, \label{eq:coef-D}\\
-  E_0 &= \frac{C_{0,s}}{C_0}, \quad
-  E_1 = \frac{C_1 C_{1,s} + C_2 C_{2,s}}{C_1^2 + C_2^2}, \quad
-  E_2 = \frac{C_1 C_{2,s} - C_2 C_{1,s}}{C_1^2 + C_2^2}, \label{eq:coef-E}
-\end{align}
-
-em que $C_{j,s} = \mathrm{d}C_j/\mathrm{d}s$ \cite{Caire2011}. A cada coeficiente
-$k_i$ corresponde ainda a equação geométrica
-
-\begin{equation}
-  \label{eq:geo-phi-i}
-  \frac{\mathrm{d}\phi_i}{\mathrm{d}s} = k_i(s), \qquad i = 0, \ldots, 29,
-\end{equation}
-
-e a força cortante é dada por \cite{Caire2011}
-
-\begin{equation}
-  \label{eq:Vi}
-  V_i(s) = F_0\left[A_i(s)\sin\theta_0(s) + B_i(s)\cos\theta_0(s)\right],
-  \qquad \theta_0(s) = \phi_{0L} - \phi_0(s),
-\end{equation}
-
-em que $A_i(s)$ e $B_i(s)$ são funções polinomiais de $\phi_j(s)$ e de funções
-trigonométricas de $\gamma$, obtidas do desenvolvimento do seno da variação angular até a
-terceira ordem \cite{Caire2011}. Para $i = 0$, tem-se $A_0 = -1$ e $B_0 = 0$,
-de modo que $V_0 = -F_0\sin(\phi_{0L} - \phi_0)$, e a Equação~(\ref{eq:bloco-escalar})
-reproduz a Equação~(\ref{eq:dk-ds-estatica}) com $C_0$ no papel de $EI$.
- 
-As Equações~(\ref{eq:bloco-escalar}), (\ref{eq:bloco-par}) e (\ref{eq:geo-phi-i}) formam
-um sistema de sessenta EDOs não lineares de primeira ordem, trinta para as curvaturas
-$k_i$ e trinta para os ângulos $\phi_i$ \cite{Caire2011}, sujeitas às condições de
-contorno
-
-\begin{align}
-  \phi_i(0) &= 0, \qquad 0 \le i \le 29, \label{eq:cc-0}\\
-  \phi_0(L) &= \phi_{0L}, \quad \phi_3(L) = \phi_{0L}\cos\gamma, \quad
-  \phi_4(L) = \phi_{0L}\sin\gamma, \label{eq:cc-L1}\\
-  \phi_i(L) &= 0, \qquad i = 1,\, 2 \ \text{e}\ 5 \le i \le 29, \label{eq:cc-L2}
-\end{align}
-
-impostas em $s = 0$ e $s = L$ \cite{Caire2011}. Trata-se, portanto, de um PVC,
-como no caso estático. A Tabela~\ref{tab:blocos} organiza as trinta equações de curvatura
-em blocos, segundo a frequência dos termos a que se referem.
- 
-\begin{table}[h]
-  \caption{Blocos de equações de curvatura do sistema harmônico, agrupados pela
-    frequência dos termos.}
-  \label{tab:blocos}
-  \begin{center}
-    \begin{tabular}{llp{6.2cm}c}
-      \toprule
-      Frequência & Tipo de bloco & Índices $i$ & Equações \\
-      \midrule
-      Constante & Escalar, Eq.~(\ref{eq:bloco-escalar}) & $0$, $5$, $8$, $11$ & 4 \\
-      $\omega$ & Par, Eq.~(\ref{eq:bloco-par})
-        & $(1,2)$, $(3,4)$, $(14,15)$, $(18,19)$, $(22,23)$, $(26,27)$ & 12 \\
-      $2\omega$ & Par, Eq.~(\ref{eq:bloco-par})
-        & $(6,7)$, $(9,10)$, $(12,13)$ & 6 \\
-      $3\omega$ & Par, Eq.~(\ref{eq:bloco-par})
-        & $(16,17)$, $(20,21)$, $(24,25)$, $(28,29)$ & 8 \\
-      \midrule
-      \multicolumn{3}{l}{Total} & 30 \\
-      \bottomrule
-    \end{tabular}
-  \end{center}
-  \fonte{Elaborada pelos autores com base em \citeonline{Caire2011}.}
-\end{table}
- 
-Cada bloco da Tabela~\ref{tab:blocos} é um sistema linear de primeira ordem com
-coeficientes variáveis, na forma da Equação~(\ref{eq:sistema-nh}), com
-$\mathbf{X} = \mathbf{k}$, $\mathbf{A} = -\mathbf{EI}^{-1}\,\mathrm{d}\mathbf{EI}/
-\mathrm{d}s$ e $\mathbf{F} = \mathbf{EI}^{-1}\mathbf{V}$. Nesse caso, a matriz fundamental
-é conhecida: $\boldsymbol{\Phi} = \mathbf{EI}^{-1}$, pois $\mathrm{d}\boldsymbol{\Phi}/
-\mathrm{d}s = -\mathbf{EI}^{-1}\,(\mathrm{d}\mathbf{EI}/\mathrm{d}s)\,\mathbf{EI}^{-1}
-= \mathbf{A}\boldsymbol{\Phi}$. Substituindo-se na Equação~(\ref{eq:var-parametros}),
-
-\begin{equation}
-  \label{eq:k-variacao-parametros}
-  \mathbf{k}(s) = \mathbf{EI}^{-1}(s)\left[\mathbf{C}
-  + \int \mathbf{V}(s)\,\mathrm{d}s\right],
-\end{equation}
-
-isto é, $\mathbf{EI}\,\mathbf{k} = \mathbf{C} + \int \mathbf{V}\,\mathrm{d}s$, o que
-equivale a $\mathrm{d}\mathbf{M}/\mathrm{d}s = \mathbf{V}$. A
-Equação~(\ref{eq:k-variacao-parametros}) é, porém, apenas formal: como $\mathbf{V}$
-depende dos ângulos $\phi_j$ pela Equação~(\ref{eq:Vi}) e estes dependem das curvaturas
-pela Equação~(\ref{eq:geo-phi-i}), a expressão é implícita, e a solução do sistema
-completo exige métodos numéricos. \citeonline{Caire2011} indica como escolhas
-naturais o método das diferenças finitas e o método do tiro, que transforma o PVC em um
-PVI equivalente por um processo iterativo; esses métodos são apresentados na
-Seção~\ref{sec:metodos-numericos}. Uma vez obtidas as funções $k_i(s)$ e $\phi_i(s)$, a
-curvatura e o ângulo em qualquer instante são recuperados pela
-Equação~(\ref{eq:base-perturbativa}), e as coordenadas $x(s,t)$ e $y(s,t)$ resultam da
-integração das Equações~(\ref{eq:geo-x}) e (\ref{eq:geo-y}) \cite{Caire2011}.
+% 16/11/2026 - Removido o desenvolvimento harmonico duplicado; preservado o exemplo de PVC.
+No caso viscoelástico, a relação elástica $M=EI\,k$ é substituída pela relação com
+memória da Subseção~\ref{sub:rigidez}. O equilíbrio continua geometricamente não linear,
+e as condições permanecem impostas nas duas extremidades. Para uma solicitação
+periódica, a dependência temporal pode ser representada por componentes harmônicas,
+deixando como incógnitas seus coeficientes espaciais. A ideia dessa aproximação é
+apresentada na Subseção~\ref{subsec:expansao-perturbativa}; o desenvolvimento do sistema
+harmônico, sua matriz de rigidez e as condições de contorno específicas ficam reunidos
+na Seção~\ref{sec:implementando-viscoelasticidade}, na metodologia.
 
 % ---------------------------------------------------------------------
 
 \section{Métodos Numéricos}
 \label{sec:metodos-numericos}
 
-A solução do problema proposto requer a aplicação combinada de
-diferentes métodos numéricos, uma vez que o modelo matemático envolve
-comportamento viscoelástico, equações diferenciais ordinárias,
-condições de contorno e dependência da resposta em relação ao histórico
-de carregamento. Conforme apresentado por Chapra e Canale (2011), os
-métodos numéricos permitem transformar problemas matemáticos de maior
-complexidade em procedimentos computacionais baseados em operações
-aritméticas, possibilitando a obtenção de soluções aproximadas quando
-uma solução analítica não está disponível ou apresenta limitações
-práticas.
+% 17/11/2026 - Metodos apresentados por suas funcoes, em vez de uma definicao generica.
+A solução numérica reúne tarefas distintas. Primeiro, é preciso representar os
+dados experimentais por funções utilizáveis na lei constitutiva. Depois, devem-se
+integrar as equações espaciais e ajustar os valores desconhecidos na base para
+atender ao contorno final. Essas tarefas se relacionam, mas seus erros não são
+equivalentes: um bom ajuste do material não garante uma integração precisa,
+assim como um resíduo de contorno pequeno não confirma a adequação da lei
+constitutiva.
 
+% 16/11/2026 - Delimitacao da solucao principal e da verificacao temporal complementar.
 Neste trabalho, são empregados métodos de aproximação por séries,
 ajuste de curvas por mínimos quadrados, integração numérica de equações diferenciais ordinárias, localização
 de raízes e solução de problemas de valor de contorno. A implementação
-é dividida em duas abordagens complementares: uma formulação no
-domínio da frequência, baseada em uma expansão perturbativa em
-harmônicos, e uma formulação no domínio do tempo, na qual a memória
-viscoelástica é representada por variáveis internas.
+dispõe de uma solução principal no domínio da frequência, baseada em uma expansão
+perturbativa em harmônicos, e de uma solução complementar no domínio do tempo,
+na qual a memória viscoelástica é representada por variáveis internas. A primeira
+é utilizada na comparação entre as geometrias; a segunda permite conferir os efeitos
+da aproximação perturbativa e examinar a influência do histórico de carregamento.
 
 \subsection{Representação viscoelástica por série de Prony}
 \label{subsec:serie-prony}
@@ -2093,6 +2088,17 @@ contribui de maneira distinta para a evolução da resposta mecânica,
 sendo que contribuições associadas a menores tempos de relaxação
 decrescem mais rapidamente.
 
+% 16/11/2026 - Relacao fisica entre relaxacao, modulo de longo prazo e dissipacao.
+No modelo linear adotado, a relaxação decrescente significa que, sob deformação
+mantida constante, parte da tensão se reduz enquanto os mecanismos viscosos se
+acomodam. Essa redução não elimina toda a capacidade de sustentar esforços:
+o módulo de longo prazo $G_{\infty}$ representa a parcela que permanece após a
+relaxação. Sob deformação cíclica, os mesmos mecanismos de relaxação produzem
+defasagem entre tensão e deformação e dissipam energia, descrita pelo módulo de
+perda $G''$. Assim, o decaimento da tensão e a dissipação são manifestações da
+mesma resposta viscoelástica, enquanto $G_{\infty}$ caracteriza sua parcela
+elástica remanescente.
+
 Para a formulação no domínio da frequência, utiliza-se o módulo
 complexo longitudinal, definido por
 
@@ -2104,7 +2110,8 @@ complexo longitudinal, definido por
 em que $\omega$ é a frequência angular, $G'(\omega)$ é o módulo de
 armazenamento, $G''(\omega)$ é o módulo de perda e $i$ representa a
 unidade imaginária. Considerando a convenção harmônica
-$\exp(i\omega t)$, os módulos são calculados por
+$\exp(i\omega t)$, a substituição da série de Prony nas integrais da
+Subseção~\ref{sub:regime-harmonico} fornece
 
 \begin{equation}
   G'(\omega) =
@@ -2145,7 +2152,7 @@ Os parâmetros da série de Prony e das funções de relaxação são obtidos a 
 experimentais por regressão. Dado um conjunto de $n$ pontos $(t_i, y_i)$ e um modelo
 $\hat{y}(t;\mathbf{p})$ que depende de um vetor de parâmetros $\mathbf{p}$, o método dos
 mínimos quadrados determina os parâmetros que minimizam a soma ponderada dos quadrados
-dos resíduos, conforme Chapra e Canale (2011):
+dos resíduos \cite{Chapra2011}:
 
 \begin{equation}
   S(\mathbf{p}) = \sum_{i=1}^{n} w_i\left[y_i - \hat{y}(t_i;\mathbf{p})\right]^2,
@@ -2153,7 +2160,10 @@ dos resíduos, conforme Chapra e Canale (2011):
 \end{equation}
 
 em que $w_i \geq 0$ são pesos que permitem atribuir maior ou menor importância a cada
-ponto.
+ponto. Quando se fornece ao algoritmo um vetor de resíduos, a ponderação é aplicada
+como $r_i=\sqrt{w_i}\,[y_i-\hat y(t_i;\mathbf p)]$, de modo que
+$S=\sum_i r_i^2$. Isso permite equilibrar curvas de amplitudes ou quantidades
+de pontos diferentes, sem confundir a ponderação com uma mudança do material.
 
 Quando o modelo é linear nos parâmetros, como em uma regressão polinomial ou na série de
 Prony com os tempos de relaxação fixados, a minimização conduz a um sistema linear, as
@@ -2173,18 +2183,57 @@ parâmetros, como a não negatividade dos coeficientes $G_m$, que representam pa
 módulo e têm, por isso, significado físico; o problema continua sendo de minimização, mas
 exige algoritmos específicos para parâmetros limitados.
 
+% 17/11/2026 - Distincao entre linearidade da regressao e linearidade constitutiva.
+Ser linear nos parâmetros não significa representar um material linear.
+Um polinômio como $\sigma=G_1\varepsilon+G_2\varepsilon^2$ é linear nos
+coeficientes $G_1$ e $G_2$, embora sua relação entre tensão e deformação
+seja não linear quando $G_2\neq0$. Por isso, a identificação dos coeficientes
+do PSM pode usar mínimos quadrados lineares. As restrições também dependem
+da grandeza ajustada: exigir amplitudes de relaxação não negativas não
+implica impor a mesma condição a todos os coeficientes de um polinômio.
+
 Quando o modelo é não linear nos parâmetros, como na série de Prony com os tempos de
 relaxação $\tau_m$ também desconhecidos, a minimização é iterativa: a cada passo, o modelo
 é linearizado em torno da estimativa atual e calcula-se uma correção, de forma análoga ao
 método de Newton apresentado na Subseção~\ref{subsec:metodo-tiro}. Os métodos de região de
 confiança limitam o tamanho do passo a uma região em que a linearização é considerada
-confiável, o que melhora a convergência quando as estimativas iniciais estão distantes da
-solução e permite impor limites inferiores e superiores aos parâmetros. A qualidade do
-ajuste é avaliada por medidas dos resíduos, como a raiz do erro quadrático médio, o erro
+confiável, o que pode favorecer a convergência. Variantes que tratam parâmetros
+limitados, como a reflexiva utilizada na metodologia, também incorporam
+limites inferiores e superiores à busca.
+
+% 17/11/2026 - Fundamentacao do ajuste combinado de amplitudes e tempos.
+Quando as amplitudes são lineares e os tempos são não lineares, não é necessário
+procurar todos os parâmetros da mesma maneira. Para cada tentativa dos tempos
+$\boldsymbol\tau$, resolve-se o ajuste linear das amplitudes $\mathbf c$;
+o menor erro obtido é então usado na busca dos tempos. Com amplitudes
+não negativas, esse procedimento define
+
+\begin{equation}
+  S_{\mathrm{red}}(\boldsymbol\tau)
+    =\min_{\mathbf c\geq\mathbf0}S(\mathbf c,\boldsymbol\tau).
+  \label{eq:ajuste-separavel-prony}
+\end{equation}
+
+A busca não linear minimiza $S_{\mathrm{red}}$, recalculando a parte linear
+em cada avaliação. Na metodologia, os tempos são comuns às seis curvas,
+enquanto cada curva possui suas próprias amplitudes. Fixados os tempos,
+a identificação polinomial em função da deformação constitui outro ajuste
+linear nos coeficientes, sem repetir a busca temporal.
+
+A mudança de escala das variáveis pode melhorar o comportamento numérico dessa
+regressão. Ao escrever $z=\varepsilon/\varepsilon_{\mathrm{ref}}$,
+com $\varepsilon_{\mathrm{ref}}>0$, ajustam-se potências de $z$ em vez
+das potências de deformações muito pequenas. Se $a_k$ é o coeficiente de
+$z^k$, o coeficiente $p_k$ da potência original é
+$p_k=a_k/\varepsilon_{\mathrm{ref}}^k$. A conversão de volta preserva
+o polinômio físico; não transforma uma resposta não linear em linear.
+
+A qualidade do ajuste é avaliada por medidas dos resíduos, como a raiz do erro quadrático médio, o erro
 absoluto médio e o coeficiente de determinação, definidos na
 Subseção~\ref{sec:avaliacao-ajuste-material}. A aplicação desses métodos ao ajuste dos
 termos da série de Prony é descrita na Subseção~\ref{sec:ajuste-prony}.
 
+% 16/11/2026 - Diferenciacao entre ordem perturbativa e harmonica, sem duplicar o sistema.
 \subsection{Expansão perturbativa em harmônicos}
 \label{subsec:expansao-perturbativa}
 
@@ -2232,69 +2281,59 @@ em que $N_h$ representa o número de harmônicos considerados e
 $a_n(s)$ e $b_n(s)$ são coeficientes dependentes da coordenada
 espacial.
 
-Na implementação, são considerados os três primeiros harmônicos,
-correspondentes às frequências $\omega$, $2\omega$ e $3\omega$.
-A substituição das expansões nas relações constitutivas e nas
-equações governantes permite agrupar os termos de mesma ordem
-perturbativa e mesma frequência, originando um sistema algébrico
-para a determinação dos coeficientes harmônicos.
-
-Essa organização resulta em um sistema composto por 30 coeficientes,
-que representam as contribuições necessárias para reconstruir a
-resposta do sistema. A utilização dessa abordagem reduz o problema
-original a um conjunto finito de equações diferenciais e relações
-algébricas, tornando sua solução computacional mais viável.
-
-A decomposição em harmônicos também permite avaliar separadamente
-as contribuições de cada frequência para a resposta global, além de
-possibilitar a reconstrução da solução em diferentes instantes do
-ciclo de carregamento.
-
-\subsection{Formulação das equações diferenciais ordinárias}
-\label{subsec:formulacao-edo}
-
-Após a determinação das relações entre os coeficientes harmônicos,
-o problema é organizado como um sistema de equações diferenciais
-ordinárias ao longo da coordenada espacial $s$, que representa a
-posição ao longo do comprimento do \textit{stiffener}.
-
-O vetor de estado é constituído pelos coeficientes de curvatura
-$k_i(s)$ e de ângulo $\phi_i(s)$, de modo que o sistema pode ser
-representado genericamente por
+Uma entrada senoidal não produz necessariamente uma resposta senoidal pura.
+No equilíbrio do enrijecedor, a força multiplica uma função trigonométrica do
+ângulo relativo. Ao expandir essa relação, aparecem produtos de oscilações que
+geram outras frequências. Por exemplo, tomando $\psi=\omega t$,
 
 \begin{equation}
-  \frac{d\mathbf{y}}{ds}
-  =
-  \mathbf{f}(s,\mathbf{y}),
-  \label{eq:sistema-edo}
+  \sin^2\psi=\frac{1-\cos(2\psi)}{2},
+  \label{eq:geracao-segundo-harmonico}
 \end{equation}
 
-em que $\mathbf{y}$ reúne as variáveis de estado e
-$\mathbf{f}$ representa as funções obtidas a partir das equações
-governantes.
+mostra que o quadrado de uma oscilação contém uma parcela constante e outra com
+o dobro da frequência. Produtos de terceira ordem também podem gerar o terceiro
+harmônico. Isso ocorre pela não linearidade geométrica, mesmo quando o material
+é viscoelástico linear.
 
-As equações são construídas a partir dos coeficientes flexurais
-$C_0$, $C_1$ e $C_2$, de suas derivadas e das contribuições
-associadas às forças de cisalhamento. Dessa maneira, as relações
-constitutivas e os esforços atuantes são incorporados ao sistema
-diferencial que descreve a evolução espacial da curvatura e do
-ângulo.
+É necessário distinguir a ordem perturbativa, dada pela soma das potências de
+$\epsilon$ e $\alpha$, da ordem harmônica, dada pelo múltiplo da frequência
+$\omega$. Uma contribuição de terceira ordem perturbativa, por exemplo, pode
+oscilar na frequência fundamental ou na terceira harmônica. Na aproximação adotada,
+retêm-se os produtos de grau total até três e as frequências correspondentes,
+conforme a Tabela~\ref{tab:ordens-perturbativas}.
 
-Como as condições do problema são especificadas em diferentes
-extremidades do domínio, a solução do sistema não pode ser obtida
-simplesmente pela definição de todas as condições iniciais em
-$s=0$. Torna-se necessário utilizar um procedimento numérico
-específico para satisfazer simultaneamente as condições de contorno.
+Uma série com parcela constante e três harmônicos possui sete componentes temporais
+distintas: uma constante e três pares seno-cosseno. Os trinta coeficientes por
+grandeza utilizados neste trabalho aparecem porque essas componentes são mantidas
+separadas também pelos produtos perturbativos que as originam. Não se trata,
+portanto, de trinta frequências diferentes.
 
+A substituição das expansões nas equações de equilíbrio e nas relações constitutivas
+permite identificar os termos de mesma ordem e frequência. Como seus coeficientes
+ainda variam ao longo de $s$, o resultado é um sistema de EDOs espaciais, e não
+apenas um sistema algébrico. Sua montagem específica é apresentada na
+Subseção~\ref{sec:governo-linear-frequencia}.
+
+% 16/11/2026 - Formulacao generica das EDOs incorporada a abertura do metodo do tiro.
 \subsection{Método do tiro}
 \label{subsec:metodo-tiro}
 
-O problema formulado corresponde a um problema de valor de contorno,
-no qual são impostas condições em diferentes posições do domínio
-espacial. Para sua resolução, utiliza-se o método do tiro
+Após a organização dos coeficientes de curvatura e ângulo em um vetor de estado
+$\mathbf y(s)$, as equações de equilíbrio, a geometria e a rigidez definem um
+sistema de primeira ordem,
+
+\begin{equation}
+  \frac{\mathrm{d}\mathbf y}{\mathrm{d}s}=\mathbf f(s,\mathbf y).
+  \label{eq:sistema-edo}
+\end{equation}
+
+As condições são impostas em posições diferentes do domínio espacial, caracterizando
+um problema de valor de contorno. Não se conhecem, portanto, todos os valores
+iniciais necessários à integração em $s=0$. Para sua resolução, utiliza-se o método do tiro
 (\textit{shooting method}), que transforma o problema de contorno
 em um problema de valor inicial, cuja solução pode ser obtida
-mediante integração numérica das equações diferenciais.
+mediante integração numérica das equações diferenciais \cite{Chapra2011}.
 
 O procedimento consiste em estimar inicialmente os valores das
 variáveis desconhecidas na extremidade $s=0$. A partir dessas
@@ -2352,6 +2391,7 @@ Jacobiana do vetor de resíduos, definida por
   \label{eq:jacobiana}
 \end{equation}
 
+% 16/11/2026 - Diferencas centrais em concordancia com a implementacao do tiro.
 Como a obtenção analítica das derivadas pode ser complexa, a matriz
 Jacobiana é aproximada numericamente por diferenças finitas. Para
 uma perturbação $\delta_j$ no parâmetro $p_j$, utiliza-se a
@@ -2363,8 +2403,8 @@ aproximação
   \frac{
     R_i(\mathbf{p}+\delta_j\mathbf{e}_j)
     -
-    R_i(\mathbf{p})
-  }{\delta_j},
+    R_i(\mathbf{p}-\delta_j\mathbf{e}_j)
+  }{2\delta_j},
   \label{eq:jacobiana-diferencas}
 \end{equation}
 
@@ -2409,11 +2449,10 @@ Runge-Kutta de quarta ordem}
 
 A integração espacial do sistema de equações diferenciais é
 realizada pelo método explícito de Runge-Kutta de quarta ordem
-(RK4). Conforme apresentado por Chapra e Canale (2011), os métodos
-de Runge-Kutta utilizam avaliações sucessivas da função
+(RK4). Os métodos de Runge-Kutta utilizam avaliações sucessivas da função
 diferencial dentro de cada intervalo de integração, permitindo
 obter aproximações de ordem superior sem a necessidade de calcular
-derivadas de ordem elevada.
+derivadas de ordem elevada \cite{Chapra2011}.
 
 Considerando o problema geral
 
@@ -2459,7 +2498,80 @@ No presente trabalho, o RK4 é empregado na integração das equações
 governantes ao longo do comprimento do \textit{stiffener}, tanto
 durante as iterações do método do tiro quanto na obtenção da
 solução espacial correspondente aos parâmetros iniciais
-determinados.
+determinados. Essa combinação entre integração por RK4 e atendimento das condições
+nas extremidades também aparece no estudo de enrijecedores de
+\citeonline{Lopes2025}. A contribuição dessa comparação é situar o integrador no
+problema estrutural: ele realiza a integração de cada tentativa, enquanto o
+método do tiro ajusta a tentativa até atender ao contorno.
+
+% 17/11/2026 - Metodos usados no perfil e na reconstrucao, antes ausentes nesta secao.
+\subsection{Interpolação linear e integração pela regra dos trapézios}
+\label{subsec:interpolacao-trapezios}
+
+Nem toda operação espacial exige resolver uma EDO. Para obter o diâmetro entre
+dois pontos conhecidos do perfil, utiliza-se interpolação linear: os pontos
+são ligados por uma reta, cuja expressão no intervalo $[s_j,s_{j+1}]$ é
+\cite{Chapra2011}
+
+\begin{equation}
+  f(s)\approx f_j+
+    \frac{s-s_j}{s_{j+1}-s_j}(f_{j+1}-f_j),
+  \qquad s_j\leq s\leq s_{j+1}.
+  \label{eq:interpolacao-linear}
+\end{equation}
+
+Para o diâmetro externo de um trecho cilíndrico ou cônico, essa expressão
+reproduz o perfil definido pelos pontos. A aplicação é feita por trechos,
+respeitando suas junções. Isso não significa interpolar linearmente todas
+as propriedades: o momento de inércia, por exemplo, depende da quarta
+potência do diâmetro.
+
+A mesma aproximação por uma reta permite integrar uma função conhecida:
+a área em cada intervalo é a de um trapézio. Somando as áreas, obtém-se
+a regra dos trapézios composta,
+
+\begin{equation}
+  \int_{s_0}^{s_N}f(s)\,\mathrm{d}s
+    \approx\sum_{j=0}^{N-1}
+      \frac{s_{j+1}-s_j}{2}(f_j+f_{j+1}).
+  \label{eq:trapezios-composta}
+\end{equation}
+
+Os intervalos não precisam ter o mesmo comprimento. No trabalho, essa regra
+acumula as projeções $\cos\phi$ e $\sin\phi$ para reconstruir as coordenadas
+do eixo, conforme a Subseção~\ref{sec:reconstrucao-geometria-linear}.
+Ela integra campos angulares já calculados; o RK4, por sua vez, determina
+a evolução das incógnitas durante a solução das equações de governo.
+Assim, os dois procedimentos têm funções distintas e não são substitutos
+diretos um do outro.
+
+% 16/11/2026 - Separacao entre convergencia do tiro e demais fontes de erro.
+\subsection{Convergência e fontes de erro da solução}
+\label{subsec:convergencia-erros}
+
+Uma solução numérica pode satisfazer as condições de contorno com resíduo pequeno
+e ainda apresentar diferenças relevantes em relação à solução do modelo. O resíduo
+do tiro mede o atendimento ao contorno para a integração realizada, mas não mede,
+sozinho, todos os erros envolvidos. A análise deve distinguir:
+
+\begin{itemize}
+  \item o erro de integração espacial, avaliado pelo refinamento do passo usado no RK4;
+  \item a truncagem perturbativa, examinada pela contribuição das ordens sucessivas
+  e pela comparação com uma solução sem essa expansão;
+  \item a amostragem em fase, que influencia a localização e o valor dos máximos
+  reconstruídos;
+  \item o comprimento do domínio, cuja escolha pode aproximar o contorno da região
+  de interesse e alterar a resposta calculada.
+\end{itemize}
+
+Esses efeitos devem ser examinados separadamente, mantendo os demais controles fixos
+sempre que possível. Refinar a malha espacial não elimina a truncagem perturbativa,
+assim como aumentar o número de fases não corrige um domínio insuficiente.
+Na solução temporal complementar, o passo de tempo e a duração simulada também
+precisam ser avaliados, pois o primeiro controla a atualização da memória e a segunda
+determina quanto do transiente ainda está presente. O atendimento da tolerância do
+tiro é, assim, uma condição necessária ao procedimento, mas não uma garantia de
+precisão global.
 
 \subsection{Localização de raízes pelo método de Newton e pelo
 método de Illinois}
@@ -2475,10 +2587,9 @@ variável $x$ que satisfaça
   \label{eq:equacao-raiz}
 \end{equation}
 
-Segundo Chapra e Canale (2011), os métodos de localização de raízes
-podem ser divididos, de maneira geral, em métodos que isolam a raiz
+Os métodos de localização de raízes podem ser divididos em métodos que isolam a raiz
 em um intervalo e métodos abertos, que utilizam estimativas
-iniciais para produzir aproximações sucessivas.
+iniciais para produzir aproximações sucessivas \cite{Chapra2011}.
 
 No procedimento de solução do problema de contorno, o método de
 Newton é empregado na correção simultânea de múltiplas condições
@@ -2537,31 +2648,52 @@ evitar que um dos extremos permaneça fixo por muitas iterações,
 situação que pode tornar lenta a convergência do método da
 falsa posição convencional.
 
-O procedimento é repetido até que o resíduo ou a largura do
-intervalo satisfaça a tolerância estabelecida. Dessa forma,
+% 16/11/2026 - Criterio de parada temporal conforme o residuo angular implementado.
+O procedimento implementado é repetido até que o módulo do resíduo angular
+satisfaça a tolerância estabelecida. Dessa forma,
 obtém-se o momento inicial que permite satisfazer a condição
 de contorno angular na extremidade final do domínio.
 
+% 16/11/2026 - Definicao da memoria e distincao entre solucao temporal e harmonica.
 \subsection{Integração no domínio do tempo e variáveis internas
 viscoelásticas}
 \label{subsec:integracao-temporal}
 
-Além da formulação no domínio da frequência, o modelo utiliza
-uma abordagem no domínio do tempo para representar diretamente
-a evolução da resposta viscoelástica. Nessa formulação, o
-comportamento dependente do histórico de deformação é incorporado
-por meio de variáveis internas associadas aos termos da série
-de Prony.
+Na solução no domínio do tempo, acompanha-se a resposta desde uma condição inicial,
+atualizando a memória do material a cada incremento temporal. Isso permite representar
+o início do carregamento e a evolução transitória. Já a solução em frequência considera
+diretamente o regime periódico permanente: os efeitos da memória são incorporados por
+$G'$ e $G''$ em cada frequência, sem acompanhar os ciclos anteriores.
+As duas descrições partem da mesma lei constitutiva linear; diferem no modo de
+representar sua dependência temporal e, neste trabalho, também na aproximação
+perturbativa utilizada para a geometria na solução harmônica.
 
-Para cada termo de relaxação, define-se uma variável interna
-$q_m(s,t)$, cuja evolução temporal representa a contribuição
-histórica daquele mecanismo de relaxação para a resposta
-mecânica. Essa representação permite substituir a necessidade
-de armazenar todo o histórico de curvatura por um conjunto
-finito de variáveis de estado.
+Para a série de Prony e uma história inicialmente sem deformação, a derivada
+$\dot G(t)=-\sum_m(G_m/\tau_m)\exp(-t/\tau_m)$ permite reescrever a integral
+de memória da Equação~\eqref{eq:ve-M-k}. Define-se, para cada termo,
 
-A atualização das variáveis internas entre dois instantes
-consecutivos é realizada por uma relação recursiva da forma
+\begin{equation}
+  q_m(s,t)=\frac{1}{\tau_m}\int_0^t
+    \exp\left(-\frac{t-\tau}{\tau_m}\right)k(s,\tau)\,\mathrm{d}\tau,
+  \qquad q_m(s,0)=0.
+  \label{eq:definicao-variavel-interna}
+\end{equation}
+
+A variável $q_m$ reúne a influência das curvaturas anteriores ponderadas pelo
+decaimento exponencial. Dessa definição decorrem a equação de evolução e a relação
+momento-curvatura,
+
+\begin{align}
+  \frac{\partial q_m}{\partial t}&=\frac{k-q_m}{\tau_m},
+    \label{eq:evolucao-variavel-interna}\\
+  M(s,t)&=\left[EI_{PIPE}+I_{BS}(s)G(0)\right]k(s,t)
+    -I_{BS}(s)\sum_{m=1}^{N}G_m q_m(s,t).
+    \label{eq:momento-variaveis-internas}
+\end{align}
+
+Assim, a memória pode ser atualizada sem armazenar todo o histórico de curvatura.
+Considerando que a curvatura varie linearmente entre dois instantes consecutivos,
+a integração da equação de evolução fornece a atualização recursiva
 
 \begin{equation}
   q_m^{n+1}(s)
@@ -2574,18 +2706,19 @@ consecutivos é realizada por uma relação recursiva da forma
   \label{eq:recursao-viscoelastica}
 \end{equation}
 
-em que $n$ representa o índice do passo temporal, $k^n$ e
-$k^{n+1}$ são os valores da curvatura nos instantes consecutivos,
-e $a_m$, $w_{0,m}$ e $w_{1,m}$ são coeficientes determinados
-pelos parâmetros do respectivo termo de relaxação e pelo
-intervalo de tempo utilizado.
+em que $n$ identifica o passo temporal e $\Delta t=t_{n+1}-t_n$.
+Para $\Delta t>0$, os pesos são
 
-A utilização dessa formulação recursiva permite atualizar a
-contribuição de cada mecanismo de relaxação a partir do estado
-anterior e dos valores de curvatura no intervalo atual. Assim,
-a memória viscoelástica é preservada sem que seja necessário
-armazenar explicitamente todos os valores anteriores da
-curvatura, reduzindo os requisitos de memória computacional.
+\begin{align}
+  a_m&=\exp(-\Delta t/\tau_m),\\
+  w_{0,m}&=\frac{\tau_m}{\Delta t}(1-a_m)-a_m,\qquad
+  w_{1,m}=1-\frac{\tau_m}{\Delta t}(1-a_m).
+  \label{eq:pesos-memoria-prony}
+\end{align}
+
+Esses pesos integram a memória exatamente para a interpolação linear adotada
+no intervalo, não para uma história arbitrária de curvatura. Permanece, portanto,
+a necessidade de avaliar o passo temporal.
 
 A integração no domínio do tempo envolve, portanto, a evolução
 conjunta das variáveis mecânicas e das variáveis internas
@@ -2595,67 +2728,19 @@ relaxação, enquanto a condição de contorno é satisfeita pela
 determinação iterativa do momento inicial, conforme descrito
 na Subseção~\ref{subsec:busca-raizes}.
 
-\subsection{Reconstrução da resposta em fase e no domínio do
-tempo}
-\label{subsec:reconstrucao-resposta}
+Sob carregamento periódico, a resposta temporal pode se aproximar de um ciclo
+que se repete, à medida que os transientes deixam de ser relevantes. Nessa condição,
+a comparação com a solução em frequência deve utilizar a mesma fase do carregamento
+e os mesmos dados de material, geometria e contorno. A duração necessária não é
+definida apenas pelo período da carga: os tempos de relaxação também influenciam
+a persistência da memória.
 
-Após a determinação dos coeficientes harmônicos, a resposta
-mecânica é reconstruída por meio da combinação das diferentes
-componentes da expansão perturbativa. Essa etapa permite
-recuperar a dependência temporal das grandezas inicialmente
-representadas por coeficientes associados a cada frequência.
-
-A reconstrução é realizada pela avaliação das componentes
-harmônicas nos instantes ou fases de interesse. De maneira
-geral, a resposta pode ser expressa pela soma
-
-\begin{equation}
-  u(s,t) =
-  a_0(s) +
-  \sum_{n=1}^{N_h}
-  \left[
-    a_n(s)\cos(n\omega t) +
-    b_n(s)\sin(n\omega t)
-  \right],
-  \label{eq:reconstrucao-resposta}
-\end{equation}
-
-com a inclusão dos termos correspondentes às diferentes ordens
-perturbativas consideradas no modelo.
-
-A partir da distribuição espacial do ângulo $\phi(s,t)$, a
-geometria deformada do elemento é determinada pela integração
-das relações cinemáticas
-
-\begin{align}
-  \frac{dx}{ds} &= \cos\phi(s,t), \\
-  \frac{dy}{ds} &= \sin\phi(s,t).
-\end{align}
-
-Consequentemente, as coordenadas da linha deformada podem ser
-obtidas por
-
-\begin{align}
-  x(s,t) &=
-  x(0,t)+
-  \int_0^s \cos\phi(\xi,t)\,d\xi, \\
-  y(s,t) &=
-  y(0,t)+
-  \int_0^s \sin\phi(\xi,t)\,d\xi.
-\end{align}
-
-Essas integrais são avaliadas numericamente a partir da
-discretização espacial utilizada na solução. A reconstrução
-permite obter a geometria deformada e avaliar as grandezas
-mecânicas de interesse, incluindo curvatura, ângulo, tensão
-na região superior do elemento e envelopes de resposta ao
-longo do ciclo de carregamento.
-
-Dessa forma, a combinação entre a expansão perturbativa, a
-integração das equações diferenciais e a reconstrução
-harmônica possibilita representar a resposta do sistema tanto
-em função da posição quanto da fase ou do instante de
-carregamento.
+% 16/11/2026 - Reconstrucao condensada; procedimento detalhado mantido na metodologia.
+Recuperar uma história a partir dos coeficientes harmônicos consiste em avaliar
+a Equação~\eqref{eq:expansao-harmonica} nas fases desejadas. Essa reconstrução
+não acompanha o desaparecimento de transientes, nem transforma a solução harmônica
+em uma integração temporal. O cálculo dos campos, da geometria deformada e dos
+envelopes é desenvolvido na Seção~\ref{sec:reconstrucao-da-resposta}.
 
 % ----------------------------------------------------------------------
 % Pedro
@@ -2667,6 +2752,13 @@ resposta do conjunto linha flexível-enrijecedor. A análise é local e consider
 viscoelástico linear, com força e ângulo de topo variáveis de forma harmônica. A solução principal
 é obtida no domínio da frequência e representa a resposta periódica em regime permanente,
 sem descrever o início da aplicação do carregamento.
+
+% 16/11/2026 - Papel da solucao temporal sem alterar o escopo do estudo de geometrias.
+Como verificação complementar, a implementação dispõe de uma solução no domínio
+do tempo, que conserva a memória do material e permite acompanhar transientes.
+Sua função é apoiar a comparação entre as formulações e a análise do histórico
+de carregamento, conforme a Subseção~\ref{sec:verificacao-tempo-frequencia}.
+O estudo comparativo das três geometrias utiliza a solução harmônica principal.
 
 O trabalho é numérico e utiliza dados de relaxação publicados por \citeonline{Caire2011},
 sem realização de uma campanha experimental própria. A identificação de parâmetros é orientada
@@ -2698,65 +2790,104 @@ As etapas da metodologia são:
   o atendimento aos limites de curvatura e deformação adotados para o caso.
 \end{enumerate}
 
-A Figura~\ref{fig:fluxo-metodologia-linear} apresenta o fluxo geral da solução. Os dados do
-material e da geometria são reunidos no cálculo da rigidez, enquanto o carregamento participa
-da definição dos esforços. Essas informações alimentam o sistema de equações resolvido
-pelo método do tiro. Somente após a convergência são reconstruídas as respostas utilizadas
-nas verificações. A correção das estimativas no método do tiro segue o procedimento
-apresentado na Subseção~\ref{subsec:metodo-tiro}.
+% 17/11/2026 - Leitura do fluxograma organizada pela sequencia efetiva da analise.
+A Figura~\ref{fig:fluxo-metodologia-linear} mostra como os dados de entrada
+chegam aos resultados. Primeiro, define-se o conjunto de parâmetros do material:
+os valores podem ser identificados a partir das curvas de relaxação ou
+obtidos do trabalho de Caire. São duas alternativas, e não duas etapas
+obrigatórias em sequência. No caso de referência e na comparação das três
+geometrias, utilizam-se os valores publicados por Caire.
 
-\begin{figure}[!htbp]
+Com o material definido, calculam-se os módulos de armazenamento e de perda.
+Esses módulos e as propriedades da seção determinam a rigidez do conjunto.
+O carregamento fornece a outra parte da formulação, por meio dos coeficientes
+do esforço cortante. A reunião dessas relações resulta no sistema de sessenta
+equações diferenciais.
+
+No método do tiro, estimam-se as curvaturas no engaste e integram-se as equações
+até a extremidade da linha. Se o contorno angular não for atendido dentro da
+tolerância, corrigem-se as estimativas e repete-se a integração. A correção
+utiliza Newton amortecido; quando necessário, recorre-se à continuação em
+carga. Os limites de iteração e o critério de parada estão descritos na
+Subseção~\ref{sec:controles-numericos}.
+
+Após a convergência, reconstroem-se o ângulo, a curvatura e a forma deformada
+para localizar os pontos críticos e avaliar os limites de projeto. O ramo
+tracejado indica uma verificação complementar: a solução no domínio do tempo
+recebe os mesmos dados e pode ser comparada com a solução harmônica.
+Essa comparação não é uma etapa obrigatória de cada simulação das três
+geometrias.
+
+% 16/11/2026 - Fluxo redesenhado com origem dos parametros, decisao e verificacao temporal.
+\begin{figure}[p]
   \centering
   \caption{Fluxograma geral da análise viscoelástica linear do conjunto linha flexível-enrijecedor.}
   \label{fig:fluxo-metodologia-linear}
   \begin{tikzpicture}[
     processo/.style={draw, line width=0.6pt, fill=white, align=center,
-      text width=2.9cm, minimum height=1.2cm, inner sep=5pt,
-      font=\small\linespread{1}\selectfont},
+      text width=4cm, minimum height=1.15cm, inner sep=5pt,
+      font=\small\linespread{1}\selectfont,
+      execute at begin node={\hyphenpenalty=10000\relax\exhyphenpenalty=10000\relax}},
     etapa/.style={processo, fill=gray!12, text width=5.8cm},
-    fluxo/.style={->, >=stealth, line width=0.6pt}
+    decisao/.style={processo, diamond, aspect=2.5, text width=2cm, inner sep=2pt},
+    fluxo/.style={->, >=stealth, line width=0.6pt},
+    complementar/.style={fluxo, dashed}
   ]
-    \node[processo] (material) at (-5.1,0)
-      {Material linear\\$G_{01}$, $G_{m1}$ e $\tau_m$};
-    \node[processo] (geometria) at (-1.7,0)
-      {Geometria\\$D_e(s)$, $D_i$ e $L$};
-    \node[processo] (linha) at (1.7,0)
-      {Linha flexível\\$(EI)_{\mathrm{linha}}$};
-    \node[processo] (carga) at (5.1,0)
-      {Carregamento\\$F_0$, $\phi_{0L}$, $\omega$, $\gamma$, $\epsilon$ e $\alpha$};
-    \node[processo] (modulos) at (-5.1,-2)
-      {Módulos de armazenamento e de perda};
-    \node[processo] (secao) at (-1.7,-2)
-      {Propriedades da seção\\$I_e(s)$ e $\mathrm{d}I_e/\mathrm{d}s$};
-    \node[processo] (rigidez) at (-1.7,-4)
-      {Coeficientes de rigidez por harmônico};
-    \node[processo] (esforcos) at (5.1,-3.5)
-      {Expansão perturbativa e coeficientes do esforço cortante};
-    \node[etapa] (edos) at (1.7,-6)
-      {Montagem do sistema de 60 equações diferenciais};
-    \node[etapa] (tiro) at (1.7,-8)
-      {Método do tiro\\Integração RK4, correção das curvaturas iniciais e continuação em carga};
-    \node[etapa] (resposta) at (1.7,-10.2)
-      {Reconstrução após a convergência\\Ângulo, curvatura e forma deformada};
-    \node[processo] (criterios) at (-1.7,-13)
-      {Resultados e critérios\\MBR, deformação do poliuretano e volume};
-    \node[processo] (validacao) at (5.1,-13)
-      {Verificações e comparação com a solução no tempo e a literatura};
+    % 17/11/2026 - Rotulos em frases curtas, preservando a estrutura visual aprovada.
+    \node[processo, text width=5.7cm] (identificacao) at (-3.9,0)
+      {Ajustar as curvas de relaxação\\e identificar os parâmetros};
+    \node[processo, text width=5.7cm] (referencia) at (3.9,0)
+      {Usar os parâmetros de Caire\\no caso de referência\\e nas três geometrias};
+    \node[etapa, text width=6.4cm] (material) at (0,-2.05)
+      {Definir os parâmetros do material\\$G_{01}$, $G_{m1}$ e $\tau_m$};
+    \node[processo] (geometria) at (-5,-4.25)
+      {Geometria e linha\\$D_e(s)$, $D_i$ e $L$\\$(EI)_{\mathrm{linha}}$};
+    \node[processo] (modulos) at (0,-4.25)
+      {Calcular os módulos\\$G'(n\omega)$ e $G''(n\omega)$};
+    \node[processo] (carga) at (5,-4.25)
+      {Carregamento aplicado\\$F_0$, $\phi_{0L}$, $\omega$, $\gamma$, $\epsilon$ e $\alpha$};
+    \node[processo, text width=5cm] (rigidez) at (-3,-6.5)
+      {Calcular a rigidez por harmônico\\usando $I_e(s)$, sua derivada\\e os módulos do material};
+    \node[processo, text width=5cm] (esforcos) at (3,-6.5)
+      {Expandir o esforço cortante\\até a terceira ordem};
+    \node[etapa, text width=7cm] (edos) at (0,-8.4)
+      {Montar o sistema de 60 EDOs\\30 coeficientes de curvatura\\e 30 coeficientes de ângulo};
+    \node[etapa] (tiro) at (0,-10.25)
+      {Método do tiro\\Estimar as curvaturas na base\\e integrar por RK4};
+    \node[decisao] (convergencia) at (0,-12.15)
+      {Convergiu?};
+    \node[processo, text width=3.7cm] (correcao) at (-5.2,-12.15)
+      {Newton amortecido\\e, se necessário,\\continuação em carga};
+    \node[etapa] (resposta) at (0,-14.5)
+      {Reconstruir o ângulo,\\a curvatura e a forma\\deformada do conjunto};
+    \node[processo, dashed, text width=3cm] (tempo) at (5.45,-14.5)
+      {Solução no tempo\\com os mesmos\\dados de entrada};
+    \node[processo, text width=5.5cm] (criterios) at (-3.85,-17.4)
+      {Localizar máximos e pontos críticos\\Verificar MBR e deformação\\Calcular o volume};
+    \node[processo, text width=5.5cm] (validacao) at (3.85,-17.4)
+      {Comparar com a literatura\\e com a solução no tempo};
+    \draw[fluxo] (identificacao.south) -- (-3.9,-1) -- (material.north);
+    \draw[fluxo] (referencia.south) -- (3.9,-1) -- (material.north);
     \draw[fluxo] (material) -- (modulos);
-    \draw[fluxo] (geometria) -- (secao);
-    \draw[fluxo] (modulos.south) -- (-5.1,-4) -- (rigidez.west);
-    \draw[fluxo] (secao) -- (rigidez);
-    \draw[fluxo] (linha.south) -- (1.7,-4) -- (rigidez.east);
-    \draw[fluxo] (carga) -- (esforcos);
-    \draw[fluxo] (rigidez.south) -- (-1.7,-6) -- (edos.west);
-    \draw[fluxo] (esforcos.south) -- (5.1,-6) -- (edos.east);
+    \draw[fluxo] (geometria.south) -- (-5,-5.4) -- (-3,-5.4) -- (rigidez.north);
+    \draw[fluxo] (modulos.south) -- (0,-5.4) -- (-3,-5.4) -- (rigidez.north);
+    \draw[fluxo] (carga.south) -- (5,-5.4) -- (3,-5.4) -- (esforcos.north);
+    \draw[fluxo] (rigidez.south) -- (-3,-7.6) -- (edos.north);
+    \draw[fluxo] (esforcos.south) -- (3,-7.6) -- (edos.north);
     \draw[fluxo] (edos) -- (tiro);
-    \draw[fluxo] (tiro) -- (resposta);
-    \draw[fluxo] (resposta.south) -- (1.7,-11.25) -- (-1.7,-11.25) -- (criterios.north);
-    \draw[fluxo] (resposta.south) -- (1.7,-11.25) -- (5.1,-11.25) -- (validacao.north);
+    \draw[fluxo] (tiro) -- (convergencia);
+    \draw[fluxo] (convergencia.west) -- node[above, font=\small] {Não} (correcao.east);
+    \draw[fluxo] (correcao.north) -- (-5.2,-10.25) -- (tiro.west);
+    \draw[fluxo] (convergencia.south) -- node[right, font=\small] {Sim} (resposta.north);
+    \draw[fluxo] (resposta.south) -- (0,-16) -- (-3.85,-16) -- (criterios.north);
+    \draw[fluxo] (resposta.south) -- (0,-17.4) -- (validacao.west);
+    \draw[complementar] (material.east) -- (7.4,-2.05) -- (7.4,-14.5) -- (tempo.east);
+    \draw[complementar] (tempo.south) -- (5.45,-16) -- (3.85,-16) -- (validacao.north);
   \end{tikzpicture}
   \fonte{Autoria própria}
 \end{figure}
+% 16/11/2026 - Figura concluida antes dos criterios, sem interromper suas equacoes.
+\clearpage
 
 A comparação com a literatura deve distinguir os dados publicados em tabelas dos valores
 obtidos por leitura de gráficos, sujeitos à precisão dessa leitura. Da mesma forma, parâmetros
@@ -2952,14 +3083,17 @@ tensão são próprios de cada curva, enquanto os quatro tempos são comuns às 
 Esse número de termos acompanha a representação utilizada no caso de referência de
 \citeonline{Caire2011}.
 
-A identificação é realizada em duas etapas combinadas. O método dos mínimos quadrados busca
-os parâmetros que reduzem a soma dos quadrados das diferenças entre a curva calculada e
-os dados de relaxação. Para uma estimativa dos tempos,
-calculam-se os cinco coeficientes de cada curva por mínimos quadrados, impondo valores
-não negativos. Em seguida, os tempos são atualizados para reduzir o erro conjunto das
-seis curvas. Esse processo utiliza as rotinas \texttt{lsq\_linear} e
-\texttt{least\_squares} da biblioteca SciPy. Os tempos são parametrizados por incrementos
-positivos, mantendo-se $\tau_1<\tau_2<\tau_3<\tau_4$ durante a busca.
+% 17/11/2026 - Encadeamento do ajuste linear interno com a busca nao linear dos tempos.
+A identificação combina as duas formas de mínimos quadrados discutidas na
+Subseção~\ref{subsec:minimos-quadrados}. Para cada tentativa dos quatro tempos,
+a rotina \texttt{lsq\_linear} calcula os cinco coeficientes de tensão de cada
+curva, impondo valores não negativos. Os resíduos resultantes são fornecidos
+à rotina \texttt{least\_squares}, que propõe novos tempos para reduzir o erro
+conjunto das seis curvas. A cada nova avaliação, os coeficientes de tensão
+são calculados novamente: a busca dos tempos utiliza o erro que resta após
+resolver a parte linear, conforme a Equação~\eqref{eq:ajuste-separavel-prony}.
+Os tempos são parametrizados por incrementos positivos, mantendo-se
+$\tau_1<\tau_2<\tau_3<\tau_4$ durante a busca.
 
 Para evitar que uma curva domine o ajuste apenas por apresentar tensões maiores ou mais
 pontos, seus resíduos são divididos pela amplitude de variação da tensão e pela raiz
@@ -2975,6 +3109,8 @@ quadrada do número de pontos. Para as curvas utilizadas, a função objetivo é
 em que $n_i$ é o número de pontos da curva $i$, $t_{ij}$ é o tempo do ponto $j$ e
 $\Delta\sigma_i$ é a diferença entre a maior e a menor tensão dessa curva. A ponderação
 equilibra a participação das curvas sem alterar as unidades dos coeficientes finais.
+Na notação da Equação~\eqref{eq:minimos-quadrados}, cada ponto da curva $i$
+recebe o peso $w_{ij}=1/[n_i(\Delta\sigma_i)^2]$.
 
 Na configuração do programa, as estimativas iniciais dos tempos são 1, 10, 100 e
 1000 segundos. Sua atualização utiliza o algoritmo de região de confiança
@@ -3002,9 +3138,10 @@ para cada curva.
 \subsection{Identificação das Funções de Relaxação}
 \label{sec:identificacao-funcoes-relaxacao}
 
-O ajuste anterior descreve cada curva de relaxação separadamente. Para reunir essas curvas,
-é necessário representar como a tensão muda tanto com o tempo quanto com o nível de
-deformação. Em um material viscoelástico linear, dobrar a deformação de um ensaio ideal de
+O ajuste anterior fornece coeficientes de tensão próprios de cada curva,
+com tempos de relaxação comuns a todas elas. A etapa seguinte relaciona esses
+coeficientes ao nível de deformação, para reunir as curvas em uma mesma
+representação constitutiva. Em um material viscoelástico linear, dobrar a deformação de um ensaio ideal de
 relaxação dobra a tensão em todos os instantes. Quando essa proporcionalidade não ocorre,
 uma única função linear não descreve toda a família de curvas.
 
@@ -3047,11 +3184,15 @@ aos coeficientes do material por:
   \qquad m=0,1,2,3,4.
 \end{equation}
 
+% 17/11/2026 - Diferenca entre a regressao polinomial e a linearidade do material.
 Para cada valor de $m$, ajusta-se um polinômio sem termo independente aos seis níveis de
 deformação. Os quatro coeficientes são obtidos por mínimos quadrados, utilizando
 \texttt{numpy.linalg.lstsq}. O resultado é uma matriz com cinco linhas, correspondentes
 ao termo de longo prazo e aos quatro termos exponenciais, e quatro colunas, correspondentes
 às funções $G_1$, $G_2$, $G_3$ e $G_4$.
+Esse ajuste é linear nos coeficientes $G_{mk}$, embora represente uma dependência
+não linear em relação à deformação. Não se trata de uma nova identificação
+dos tempos de relaxação.
 
 Para melhorar o comportamento numérico dessa regressão, o programa utiliza temporariamente
 as deformações divididas por 0,30 e converte os coeficientes de volta à escala original após
@@ -3084,6 +3225,17 @@ terceira e quarta potências da deformação na solução estrutural. Isso não 
 todas as curvas utilizadas na identificação, inclusive as de maior deformação, sejam
 lineares. O bom ajuste da representação polinomial completa também não demonstra, por
 si só, que a parcela linear seja adequada em toda a faixa de 2,5\% a 30\%.
+
+% 16/11/2026 - Delimitacao da parcela linear e sua diferenca em relacao ao limite admissivel.
+Neste trabalho, a viscoelasticidade linear é adotada como recorte da análise para
+comparar as geometrias sob a mesma lei de material. Os ensaios disponíveis permitem
+identificar a parcela linear da representação escolhida, mas, por não incluírem
+níveis abaixo de 2,5\%, não estabelecem diretamente seu comportamento no limite
+de deformações muito pequenas. Também não se utiliza o limite admissível de 15\%
+como evidência de linearidade: ele serve apenas à verificação de projeto.
+Consequentemente, reproduzir o caso linear de Caire confere a implementação
+desse modelo, sem comprovar que a aproximação constitutiva descreva o poliuretano
+real em toda a faixa de deformação calculada.
 
 Para o modelo linear de Maxwell generalizado, o programa verifica
 tempos positivos e contribuições de relaxação não negativas, além da consistência dos
@@ -3206,7 +3358,8 @@ O momento de inércia diminui ao longo do cone, reduzindo gradualmente a contrib
 enrijecedor à rigidez do conjunto. Como depende da quarta potência dos diâmetros, pequenas
 mudanças no perfil podem produzir diferenças relevantes na resposta.
 
-O programa obtém $D_e(s)$ por interpolação linear entre os pontos que definem o perfil
+O programa obtém $D_e(s)$ por interpolação linear entre os pontos que definem o perfil,
+conforme a Subseção~\ref{subsec:interpolacao-trapezios},
 e calcula a derivada de $I_e(s)$ em cada trecho por:
 
 \begin{equation}
@@ -3316,15 +3469,15 @@ O diagrama de corpo livre da Figura~\ref{fig:dcl-souza} auxilia a interpretaçã
 equilíbrio do conjunto: a linha é engastada em $s=0$, recebe a força $F$ na extremidade
 $s=L$ e apresenta rigidez flexional variável ao longo do trecho envolvido pelo
 enrijecedor. O detalhe de um elemento da linha indica os esforços internos que
-participam do equilíbrio. Essa representação, originalmente atribuída a Boef e Out
-(1990), foi reproduzida por \citeonline{Souza2008}.
+participam do equilíbrio.
 
 \begin{figure}[!htbp]
   \centering
   \caption{Diagrama de forças e equilíbrio de um elemento do conjunto linha flexível-enrijecedor.}
   \label{fig:dcl-souza}
   \includegraphics[width=0.65\textwidth]{pics/souza2008-dcl.png}
-  \fonte{Boef e Out (1990), reproduzido em \citeonline{Souza2008}.}
+  % 17/11/2026 - Credito atribuido aos autores originais do diagrama.
+  \fonte{\citeonline{BoefOut1990}.}
 \end{figure}
 
 Mantém-se na figura a notação da fonte original. O ângulo da linha, indicado por
@@ -3447,10 +3600,14 @@ dos coeficientes harmônicos correspondentes serão apresentadas após sua defin
 \section{Equações de Governo para Viscoelasticidade Linear}
 \label{sec:implementando-viscoelasticidade}
 
+% 16/11/2026 - Formulacao valida para os dois conjuntos de parametros, sem confundir sua origem.
 As equações de governo reúnem as relações geométricas, o equilíbrio e a resposta
 do material. A formulação apresentada nesta seção segue o desenvolvimento da
-seção 3.4 de \citeonline{Caire2011}, utilizando a função longitudinal $G_1(t)$
-identificada na Seção~\ref{sec:caracterizacao-do-material}. Apresenta-se primeiro
+seção 3.4 de \citeonline{Caire2011}, utilizando a função longitudinal $G_1(t)$.
+Seus parâmetros podem ser os publicados por Caire ou os obtidos pela identificação
+descrita na Seção~\ref{sec:caracterizacao-do-material}, sem alterar a estrutura
+das equações. No caso de referência e no estudo comparativo, utiliza-se o conjunto
+publicado, conforme a Subseção~\ref{sec:material-ambiente-linha-flexivel}. Apresenta-se primeiro
 a relação no domínio do tempo, para explicitar a memória do material, e depois
 a formulação harmônica em regime permanente utilizada na solução principal.
 
@@ -3799,6 +3956,92 @@ satisfazer esse contorno, utilizando a integração RK4 e a correção de Newton
 apresentadas no referencial teórico. Após a convergência, esses coeficientes
 alimentam a reconstrução descrita a seguir.
 
+% 16/11/2026 - Criterios efetivos do tiro e separacao das verificacoes de precisao.
+\subsection{Controles Numéricos da Solução}
+\label{sec:controles-numericos}
+
+Na configuração principal, o método do tiro ajusta as trinta curvaturas iniciais
+até que o maior módulo dos resíduos dos coeficientes angulares na extremidade
+seja inferior ou igual a $10^{-6}\,\mathrm{rad}$. O critério utiliza a norma
+infinita,
+
+\begin{equation}
+  \|\mathbf R\|_{\infty}=\max_{0\leq i\leq29}
+    |\phi_i(L)-\phi_{i,\mathrm{prescrito}}(L)|
+    \leq10^{-6}\,\mathrm{rad}.
+  \label{eq:tolerancia-angular-tiro}
+\end{equation}
+
+São permitidas até trinta iterações de Newton por tentativa de solução, com
+amortecimento e continuação em carga conforme a Subseção~\ref{subsec:metodo-tiro}.
+O passo espacial nominal é de 0,01 m, com inclusão das junções do perfil na malha.
+A reconstrução utiliza 361 fases. A tolerância angular controla o atendimento
+ao contorno dos coeficientes, não a precisão dos máximos físicos reconstruídos.
+
+As fontes de erro discutidas na Subseção~\ref{subsec:convergencia-erros} exigem
+avaliações distintas. O refinamento espacial deve acompanhar os máximos de
+curvatura e deformação e suas posições, enquanto o aumento do número de fases
+avalia a amostragem dos extremos. As reconstruções de primeira, segunda e terceira
+ordens permitem examinar a contribuição das correções perturbativas. A solução
+temporal complementar permite uma comparação sem essa truncagem geométrica,
+desde que seus próprios erros e transientes sejam avaliados.
+
+Esses controles não substituem a avaliação do comprimento do domínio:
+o ângulo é prescrito em uma seção finita da linha, cuja proximidade pode
+influenciar a região do enrijecedor. Os valores de passo e tolerância aqui
+informados são configurações de cálculo, não resultados de um estudo de
+convergência. A suficiência da malha, da amostragem e do domínio não deve ser
+concluída apenas porque o tiro convergiu.
+
+% 16/11/2026 - Procedimento complementar de comparacao entre tempo e frequencia.
+\subsection{Verificação Complementar no Domínio do Tempo}
+\label{sec:verificacao-tempo-frequencia}
+
+A rotina temporal utiliza a mesma lei viscoelástica linear e o mesmo domínio
+local da solução principal, mas resolve o equilíbrio em momento e ângulo a
+cada instante. A curvatura é obtida da
+Equação~\eqref{eq:momento-variaveis-internas}, utilizando
+$G=G_1$, $I_{BS}=I_e$ e $k=\kappa$ na notação da metodologia.
+As variáveis internas são atualizadas pela
+Equação~\eqref{eq:recursao-viscoelastica}. Não se aplica, nessa rotina,
+a expansão perturbativa do seno do ângulo relativo; por isso, a comparação
+permite examinar o efeito dessa aproximação na solução harmônica.
+O equilíbrio permanece quase-estático em ambas as abordagens, sem forças de inércia.
+
+O cálculo parte de uma condição descarregada e sem memória, com $q_m(s,0)=0$.
+Em cada passo temporal, o programa atualiza a contribuição das curvaturas
+anteriores, estima o momento no engaste e integra as equações espaciais por RK4.
+O momento inicial é corrigido pelo método de Illinois até que o módulo
+da diferença entre o ângulo terminal calculado e o prescrito seja inferior a
+$10^{-11}\,\mathrm{rad}$. Essa tolerância não elimina o erro da atualização temporal.
+
+Na configuração disponível para comparar as formulações, aplica-se primeiro
+o carregamento médio constante durante 14\,000 s, com oitenta passos
+distribuídos geometricamente entre 0,5 s e esse instante, além do instante inicial.
+Em seguida, aplicam-se seis períodos do carregamento harmônico,
+com passo temporal de 0,5 s, mantendo os mesmos valores de frequência, amplitudes
+e diferença de fase utilizados na reconstrução harmônica.
+O último ciclo é utilizado para comparar o maior módulo da curvatura nas duas
+soluções. A fase da solução em frequência é contada a partir do início
+da etapa harmônica, e não do início da simulação temporal.
+
+A duração prescrita não garante, por si só, que o regime permanente tenha sido
+atingido. É necessário examinar a repetição entre ciclos e a sensibilidade a
+tempos simulados maiores, além de refinar o passo temporal. Somente quando a
+influência dos transientes for suficientemente pequena a diferença entre as
+respostas pode ser interpretada principalmente em termos da aproximação
+perturbativa e dos erros numéricos restantes.
+
+A implementação também permite comparar a aplicação harmônica desde o instante
+inicial com sua aplicação após um intervalo sob carregamento médio constante.
+Essa comparação evidencia que histórias anteriores diferentes podem produzir
+respostas distintas durante a evolução, mesmo com o mesmo carregamento no
+intervalo observado. Para o trabalho, a solução temporal oferece, portanto,
+uma conferência complementar à reprodução de Caire, sem constituir uma nova
+validação experimental. As configurações descritas identificam o procedimento
+disponível; sua existência no programa não comprova, isoladamente, a concordância
+entre as soluções nem a eliminação dos transientes.
+
 % Reconstrução das Respostas para o Modelo de Caire
 \section{Reconstrução da Resposta}
 \label{sec:reconstrucao-da-resposta}
@@ -3891,7 +4134,8 @@ das Equações~\eqref{eq:geometria-x-metodologia} e
 \end{align}
 
 Essas integrais acumulam as projeções dos pequenos trechos da linha. O
-programa as avalia pela regra dos trapézios na malha espacial da solução.
+programa as avalia pela regra dos trapézios na malha espacial da solução,
+apresentada na Subseção~\ref{subsec:interpolacao-trapezios}.
 Para duas posições consecutivas, por exemplo:
 
 \begin{align}
@@ -4033,9 +4277,9 @@ carregamento. Dessa forma, a aplicação ao estudo de caso permanece limitada
 
 O estudo de caso compara três geometrias de enrijecedores submetidas às mesmas
 condições de material, linha flexível e carregamento. Além do caso de referência
-de \citeonline{Caire2011}, são selecionadas duas geometrias atribuídas a Boef
-e Out (1990) e a Lane et al. (1995), reunidas na revisão de
-\citeonline{Souza2008}. O objetivo é avaliar como a mudança das dimensões
+de \citeonline{Caire2011}, são selecionadas duas geometrias de
+\citeonline{BoefOut1990} e de \citeonline{Lane1995}.
+O objetivo é avaliar como a mudança das dimensões
 do enrijecedor altera a curvatura da linha, a deformação do poliuretano e o volume
 de material necessário.
 
@@ -4112,16 +4356,17 @@ $G$ representa o diâmetro externo da linha, não seu diâmetro interno.
   \fonte{\citeonline{Souza2008}.}
 \end{figure}
 
-A Tabela~\ref{tab:geometrias-originais-estudo} reproduz somente as duas
-geometrias adicionais selecionadas, preservando os valores reunidos por
-Souza. A escolha permite comparar um enrijecedor de maior diâmetro na base
+% 17/11/2026 - Dados geometricos creditados aos trabalhos que os originaram.
+A Tabela~\ref{tab:geometrias-originais-estudo} apresenta as duas
+geometrias adicionais selecionadas, preservando suas dimensões originais.
+A escolha permite comparar um enrijecedor de maior diâmetro na base
 e menor comprimento, E2, com outro de menor diâmetro e maior comprimento,
 E3. As diferenças incluem o trecho cilíndrico e a inclinação do cone;
 portanto, não se trata de variar uma única dimensão isoladamente.
 
 \begin{table}[!htbp]
   \centering
-  \caption{Dimensões das geometrias adicionais na compilação de Souza, em metros.}
+  \caption{Dimensões originais das geometrias adicionais, em metros.}
   \label{tab:geometrias-originais-estudo}
   \begin{tabular}{l c c c c c c c}
     \hline
@@ -4131,11 +4376,10 @@ portanto, não se trata de variar uma única dimensão isoladamente.
     Lane et al. & 0,575 & 0,248 & 0,425 & 1,925 & 3,850 & 5,775 & 0,248\\
     \hline
   \end{tabular}
-  \fonte{Dados de Boef e Out (1990) e Lane et al. (1995), reunidos em
-  \citeonline{Souza2008}.}
+  \fonte{\citeonline{BoefOut1990} e \citeonline{Lane1995}.}
 \end{table}
 
-Na tabela original, Souza informa que o trecho cilíndrico de Lane et al.
+Na compilação de \citeonline{Souza2008}, informa-se que o trecho cilíndrico de Lane et al.
 não foi avaliado analiticamente. O comprimento total registrado,
 $F=5{,}775\,\mathrm{m}$, corresponde a $D+E$, sem somar o valor de $C$.
 Também informa, para Boef e Out, um diâmetro interno da linha de 0,1016 m,

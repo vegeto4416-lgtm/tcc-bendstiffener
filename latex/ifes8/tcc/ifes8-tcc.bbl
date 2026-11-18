@@ -20,6 +20,14 @@ Dispon{\'\i}vel em:
 {ASIMOV, Isaac. The mammoth book of zingers, quips, and one-liners.
 In:  \underline{\ \ \ \ \ \ \ \ }. [S.l.]: Running Press, 2004. p.~299.}
 
+\bibitem[Boef e Out 1990]{BoefOut1990}
+\abntrefinfo{Boef e Out}{BOEF; OUT}{1990}
+{BOEF, W. J.~C.; OUT, J. M.~M. Analysis of a flexible-riser top connection with
+  bend restrictor. In:  \emph{Proceedings of the 22nd Annual Offshore
+  Technology Conference}. Houston: Offshore Technology Conference, 1990. p.
+  131--142. OTC 6436. Dispon{\'\i}vel em:
+  \url{https://doi.org/10.4043/6436-MS}. Acesso em: 17 nov. 2026.}
+
 \bibitem[Caire 2005]{Caire2005}
 \abntrefinfo{Caire}{CAIRE}{2005}
 {CAIRE, Marcelo.
@@ -34,6 +42,18 @@ Disserta\c{c}\~{a}o (Dissertação (Mestrado em Engenharia Oceânica)) ---
 \emph{Modelo de comportamento viscoelástico de enrijecedores à flexão}.
 Tese (Doutorado em Engenharia Oceânica) --- Universidade Federal do Rio de
   Janeiro, COPPE, Programa de Engenharia Oceânica, Rio de Janeiro, 2011.}
+
+\bibitem[Chapra e Canale 2011]{Chapra2011}
+\abntrefinfo{Chapra e Canale}{CHAPRA; CANALE}{2011}
+{CHAPRA, Steven~C.; CANALE, Raymond~P. \emph{Métodos Numéricos para
+  Engenharia}. 5. ed. Porto Alegre: AMGH, 2011.}
+
+\bibitem[Lane et al. 1995]{Lane1995}
+\abntrefinfo{Lane et al.}{LANE et al.}{1995}
+{LANE, M. et al. Bend stiffeners for flexible risers. In:  \emph{Proceedings of
+  the 27th Annual Offshore Technology Conference}. Houston: Offshore Technology
+  Conference, 1995. p. 345--353. OTC 7730. Dispon{\'\i}vel em:
+  \url{https://doi.org/10.4043/7730-MS}. Acesso em: 17 nov. 2026.}
 
 \bibitem[Lopes 2025]{Lopes2025}
 \abntrefinfo{Lopes}{LOPES}{2025}
@@ -96,13 +116,8 @@ Disserta\c{c}\~{a}o (Mestrado em Engenharia Mecânica) --- Universidade de São
 Dispon{\'\i}vel em: \url{https://doi.org/10.1080/14786442108636264}. Acesso em:
   2 nov. 2026.}
 
-\bibitem[Zill e Cullen 2001]{Zill2001v1}
-\abntrefinfo{Zill e Cullen}{ZILL; CULLEN}{2001a}
-{ZILL, Dennis~G.; CULLEN, Michael~R. \emph{Equações diferenciais}. 3. ed.
-  São Paulo: Pearson Makron Books, 2001. v.~1.}
-
 \bibitem[Zill e Cullen 2001]{Zill2001v2}
-\abntrefinfo{Zill e Cullen}{ZILL; CULLEN}{2001b}
+\abntrefinfo{Zill e Cullen}{ZILL; CULLEN}{2001}
 {ZILL, Dennis~G.; CULLEN, Michael~R. \emph{Equações diferenciais}. 3. ed.
   São Paulo: Pearson Makron Books, 2001. v.~2.}
 
