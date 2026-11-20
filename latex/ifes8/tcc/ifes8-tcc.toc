@@ -78,16 +78,16 @@
 \contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Resultados e Discussão}}{89}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Validação do Programa}{89}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Reprodução do Comportamento de Relaxação}{89}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Reprodução da Resposta Estrutural}{89}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Solução do Estudo de Caso}{89}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Resultados Obtidos}{89}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Comparação dos Resultados}{89}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.1.2}Reprodução da Resposta Estrutural}{91}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Solução do Estudo de Caso}{91}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Resultados Obtidos}{91}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Comparação dos Resultados}{93}{subsection.4.2.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclusão}}{90}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Trabalhos Futuros}{90}{section.5.1}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclusão}}{95}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Trabalhos Futuros}{95}{section.5.1}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{91}{section*.38}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{96}{section*.45}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setcounter {tocdepth}{0}
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
@@ -95,7 +95,7 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Demonstração do Teorema Loren Ipsum}}{94}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Demonstração do Teorema Loren Ipsum}}{99}{appendix.A}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
@@ -103,4 +103,4 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Exemplo de lombada}}{96}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Exemplo de lombada}}{101}{appendix.anexochapback.1}%

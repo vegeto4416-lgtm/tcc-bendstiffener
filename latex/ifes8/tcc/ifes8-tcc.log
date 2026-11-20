@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.11.14)  17 NOV 2026 22:19
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.11.14)  20 NOV 2026 13:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1567,7 +1567,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 182--187
 ] (ifes8-tcc.toc [8
 
 
-]) [9]
+]
+Overfull \hbox (1.42145pt too wide) detected at line 106
+ \TU/Arial(0)/b/n/12 101
+ []
+
+) [9]
 Cap\'{\i }tulo 1.
 File: pics/Bend stiffener, installation expo_windjounal_haracop.jpeg Graphic fi
 le (type bmp)
@@ -1659,29 +1664,39 @@ File: pics/souza2008-dimensoes-comparacao.png Graphic file (type bmp)
 <pics/souza2008-dimensoes-comparacao.png>
  [85] [86] [87] [88]
 Cap\'{\i }tulo 4.
+File: pics/all-relaxation-fits.png Graphic file (type bmp)
+<pics/all-relaxation-fits.png>
 [89
 
-]
+] [90]
+File: pics/caire-curvature-envelope.png Graphic file (type bmp)
+<pics/caire-curvature-envelope.png>
+ [91] [92]
+File: pics/comparacao-geometria.png Graphic file (type bmp)
+<pics/comparacao-geometria.png>
+File: pics/fatores-seguranca.png Graphic file (type bmp)
+<pics/fatores-seguranca.png>
+ [93] [94]
 Cap\'{\i }tulo 5.
-(ifes8-tcc.bbl [90
+(ifes8-tcc.bbl [95
 
 ]
 bibitemlist
-[91
+[96
 
-]) [92] [93
+]) [97] [98
 
 ]
 AP\^ENDICE A.
-[94
+[99
 
-] [95
+] [100
 
 ]
 ANEXO A.
 File: pics/normas-ifes-apendice-d.png Graphic file (type bmp)
 <pics/normas-ifes-apendice-d.png>
-[96
+[101
 
 ]
 \tf@toc=\write5
@@ -1696,12 +1711,12 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 35597 strings out of 402987
- 689165 string characters out of 5448523
- 1218994 words of memory out of 5000000
- 63803 multiletter control sequences out of 15000+600000
+ 35640 strings out of 402987
+ 690569 string characters out of 5448523
+ 1219664 words of memory out of 5000000
+ 63842 multiletter control sequences out of 15000+600000
  636094 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  113i,20n,121p,1008b,835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ifes8-tcc.xdv (99 pages, 1781580 bytes).
+Output written on ifes8-tcc.xdv (104 pages, 1875324 bytes).
