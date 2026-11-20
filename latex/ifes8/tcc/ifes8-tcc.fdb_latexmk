@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex ifes8-tcc"] 1795125383.68737 "ifes8-tcc.aux" "ifes8-tcc.bbl" "ifes8-tcc" 1795125388.30585 0
+["bibtex ifes8-tcc"] 1795125856.24864 "ifes8-tcc.aux" "ifes8-tcc.bbl" "ifes8-tcc" 1795125861.02893 0
   "./referencias.bib" 1794681175 6149 76e10ff3b200885985a1b1668ba68308 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/bibtex/bib/abntex2/abntex2-options.bib" 1543103229 5396 4eb260dac60f150ae608d45252853090 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/bibtex/bst/abntex2/abntex2-alf.bst" 1543103230 60064 0819ac8568f9a482510a46e3a8a6f605 ""
-  "ifes8-tcc.aux" 1795125386 53057 e57db97a34cf7b3ea2f76664ffb34352 "xelatex"
+  "ifes8-tcc.aux" 1795125858 53057 ae3953381243d353eb16c8020c6b1c20 "xelatex"
   (generated)
   "ifes8-tcc.bbl"
   "ifes8-tcc.blg"
   (rewritten before read)
-["xdvipdfmx"] 1795125386.87389 "ifes8-tcc.xdv" "ifes8-tcc.pdf" "ifes8-tcc" 1795125388.31449 0
-  "ifes8-tcc.xdv" 1795125386 1742224 0e7b6b7aae06af946b4df547335ebe46 "xelatex"
+["xdvipdfmx"] 1795125859.55028 "ifes8-tcc.xdv" "ifes8-tcc.pdf" "ifes8-tcc" 1795125861.03955 0
+  "ifes8-tcc.xdv" 1795125858 1763204 cc9db1a422907a46f62669c4d658d372 "xelatex"
   (generated)
   "ifes8-tcc.pdf"
   (rewritten before read)
-["xelatex"] 1795125383.89607 "ifes8-tcc.tex" "ifes8-tcc.xdv" "ifes8-tcc" 1795125388.30625 0
+["xelatex"] 1795125856.46258 "ifes8-tcc.tex" "ifes8-tcc.xdv" "ifes8-tcc" 1795125861.02928 0
   "C:/Users/Usuario/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1794681187 27223822 74cb2ff8d083b0e55816d4464a10ea5d ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136783054 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -208,10 +208,10 @@
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "configlistings.tex" 1790457967 1830 5494d1df46a936de8c2ed960edc9815e ""
-  "ifes8-tcc.aux" 1795125386 53057 e57db97a34cf7b3ea2f76664ffb34352 "xelatex"
-  "ifes8-tcc.bbl" 1795125383 4672 955e8427bfd93afb5b780d30fad17e9e "bibtex ifes8-tcc"
-  "ifes8-tcc.tex" 1795125348 221932 364b7240082dd04da96cdc5d1ae217aa ""
-  "ifes8-tcc.toc" 1795125386 9179 33509da23ecf1b357d754485d14f7047 "xelatex"
+  "ifes8-tcc.aux" 1795125858 53057 ae3953381243d353eb16c8020c6b1c20 "xelatex"
+  "ifes8-tcc.bbl" 1795125856 4672 955e8427bfd93afb5b780d30fad17e9e "bibtex ifes8-tcc"
+  "ifes8-tcc.tex" 1795125847 224153 0ebd6bb0004b539f496073064d0ba47a ""
+  "ifes8-tcc.toc" 1795125858 9179 60b3d897786c02840dc9c808c6988419 "xelatex"
   "ifes8.cls" 1794681175 21356 0e8844d5be9c791a0e8fdc036529dbf1 ""
   "pics/Bend stiffener, installation expo_windjounal_haracop.jpeg" 1793642850 495835 ffc96349acaf1ce39e0525ccf4c586c6 ""
   "pics/all-relaxation-fits.png" 1794067220 235576 2527e0894ea23ae84c73dbf58a2c73b6 ""

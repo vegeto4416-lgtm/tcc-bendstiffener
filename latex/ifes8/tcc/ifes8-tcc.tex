@@ -4243,11 +4243,29 @@ na Seção~\ref{sec:solucao-do-estudo-de-caso}.
 \chapter{Resultados e Discussão}
 \label{sec:resultados-e-discussao}
 
+Este capítulo apresenta e interpreta os resultados obtidos nas etapas
+experimental, numérica e de dimensionamento. Inicialmente, avalia-se a
+capacidade do modelo identificado de reproduzir os ensaios de relaxação
+e a resposta estrutural calculada. Em seguida, comparam-se as três
+geometrias analisadas, considerando curvatura, deformação do poliuretano,
+raio mínimo, volume e fatores de segurança.
+
 \section{Validação do Programa}
 \label{sec:validacao-programa}
 
+Nesta seção, verifica-se se os procedimentos implementados reproduzem os
+dados de caracterização do material e a resposta esperada do sistema
+linha flexível--enrijecedor. A validação tem como finalidade distinguir
+as limitações próprias da identificação viscoelástica dos possíveis
+desvios da solução estrutural.
+
 \subsection{Reprodução do Comportamento de Relaxação}
 \label{sec:reproducao-relaxacao}
+
+Esta subseção avalia a qualidade da representação viscoelástica ajustada
+aos ensaios de relaxação. Os resultados permitem verificar a aderência da
+série de Prony aos dados experimentais e a extensão das diferenças entre
+a identificação própria e os parâmetros publicados por Caire.
 
 Os ensaios de relaxação foram realizados para seis níveis de deformação,
 de $2{,}5$ a $30\,\%$. Em cada nível, ajustou-se uma série de Prony com
@@ -4311,6 +4329,12 @@ $G''(0{,}2512)\cong4{,}29\,\mathrm{MPa}$ no termo linear.
 \subsection{Reprodução da Resposta Estrutural}
 \label{sec:reproducao-solucao-estrutural}
 
+Esta subseção apresenta a avaliação da convergência da solução
+perturbativa e a resposta da geometria de referência. A comparação entre
+as ordens de aproximação verifica a sensibilidade do método às parcelas
+não lineares consideradas, ao passo que os máximos calculados fornecem
+referência para a etapa de dimensionamento.
+
 Antes da comparação entre geometrias, a resposta da configuração linear
 foi verificada pela comparação das soluções obtidas com expansão até a
 primeira, segunda e terceira ordens. As curvaturas máximas na raiz do
@@ -4356,8 +4380,18 @@ que o MBR adotado de $2{,}00\,\mathrm{m}$.
 \section{Solução do Estudo de Caso}
 \label{sec:solucao-do-estudo-de-caso}
 
+Nesta seção, aplica-se o procedimento validado às geometrias selecionadas
+para o estudo de caso. A análise considera condições comuns de
+carregamento e verifica o atendimento simultâneo aos limites de deformação
+do poliuretano e de raio mínimo de curvatura.
+
 \subsection{Resultados Obtidos}
 \label{sec:resultados-obtidos}
+
+Esta subseção reúne os valores máximos calculados para cada geometria e
+identifica o critério que governou a aprovação ou reprovação em cada
+caso. Os resultados são apresentados de forma conjunta para permitir a
+leitura direta das diferenças entre os enrijecedores.
 
 As três geometrias foram submetidas ao mesmo carregamento, à mesma
 frequência e ao mesmo modelo constitutivo. Os resultados foram obtidos
@@ -4400,6 +4434,11 @@ apesar de apresentar o menor volume e o maior comprimento.
 
 \subsection{Comparação dos Resultados}
 \label{sec:comparacao-resultados}
+
+Esta subseção interpreta as diferenças observadas entre as geometrias
+avaliadas. A comparação busca relacionar volume, curvatura, deformação e
+fatores de segurança, sem confundir o estudo com uma otimização completa
+das dimensões do enrijecedor.
 
 O aumento do comprimento total não produziu uma redução proporcional da
 curvatura crítica nas geometrias avaliadas. E1, com volume de
