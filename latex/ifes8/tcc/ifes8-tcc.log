@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.11.14)  20 NOV 2026 13:46
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.11.14)  20 NOV 2026 20:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1389,34 +1389,34 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
     so I'm assuming it got fixed.
 (configlistings.tex)
 Package babel Info: 'brazilian' activates 'portuges' shorthands.
-(babel)             Reported on input line 38.
+(babel)             Reported on input line 40.
  (ifes8-tcc.aux
 Package babel Info: 'brazil' activates 'portuges' shorthands.
 (babel)             Reported on input line 13.
 )
 \openout1 = `ifes8-tcc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-Package hyperref Info: Link coloring OFF on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+Package hyperref Info: Link coloring OFF on input line 79.
 \myptabbox=\box80
 \myptabboxwidth=\skip286
 Package caption Info: Begin \AtBeginDocument code.
@@ -1430,63 +1430,63 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 77.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 77.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 77.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 77.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 77.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 77.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 77.
-LaTeX Font Info:    Redeclaring math accent \check on input line 77.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 77.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 77.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 77.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 77.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 79.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 79.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 79.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 79.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 79.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 79.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 79.
+LaTeX Font Info:    Redeclaring math accent \check on input line 79.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 79.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 79.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 79.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 79.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 79.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 77.
+(Font)              `operators' in the math version `normal' on input line 79.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/Arial(0)/m/n on input line 77.
+(Font)                  OT1/cmr/m/n --> TU/Arial(0)/m/n on input line 79.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 77.
+(Font)              `operators' in the math version `bold' on input line 79.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/Arial(0)/m/n on input line 77.
+(Font)                  OT1/cmr/bx/n --> TU/Arial(0)/m/n on input line 79.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/Arial(0)/m/n --> TU/Arial(0)/m/n on input line 77.
+(Font)                  TU/Arial(0)/m/n --> TU/Arial(0)/m/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/Arial(0)/m/it on input line 77.
+(Font)                  OT1/cmr/m/it --> TU/Arial(0)/m/it on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/Arial(0)/b/n on input line 77.
+(Font)                  OT1/cmr/bx/n --> TU/Arial(0)/b/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/Arial(0)/m/n on input line 77.
+(Font)                  OT1/cmss/m/n --> TU/Arial(0)/m/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 77.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 79.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/Arial(0)/m/n --> TU/Arial(0)/b/n on input line 77.
+(Font)                  TU/Arial(0)/m/n --> TU/Arial(0)/b/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/Arial(0)/b/it on input line 77.
+(Font)                  OT1/cmr/bx/it --> TU/Arial(0)/b/it on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/Arial(0)/b/n on input line 77.
+(Font)                  OT1/cmss/bx/n --> TU/Arial(0)/b/n on input line 79.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 77.
-LaTeX Info: Redefining \microtypecontext on input line 77.
-Package microtype Info: Applying patch `item' on input line 77.
-Package microtype Info: Applying patch `toc' on input line 77.
-Package microtype Info: Applying patch `eqnum' on input line 77.
-Package microtype Info: Applying patch `footnote' on input line 77.
-Package microtype Info: Applying patch `verbatim' on input line 77.
-LaTeX Info: Redefining \microtypesetup on input line 77.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 79.
+LaTeX Info: Redefining \microtypecontext on input line 79.
+Package microtype Info: Applying patch `item' on input line 79.
+Package microtype Info: Applying patch `toc' on input line 79.
+Package microtype Info: Applying patch `eqnum' on input line 79.
+Package microtype Info: Applying patch `footnote' on input line 79.
+Package microtype Info: Applying patch `verbatim' on input line 79.
+LaTeX Info: Redefining \microtypesetup on input line 79.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -1509,51 +1509,41 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 129--129
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--129
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--129
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--129
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
 
  []
 
 [0]
-Underfull \hbox (badness 1147) in paragraph at lines 151--152
+Underfull \hbox (badness 1147) in paragraph at lines 153--154
 \TU/Arial(0)/m/n/10 do Instituto Federal do Espírito Santo, Campus
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
  []
 
 [1
 
-]
-Overfull \hbox (2.22266pt too wide) in paragraph at lines 182--187
-[]  $[]$
- []
+] [2
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 182--187
-
- []
-
-[2
 
 ] [3
-
 
 ] [4
 
@@ -1561,56 +1551,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 182--187
 
 ] [6
 
-] [7
+
+] [7] [8] [9] [10] (ifes8-tcc.toc [11
 
 
-] (ifes8-tcc.toc [8
-
-
-]
-Overfull \hbox (1.42145pt too wide) detected at line 106
- \TU/Arial(0)/b/n/12 101
- []
-
-) [9]
+]) [12]
 Cap\'{\i }tulo 1.
 File: pics/Bend stiffener, installation expo_windjounal_haracop.jpeg Graphic fi
 le (type bmp)
 <pics/Bend stiffener, installation expo_windjounal_haracop.jpeg>
-[10
+[13
 
 
 ]
 File: pics/souza2008-arranjo-tipico.png Graphic file (type bmp)
 <pics/souza2008-arranjo-tipico.png>
- [11] [12] [13]
+ [14] [15] [16]
 Cap\'{\i }tulo 2.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14
+[17
 
-] [15] [16] [17] [18]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[19] [20] [21]
+] [18] [19] [20] [21]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22] [23]
-Overfull \hbox (12.03117pt too wide) in paragraph at lines 1134--1141
+[22] [23] [24]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[25] [26]
+Overfull \hbox (12.03117pt too wide) in paragraph at lines 1276--1283
 []\TU/Arial(0)/m/n/12 Sob tensão constante $\OML/cmm/m/it/12 ^^[[]$\TU/Arial(0)
 /m/n/12 , a integração da Equação ([]19[]) fornece $\OML/cmm/m/it/12 "\OT1/cmr/
 m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = [] []$\TU/Arial(0)/m/n/12 ,
  []
 
-[24]
+[27]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[25] [26] [27] [28] [29]
-Overfull \hbox (38.66333pt too wide) detected at line 1513
+[28] [29] [30] [31] [32]
+Overfull \hbox (38.66333pt too wide) detected at line 1655
 [][][]\OML/cmm/m/it/12 ^^[\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) 
 = [] \OML/cmm/m/it/12 G[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) \
 OML/cmm/m/it/12 "\OT1/cmr/m/n/12 (0)[] + [][] []\OML/cmm/m/it/12 G[]\OT1/cmr/m/
@@ -1625,80 +1608,68 @@ cmm/m/it/12 ^^\\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 "\OT1/cmr/m/n/12 (\OML/cmm/m/
 it/12 ^^\\OT1/cmr/m/n/12 )[][][] []\OML/cmm/m/it/12 ^^\:
  []
 
-[30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44]
-[45] [46] [47] [48] [49] [50] [51] [52]
+[33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47]
+[48] [49] [50] [51] [52] [53] [54] [55]
 Cap\'{\i }tulo 3.
-[53
+[56
 
-] [54] [55]
-Underfull \hbox (badness 1888) in paragraph at lines 2936--2941
+] [57] [58]
+Underfull \hbox (badness 1888) in paragraph at lines 3078--3083
 \TU/Arial(0)/m/n/12 flexível-enrijecedor, considerando o comportamento viscoelá
 stico do poliuretano.
  []
 
-[56
+[59
 
-] [57] [58] [59]
+] [60] [61] [62]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [60] [61] [62] [63] [64]
+ [63] [64] [65] [66] [67]
 File: pics/souza2008-geometria.png Graphic file (type bmp)
 <pics/souza2008-geometria.png>
- [65]
-Underfull \hbox (badness 1259) in paragraph at lines 3384--3389
+ [68]
+Underfull \hbox (badness 1259) in paragraph at lines 3526--3531
 []\TU/Arial(0)/m/n/12 A linha flexível é representada por uma rigidez flexional
  equivalente constante,
  []
 
-[66]
+[69]
 File: pics/caire2011-elemento-infinitesimal.png Graphic file (type bmp)
 <pics/caire2011-elemento-infinitesimal.png>
- [67]
+ [70]
 File: pics/souza2008-dcl.png Graphic file (type bmp)
 <pics/souza2008-dcl.png>
- [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80]
-[81] [82] [83] [84]
+ [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83]
+[84] [85] [86] [87]
 File: pics/souza2008-dimensoes-comparacao.png Graphic file (type bmp)
 <pics/souza2008-dimensoes-comparacao.png>
- [85] [86] [87] [88]
+ [88] [89] [90] [91]
 Cap\'{\i }tulo 4.
 File: pics/all-relaxation-fits.png Graphic file (type bmp)
 <pics/all-relaxation-fits.png>
-[89
+[92
 
-] [90]
-File: pics/caire-curvature-envelope.png Graphic file (type bmp)
-<pics/caire-curvature-envelope.png>
- [91] [92]
+] [93] [94
+
+] [95] [96]
+File: pics/caire-curvature-surface.png Graphic file (type bmp)
+<pics/caire-curvature-surface.png>
+ [97] [98]
 File: pics/comparacao-geometria.png Graphic file (type bmp)
 <pics/comparacao-geometria.png>
 File: pics/fatores-seguranca.png Graphic file (type bmp)
 <pics/fatores-seguranca.png>
- [93] [94]
+ [99] [100] [101] [102]
 Cap\'{\i }tulo 5.
-(ifes8-tcc.bbl [95
+[103
 
-]
+] [104] [105] (ifes8-tcc.bbl [106]
 bibitemlist
-[96
+[107
 
-]) [97] [98
-
-]
-AP\^ENDICE A.
-[99
-
-] [100
-
-]
-ANEXO A.
-File: pics/normas-ifes-apendice-d.png Graphic file (type bmp)
-<pics/normas-ifes-apendice-d.png>
-[101
-
-]
+]) [108]
 \tf@toc=\write5
 \openout5 = `ifes8-tcc.toc'.
 
@@ -1711,12 +1682,12 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 35640 strings out of 402987
- 690569 string characters out of 5448523
- 1219664 words of memory out of 5000000
- 63842 multiletter control sequences out of 15000+600000
+ 35727 strings out of 402987
+ 691219 string characters out of 5448523
+ 1245434 words of memory out of 5000000
+ 63930 multiletter control sequences out of 15000+600000
  636094 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  113i,20n,121p,1008b,835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ifes8-tcc.xdv (104 pages, 1875324 bytes).
+Output written on ifes8-tcc.xdv (111 pages, 2244308 bytes).

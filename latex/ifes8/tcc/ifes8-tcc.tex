@@ -12,6 +12,8 @@
 
 \usepackage{microtype}          % para melhorias de justificação
 \setlength{\emergencystretch}{2em}
+% 20/11/2026 - Espaco no sumario para a paginacao de tres algarismos.
+\setpnumwidth{2em}
 \usepackage{morefloats}         % permite mais floats
 \usepackage{blindtext}          % para gerar texto aleatório (dummy text)
 \usepackage{tikz}
@@ -176,75 +178,107 @@
 \end{folhadeaprovacao}
 
 %%% ====================================================================
-%%% Ambiente para a escrita da dedicatória.
-\begin{dedicatoria}
-  \vspace*{\fill}
-  \hspace{0.2\textwidth}
-  \begin{minipage}{0.8\textwidth}
-    Este trabalho é dedicado aos que acreditam que Pikachu sempre será o
-    melhor pokemon.
-  \end{minipage}
-\end{dedicatoria}
-
-
-%%% ====================================================================
 %%% Agradecimentos
 \begin{agradecimentos}
-  Agradeço a todos os que fizeram alguma coisa pela qual eu deveria
-  ser grato.
+A Deus, por iluminar os caminhos, sustentar a fé e renovar as forças nos momentos de dificuldade. Por ensinar,
+mesmo diante das incertezas, preservar e seguir adiante.
+
+Às nossas famílias pelo apoio ao longo de nossas trajetórias acadêmicas e pela compreensão
+nos momentos em que a dedicação exigiu a nossa ausência. 
+
+À memória de Giovani Elias Goronci, cuja presença, inspiração, força e afeto permancem vivos em mim.
+
+Ao nosso orientador, Vinícius Erler, agradecemos pela disponibilidade, pelas discussões e contribuições que
+permitiram essa pesquisa.
+
+Agradecemos também aos colegas e amigos que, de alguma forma, contribuíram para o desenvolvimento deste trabalho.
+
 \end{agradecimentos}
 
 
-%%% ====================================================================
-%%% Epígrafe
+% 20/11/2026 - Epigrafe com verso de Autotomia na traducao de Regina Przybycien.
 \begin{epigrafe}
   \vspace*{\fill}
-  \begin{otherlanguage}{english}
-    \begin{flushright}
+  \begin{flushright}
+    \begin{minipage}{0.60\textwidth}
+      \raggedleft
       \begin{SingleSpace}
-        People who think they know everything are a great \\
-        annoyance to those of us who do. \cite{Asimov2004}
+        ``Regenerar quanto for preciso da parte que restou.''
+
+        \medskip
+        Wisława \citeonline{Szymborska2016}\\
+        \textit{Autotomia}
       \end{SingleSpace}
-    \end{flushright}
-  \end{otherlanguage}
+    \end{minipage}
+  \end{flushright}
 \end{epigrafe}
 
 
 %%% Ambiente para resumo em português
+% 20/11/2026 - Resumos alinhados aos metodos, resultados e limites do trabalho concluido.
 \begin{resumo}
 
-  A engenharia \emph{offshore} (fora da costa) é responsável pelo desenvolvimento de atividades
-  relacionadas à exploração e produção de petróleo e gás natural em ambientes marítimos. Para essas
-  aplicações, o uso de linhas flexíveis é essencial para o escoamento da produção e para a interligação
-  de equipamentos marinhos com a plataforma de operação FPSO (\emph{Floating Production Storage and Offloading}).
-  De modo geral, as linhas flexíveis não possuem resistência à flexão suficiente para suportar as cargas associadas
-  ao ambiente que são trasnferidas para as conexões de topo, sendo necessário o uso de enrijecedores à flexão.
-  O objetivo deste trabalho é apresentar uma metodologia para a caracterização viscoelástica e 
-  o dimensionamento de enrijecedores à flexão para risers flexíveis por meio da implementação 
-  de um modelo matemático capaz de descrever o comportamento viscoelástico mediante regressão
-  dos dados experimentais obtidos no ensaio de relaxação do poliuretano e implementação de solução
-  numérica para avaliação da resposta dinâmica do sistema enrijecedor de curvatura com duto flexível
-  em regime harmônico.
+  A baixa rigidez flexional das linhas flexíveis favorece a concentração de curvaturas
+  nas conexões de topo, tornando necessário controlar sua transição de rigidez por meio
+  de enrijecedores à flexão. Este trabalho aplicou uma metodologia numérica para
+  caracterização viscoelástica do poliuretano e análise preliminar de enrijecedores
+  sob carregamento harmônico simples. A caracterização utilizou seis curvas de
+  relaxação digitalizadas da literatura, ajustadas por séries de Prony, com
+  identificação polinomial da dependência em deformação e extração da parcela linear.
+  A solução estrutural considerou viscoelasticidade linear e equilíbrio
+  quase-estático em regime harmônico permanente, mediante expansão perturbativa até
+  a terceira ordem, integração espacial por Runge-Kutta de quarta ordem e método
+  do tiro. As simulações estruturais utilizaram parâmetros publicados, mantidos
+  separados daqueles identificados neste trabalho. Os ajustes individuais das curvas
+  apresentaram coeficientes de determinação entre $0{,}9994$ e $0{,}9998$, enquanto
+  a solução estrutural reproduziu o caso linear de referência com pequenas diferenças
+  em relação aos resultados digitalizados. No estudo de caso, compararam-se três
+  geometrias, denominadas E1, E2 e E3, para a mesma linha, material e carregamento.
+  E1 e E2 atenderam aos limites adotados de deformação do poliuretano e de raio mínimo
+  de curvatura da linha, enquanto E3 não atendeu a nenhum deles. E2 reduziu o volume em
+  aproximadamente $5\,\%$ em relação a E1, mas sua deformação máxima de
+  $14{,}61\,\%$ ficou próxima do limite de $15\,\%$. A tendência conservadora da
+  aproximação linear, observada na comparação bibliográfica com um modelo não linear,
+  foi delimitada ao caso de referência. Concluiu-se que a ferramenta permite
+  comparar alternativas geométricas e apoiar o dimensionamento preliminar, sem que
+  a qualidade dos ajustes ou a concordância bibliográfica substituam a validação
+  experimental independente e as verificações numéricas e de serviço necessárias
+  à avaliação de segurança.
 
-  Palavras-chave: Engenharia offshore. Enrijecedores à Flexão. Viscoelasticidade. Métodos numéricos. Dimensionamento. 
+  Palavras-chave: Engenharia offshore. Enrijecedores à flexão. Viscoelasticidade linear. Métodos numéricos. Dimensionamento estrutural.
 \end{resumo}
 
 %%% Ambiente para resumo em inglês.
 \begin{resumo}[Abstract]
   \begin{otherlanguage}{english}
-    The offshore engineering is responsible for the development of activities related to the exploration and 
-    production of oil and natural gas in marine environments. For these applications, the use of flexible 
-    risers is essential for the flow of production and for the interconnection of marine equipment with the 
-    FPSO (\emph{Floating Production Storage and Offloading}) platform. In general, flexible risers do not 
-    have sufficient bending resistance to withstand the loads associated with the environment, which are transferred 
-    to the top connections, making the use of bending stiffeners necessary. The objective of this work is to 
-    present a methodology for the viscoelastic characterization and the design of bending stiffeners for flexible 
-    risers through the implementation of a mathematical model capable of describing the viscoelastic behavior by 
-    regression of the experimental data obtained in the polyurethane relaxation test and the implementation of a 
-    numerical solution for evaluating the dynamic response of the bending stiffener system with flexible pipe under 
-    harmonic regime.
+    The low flexural stiffness of flexible risers promotes curvature concentration
+    at top connections, requiring bend stiffeners to provide a gradual stiffness
+    transition. This work applied a numerical methodology for the viscoelastic
+    characterization of polyurethane and the preliminary analysis of bend stiffeners
+    under simple harmonic loading. Material characterization used six relaxation
+    curves digitized from the literature, fitted with Prony series, followed by
+    polynomial identification of strain dependence and extraction of the linear
+    component. The structural solution assumed linear viscoelasticity and
+    quasi-static equilibrium in steady-state harmonic response, using a perturbation
+    expansion up to third order, fourth-order Runge-Kutta spatial integration, and
+    the shooting method. Structural simulations used published parameters,
+    kept separate from those identified in this work. The individual curve fits
+    yielded coefficients of determination between $0.9994$ and $0.9998$, while the
+    structural solution reproduced the linear reference case with small differences
+    relative to the digitized results. The case study compared three geometries,
+    designated E1, E2, and E3, for the same riser, material, and loading conditions.
+    E1 and E2 met the adopted polyurethane strain and riser minimum bend radius
+    limits, whereas E3 met neither criterion. E2 reduced volume by approximately
+    $5\,\%$ relative to E1, but its maximum strain of $14.61\,\%$ approached the
+    adopted limit of $15\,\%$. The conservative tendency of the linear approximation,
+    observed in the published comparison with a nonlinear model, was restricted
+    to the reference case. The tool was found to support comparison of geometric
+    alternatives and preliminary structural design; however, fit quality and
+    agreement with published results do not replace independent experimental
+    validation or the numerical and service-condition assessments required for
+    safety evaluation.
 
-    Keywords: Offshore Engineering. Bending Stiffeners. Viscoelasticity. Numerical Methods. Design.
+    Keywords: Offshore engineering. Bend stiffeners. Linear viscoelasticity. Numerical methods. Structural design.
   \end{otherlanguage}
 \end{resumo}
 
@@ -298,12 +332,120 @@
 
 
 %%% Lista de símbolos
+% 20/11/2026 - Notacao efetivamente utilizada, incluindo significados distintos por contexto.
 \begin{simbolos}
-  \simb{$\Gamma$} -- Letra grega Gama
-  \simb{$\Lambda$} -- Lambda
-  \simb{$\zeta$} -- Letra grega minúscula zeta
-  \simb{$\in$} -- Pertence
-  \simb{$\top$} -- Valor lógico máximo dentro de um reticulado regular booleano ou quasi-booleano.
+  \simb{$A,\ A_e,\ A_{BS}$} -- Área da seção transversal e área de poliuretano do enrijecedor.
+  \simb{$A,\ldots,G$} -- Na notação geométrica da literatura: diâmetros $A$, $B$ e $G$ e comprimentos $C$, $D$, $E$ e $F$.
+  \simb{$A_i,\ B_i$} -- Funções dos coeficientes angulares utilizadas na expansão do cortante.
+  \simb{$a_n,\ b_n$} -- Coeficientes de cosseno e seno de uma representação harmônica.
+  \simb{$a_m$} -- Fator exponencial de atualização da memória viscoelástica.
+  \simb{$a_k,\ p_k$} -- Coeficientes polinomiais nas escalas de deformação normalizada e original.
+  \simb{$b,\ h$} -- Largura e altura de uma seção retangular, na teoria de vigas.
+  \simb{$b_i(t;\epsilon,\alpha)$} -- Funções da base temporal e perturbativa da solução estrutural.
+  \simb{$c$} -- Distância da linha neutra à fibra externa da seção.
+  \simb{$C_1,\ C_2$} -- Constantes de integração nas relações elementares entre carga, cortante e momento.
+  \simb{$C_0,\ C_1,\ C_2$} -- Na formulação harmônica: coeficientes flexurais constante, de armazenamento e de perda.
+  \simb{$D,\ d$} -- Diâmetros externo e interno de uma seção anular, na notação geral.
+  \simb{$D_b,\ D_e(s),\ D_i$} -- Diâmetro externo na base, diâmetro externo variável e diâmetro interno do enrijecedor.
+  \simb{$D_1,\ d_1$} -- Na figura geométrica de referência: diâmetro externo na base e diâmetro externo da linha.
+  \simb{$E$} -- Módulo de elasticidade longitudinal.
+  \simb{$E_a,\ E_m$} -- Módulos das molas do sólido linear padrão.
+  \simb{$EI,\ EI^*$} -- Rigidez à flexão elástica e rigidez à flexão complexa.
+  \simb{$EI_{PIPE}$} -- Rigidez flexional equivalente da linha, também indicada por $(EI)_{\mathrm{linha}}$.
+  \simb{$\mathcal E[\cdot]$} -- Operador de resposta de deformação a um histórico de tensão.
+  \simb{$F(t),\ F_0$} -- Força aplicada e seu valor médio.
+  \simb{$f$} -- Frequência do carregamento harmônico.
+  \simb{$f(s,y)$} -- Função que define uma equação diferencial na apresentação dos métodos numéricos.
+  \simb{$\mathrm{FS}_{\varepsilon}$} -- Razão entre o limite de deformação e a máxima deformação calculada.
+  \simb{$\mathrm{FS}_{\mathrm{MBR}}$} -- Razão entre a curvatura admissível e a máxima curvatura absoluta calculada.
+  \simb{$\mathrm{FS}_{\mathrm{global}}$} -- Menor valor entre os fatores associados à deformação e ao MBR.
+  \simb{$G(t),\ G_1(t)$} -- Módulo longitudinal de relaxação do modelo linear; não representa módulo de cisalhamento.
+  \simb{$G(0),\ G_1(0)$} -- Módulo longitudinal instantâneo previsto pela série de Prony.
+  \simb{$G_{\infty},\ G_{01}$} -- Módulo longitudinal de longo prazo do modelo linear.
+  \simb{$G_m,\ \tau_m$} -- Contribuição de módulo e tempo de relaxação do termo $m$ da série de Prony.
+  \simb{$G_k(t)$} -- Função de relaxação associada à potência $k$ da deformação na representação polinomial.
+  \simb{$G_{0k},\ G_{mk}$} -- Coeficientes de longo prazo e das parcelas exponenciais de $G_k(t)$.
+  \simb{$G',\ G'',\ G^*$} -- Módulos longitudinais de armazenamento, de perda e complexo.
+  \simb{$h$} -- Passo de integração espacial na apresentação do método RK4.
+  \simb{$I,\ I_e,\ I_{BS}$} -- Segundo momento de área da seção; os índices $e$ e $BS$ identificam o enrijecedor.
+  \simb{$i$} -- Unidade imaginária nas expressões complexas; também utilizado como índice conforme o contexto.
+  \simb{$J(t)$} -- Função de fluência do material.
+  \simb{$J_0,\ J_{\infty}$} -- Valores instantâneo e de longo prazo da função de fluência.
+  \simb{$J,\ S,\ S_{\mathrm{red}}$} -- Funções objetivo de mínimos quadrados e função reduzida após o ajuste das amplitudes.
+  \simb{$k,\ \kappa$} -- Curvatura do eixo do conjunto.
+  \simb{$k_1,\ldots,k_4$} -- Avaliações intermediárias do método RK4; não são curvaturas nessa notação.
+  \simb{$L,\ L_e$} -- Comprimento total do domínio e comprimento ocupado pelo enrijecedor.
+  \simb{$L_{\mathrm{cil}},\ L_{\mathrm{con}}$} -- Comprimentos dos trechos cilíndrico e cônico.
+  \simb{$L_1,\ L_2,\ L_{BS}$} -- Na figura geométrica de referência: comprimentos cilíndrico, cônico e total do enrijecedor.
+  \simb{$M,\ M_e,\ M_{\mathrm{linha}}$} -- Momento fletor total e contribuições do enrijecedor e da linha.
+  \simb{$M_0$} -- Momento inicial no tiro temporal; na expansão harmônica, coeficiente constante do momento.
+  \simb{$\mathrm{MBR}$} -- Raio mínimo admissível de curvatura da linha.
+  \simb{$\mathrm{MAE},\ \mathrm{RMSE}$} -- Erro absoluto médio e raiz do erro quadrático médio.
+  \simb{$N,\ N_h$} -- Número de termos de Prony e número de harmônicos retidos.
+  \simb{$n_i$} -- Número de pontos da curva de relaxação $i$.
+  \simb{$P$} -- Período do carregamento harmônico.
+  \simb{$Q$} -- Momento estático de uma porção da seção em relação à linha neutra.
+  \simb{$q(x)$} -- Carregamento distribuído na teoria elementar de vigas.
+  \simb{$q_m(s,t)$} -- Variável interna que armazena a memória de curvatura do termo $m$.
+  \simb{$R^2$} -- Coeficiente de determinação do ajuste.
+  \simb{$r_i,\ w_i,\ w_{ij}$} -- Resíduo ponderado e pesos dos pontos no ajuste por mínimos quadrados.
+  \simb{$s,\ t$} -- Coordenada ao longo do eixo do conjunto e tempo.
+  \simb{$t_+,\ t_-$} -- Instantes de curvatura máxima e mínima no engaste, no ciclo reconstruído.
+  \simb{$T,\ V$} -- Esforços internos de tração e cortante.
+  \simb{$U_{\mathrm{MBR}}$} -- Índice de utilização do limite de curvatura associado ao MBR.
+  \simb{$V_i,\ M_i$} -- Coeficientes perturbativos do cortante e do momento fletor.
+  \simb{$W_T$} -- Energia dissipada por unidade de volume em um ciclo de deformação.
+  \simb{$w_{0,m},\ w_{1,m}$} -- Pesos da curvatura na atualização temporal da memória viscoelástica.
+  \simb{$x,\ y$} -- Coordenadas do eixo deformado; na teoria elementar, $y$ também indica a deflexão ou a distância à linha neutra.
+  \simb{$y_i,\ \widehat y_i$} -- Valor observado e valor previsto pelo modelo no ajuste genérico.
+  \simb{$Z$} -- Módulo de resistência da seção transversal.
+  \simb{$z$} -- Deformação normalizada, $z=\varepsilon/\varepsilon_{\mathrm{ref}}$.
+  \simb{$\alpha$} -- Amplitude relativa da variação do ângulo de contorno; na figura de equilíbrio da fonte, indica um ângulo local.
+  \simb{$\beta$} -- Ângulo entre a força aplicada e a tangente na extremidade do domínio.
+  \simb{$\gamma$} -- Diferença de fase entre os carregamentos de força e ângulo.
+  \simb{$\delta(\omega)$} -- Defasagem entre tensão e deformação na resposta harmônica do material.
+  \simb{$\delta_j$} -- Perturbação numérica do parâmetro $j$ no cálculo da Jacobiana.
+  \simb{$\Delta t$} -- Incremento de tempo.
+  \simb{$\Delta\varepsilon$} -- Amplitude da deformação harmônica.
+  \simb{$\Delta\sigma_i$} -- Diferença entre as tensões máxima e mínima usada na ponderação da curva $i$.
+  \simb{$\epsilon$} -- Parâmetro perturbativo; na aplicação, amplitude relativa da variação da força.
+  \simb{$\varepsilon$} -- Deformação longitudinal do material.
+  \simb{$\varepsilon_0,\ \varepsilon_i$} -- Deformação imposta no ensaio; $\varepsilon_0$ também indica a média na expressão harmônica.
+  \simb{$\varepsilon_{\mathrm{ref}}$} -- Deformação de referência usada na normalização da regressão polinomial.
+  \simb{$\varepsilon_{\mathrm{ext}}$} -- Deformação na fibra externa do poliuretano.
+  \simb{$\varepsilon_{\mathrm{lim}}$} -- Limite de deformação adotado para verificação de projeto.
+  \simb{$\eta$} -- Distância de uma fibra ao eixo neutro.
+  \simb{$\theta$} -- Ângulo relativo entre força e tangente; em outras convenções do referencial, rotação da seção.
+  \simb{$\theta_F,\ \theta_0$} -- Direção da força e ângulo relativo da configuração de referência.
+  \simb{$\kappa_i,\ \phi_i$} -- Coeficientes perturbativos da curvatura e do ângulo.
+  \simb{$\kappa_{\max},\ \kappa_{\min}$} -- Extremos de curvatura em cada seção ao longo do ciclo.
+  \simb{$\kappa_{\mathrm{abs}}$} -- Máxima curvatura absoluta em cada seção ao longo do ciclo.
+  \simb{$\lambda$} -- Fator de amortecimento da correção de Newton.
+  \simb{$\mu$} -- Coeficiente de viscosidade dos amortecedores dos modelos mecânicos.
+  \simb{$\mu(x)$} -- Fator integrante na solução de uma equação diferencial linear de primeira ordem.
+  \simb{$\rho$} -- Raio de curvatura.
+  \simb{$\sigma,\ \sigma_x$} -- Tensão normal e tensão normal longitudinal de flexão.
+  \simb{$\sigma_0,\ \sigma_{0i}$} -- Tensão imposta na fluência e termo de tensão de longo prazo do ajuste de Prony da curva $i$, respectivamente.
+  \simb{$\sigma_{mi},\ \widehat\sigma_i$} -- Coeficientes de tensão de Prony e tensão ajustada para a curva $i$.
+  \simb{$\tau$} -- Tensão de cisalhamento; como variável de integração, instante passado.
+  \simb{$\tau_R,\ \tau_C$} -- Tempo de relaxação e tempo de retardo dos modelos mecânicos.
+  \simb{$\phi(s,t),\ \phi_L(t)$} -- Ângulo da tangente ao eixo e ângulo prescrito na extremidade.
+  \simb{$\phi_0,\ \phi_{0L}$} -- Ângulo da configuração de referência e valor médio prescrito na extremidade.
+  \simb{$\psi,\ \omega$} -- Fase do ciclo reconstruído, $\psi=\omega t$, e frequência angular.
+  \simb{$\mathbf A,\ \mathbf F$} -- Matriz de coeficientes e vetor não homogêneo de um sistema de EDOs; $\mathbf A$ também designa a matriz de regressão.
+  \simb{$\mathbf B$} -- Matriz das funções da base temporal avaliadas nas fases reconstruídas.
+  \simb{$\mathbf c,\ \boldsymbol\tau$} -- Vetores das amplitudes e dos tempos no ajuste separável de Prony.
+  \simb{$\mathbf H_n,\ \mathbf K$} -- Bloco de rigidez do harmônico $n$ e matriz global de rigidez dos coeficientes.
+  \simb{$\mathbf J$} -- Matriz Jacobiana do vetor de resíduos.
+  \simb{$\mathbf p,\ \mathbf R$} -- Vetor de parâmetros e vetor de resíduos do ajuste ou do método do tiro.
+  \simb{$\mathbf W$} -- Matriz diagonal dos pesos de mínimos quadrados.
+  \simb{$\mathbf X,\ \mathbf C$} -- Vetor de incógnitas e vetor de constantes na solução de sistemas lineares de EDOs.
+  \simb{$\boldsymbol z$} -- Vetor de estado dos trinta coeficientes de curvatura e trinta de ângulo.
+  \simb{$\boldsymbol\Phi$} -- Matriz fundamental de um sistema linear de EDOs; na reconstrução, matriz dos coeficientes angulares.
+  \simb{$\boldsymbol{\mathcal C}$} -- Matriz dos coeficientes de curvatura na reconstrução.
+  \simb{$i,\ j,\ k,\ m,\ n,\ \ell$} -- Índices de curvas, pontos, potências, termos de Prony, harmônicos ou passos, conforme a expressão.
+  \simb{$\mathrm{tol}$} -- Tolerância numérica do critério de convergência.
+  \simb{$(\cdot)^{\mathsf T}$} -- Transposição de vetor ou matriz.
 \end{simbolos}
 \cleardoublepage
 
@@ -3243,7 +3385,7 @@ limites inicial e de longo prazo. Os módulos de armazenamento e de perda são c
 a partir desses parâmetros, conforme as Equações~\eqref{eq:modulo-armazenamento} e
 \eqref{eq:modulo-perda}.
 
-Mantêm-se separados dois conjuntos de parâmetros: os publicados na Tabela 2.4 de
+Mantêm-se separados dois conjuntos de parâmetros: os publicados por
 \citeonline{Caire2011} e os obtidos pela identificação deste trabalho. A escolha do conjunto
 é indicada em cada análise. Dessa forma, diferenças decorrentes da identificação do material
 não são confundidas com diferenças da implementação da solução estrutural.
@@ -3374,7 +3516,7 @@ expressão como se o perfil tivesse a mesma inclinação em todo o domínio.
 
 No caso de referência, utilizam-se um trecho cilíndrico de 0,20 m, um trecho cônico de
 1,50 m e mais 1,30 m de linha, totalizando $L=3{,}00\,\mathrm{m}$. O diâmetro externo
-na base é $D_b=0{,}70\,\mathrm{m}$, seguindo a configuração da Figura 4.3 de
+na base é $D_b=0{,}70\,\mathrm{m}$, seguindo a configuração de referência de
 \citeonline{Caire2011}. O diâmetro interno adotado no código é $D_i=0{,}34\,\mathrm{m}$,
 registrado na implementação como parâmetro calibrado para aproximar resultados de
 referência. Portanto, esse valor não deve ser apresentado como uma dimensão diretamente
@@ -3602,8 +3744,8 @@ dos coeficientes harmônicos correspondentes serão apresentadas após sua defin
 
 % 16/11/2026 - Formulacao valida para os dois conjuntos de parametros, sem confundir sua origem.
 As equações de governo reúnem as relações geométricas, o equilíbrio e a resposta
-do material. A formulação apresentada nesta seção segue o desenvolvimento da
-seção 3.4 de \citeonline{Caire2011}, utilizando a função longitudinal $G_1(t)$.
+do material. A formulação apresentada nesta seção segue o desenvolvimento de
+\citeonline{Caire2011}, utilizando a função longitudinal $G_1(t)$.
 Seus parâmetros podem ser os publicados por Caire ou os obtidos pela identificação
 descrita na Seção~\ref{sec:caracterizacao-do-material}, sem alterar a estrutura
 das equações. No caso de referência e no estudo comparativo, utiliza-se o conjunto
@@ -3784,7 +3926,7 @@ base, seus coeficientes são escritos como:
 
 As funções $A_i$ e $B_i$ reúnem os produtos dos coeficientes angulares e os
 dados do contorno. Na implementação, são obtidas por manipulação simbólica,
-seguindo a organização do Anexo II de Caire. O sinal do cortante já está
+seguindo a organização proposta por \citeonline{Caire2011}. O sinal do cortante já está
 incluído nessas funções; não se acrescenta outro sinal negativo à expressão.
 Por exemplo, $A_0=-1$ e $B_0=0$ fornecem
 $V_0=-F_0\sin\theta_0$, como exige o equilíbrio.
@@ -4054,7 +4196,7 @@ conjunto. Essa etapa corresponde ao bloco de reconstrução da
 Figura~\ref{fig:fluxo-metodologia-linear} e só é realizada após a convergência
 do método do tiro.
 
-O procedimento segue a representação harmônica da seção 3.4.2 de
+O procedimento segue a representação harmônica de
 \citeonline{Caire2011}. Na implementação, os coeficientes são avaliados ao
 longo de um ciclo completo, permitindo determinar os históricos de resposta,
 os envelopes espaciais e as posições críticas. Trata-se da resposta periódica
@@ -4294,7 +4436,7 @@ um carregamento comum.
 \label{sec:material-ambiente-linha-flexivel}
 
 Nos três casos, utiliza-se o modelo viscoelástico linear com os parâmetros
-da Tabela 2.4 de \citeonline{Caire2011}. Esse conjunto é mantido separado
+publicados por \citeonline{Caire2011}. Esse conjunto é mantido separado
 dos parâmetros obtidos pela identificação própria, conforme a
 Seção~\ref{sec:parametros-material-linear}. A temperatura de referência
 permanece em $24\,^{\circ}\mathrm{C}$, sem incluir variações térmicas.
@@ -4487,6 +4629,7 @@ na Seção~\ref{sec:solucao-do-estudo-de-caso}.
 \chapter{Resultados e Discussão}
 \label{sec:resultados-e-discussao}
 
+% 20/11/2026 - Separacao entre identificacao, verificacao estrutural e comparacao de projeto.
 Os resultados são discutidos em duas etapas. Primeiro, examina-se a
 reprodução dos ensaios de relaxação e da resposta estrutural de referência;
 depois, avalia-se como as geometrias selecionadas respondem às condições
@@ -4498,44 +4641,52 @@ extrapolar as hipóteses e as resoluções numéricas descritas na metodologia.
 \label{sec:validacao-programa}
 
 A avaliação do programa abrange duas verificações complementares: a
-representação dos ensaios de relaxação pelos parâmetros identificados e a
-reprodução da resposta estrutural do caso de referência. Analisá-las em
-separado ajuda a distinguir diferenças ligadas à caracterização do
-poliuretano daquelas associadas à solução estrutural.
+identificação da resposta de relaxação, com exame da parcela linear do
+material, e a reprodução da solução estrutural linear de Caire. Na
+primeira, utilizam-se os parâmetros identificados a partir dos dados
+digitalizados; na segunda, empregam-se os parâmetros publicados na tese.
+Essa separação evita atribuir ao método de solução uma diferença causada
+pela escolha do material. A comparação entre as três geometrias é feita
+somente na Seção~\ref{sec:solucao-do-estudo-de-caso}.
 
 \subsection{Reprodução do Comportamento de Relaxação}
 \label{sec:reproducao-relaxacao}
 
-Os ensaios de relaxação foram realizados para seis níveis de deformação,
-de $2{,}5$ a $30\,\%$. Em cada nível, ajustou-se uma série de Prony com
-quatro tempos de relaxação próprios ao conjunto global de dados,
+% 20/11/2026 - Evidencias do ajuste completo distinguidas da parcela constitutiva linear.
+As curvas digitalizadas dos ensaios de Caire abrangem seis níveis de
+deformação, de $2{,}5$ a $30\,\%$. Cada curva foi representada por uma
+série de Prony, com coeficientes de tensão próprios e quatro tempos de
+relaxação comuns ao conjunto de dados,
 $2{,}3199$, $21{,}3538$, $234{,}2795$ e $3731{,}4008\,\mathrm{s}$.
+Não foram realizados novos ensaios neste trabalho.
+A Figura~\ref{fig:ajustes-relaxacao} reúne os ajustes individuais.
 Os coeficientes de determinação apresentados na
 Tabela~\ref{tab:qualidade-ajustes-relaxacao} variam de $0{,}9994$ a
 $0{,}9998$. Em conjunto com os baixos valores de RMSE e MAE, esse
 resultado indica que as curvas ajustadas acompanham de perto os dados
 digitalizados utilizados na identificação.
 
-\begin{figure}[htb]
-  \centering
-  \includegraphics[width=0.88\textwidth]{pics/all-relaxation-fits.png}
-  \caption{Ajustes da resposta de relaxação nos seis níveis de deformação.}
-  \label{fig:ajustes-relaxacao}
-  \fonte{Autoria própria.}
-\end{figure}
-
 A Tabela~\ref{tab:qualidade-ajustes-relaxacao} permite comparar os erros
 entre os níveis de deformação. O RMSE varia de
 $0{,}0022\,\mathrm{MPa}$ a $0{,}0074\,\mathrm{MPa}$, e o MAE, de
 $0{,}0018\,\mathrm{MPa}$ a $0{,}0061\,\mathrm{MPa}$. Embora os erros
 absolutos sejam maiores nas curvas de maior tensão, os valores de $R^2$
-permanecem elevados em todos os níveis. A variação dos coeficientes
-identificados entre as curvas também mostra por que uma única curva
-linear não representa necessariamente toda a faixa de deformações:
-para a representação PSM, os coeficientes das curvas individuais foram
-regredidos em funções polinomiais de grau quatro.
+permanecem elevados em todos os níveis. Esses indicadores se referem
+a ajustes que não impõem proporcionalidade entre tensão e deformação
+nas seis curvas. Para reuni-las na representação PSM, os coeficientes
+individuais foram posteriormente regredidos em funções polinomiais de
+grau quatro.
 
-\begin{table}[htb]
+% 20/11/2026 - Pagina de ilustracoes antes do comparativo, sem interromper seu paragrafo.
+\begin{figure}[!p]
+  \centering
+  \includegraphics[width=0.88\textwidth]{pics/all-relaxation-fits.png}
+  \caption{Ajustes individuais da resposta de relaxação nos seis níveis de deformação.}
+  \label{fig:ajustes-relaxacao}
+  \fonte{Autoria própria.}
+\end{figure}
+
+\begin{table}[!p]
   \caption{Qualidade dos ajustes de relaxação por nível de deformação.}
   \label{tab:qualidade-ajustes-relaxacao}
   \centering
@@ -4554,33 +4705,123 @@ regredidos em funções polinomiais de grau quatro.
     \hline
   \end{tabular}
   \fonte{Autoria própria.}
+  \smallskip
+  {\small Nota: $\sigma_0$ representa a tensão de longo prazo do ajuste,
+  e não a tensão inicial do ensaio.}
 \end{table}
 
-Na comparação de validação, o modelo identificado com os próprios tempos
-resultou em RMSE médio de $0{,}0280\,\mathrm{MPa}$ para todos os níveis,
-enquanto o modelo publicado por \citeonline{Caire2011} apresentou RMSE
-médio de $0{,}0637\,\mathrm{MPa}$ sobre o mesmo conjunto experimental.
-O uso dos tempos de Caire combinado aos dados próprios forneceu RMSE médio
-de $0{,}0316\,\mathrm{MPa}$, evidenciando que a identificação foi mais
-consistente com os ensaios utilizados neste trabalho. A reprodução direta
-das curvas de Prony tabuladas por Caire apresentou coerência geral em
-regiões próximas à parte inicial da resposta, mas diferenças nas escalas
-do decaimento mostram que os parâmetros publicados não são reproduzidos
-exatamente pelas tabelas fornecidas na própria tese. Para a frequência
-harmônica de $0{,}04\,\mathrm{Hz}$, o modelo próprio forneceu
-$G'(0{,}2512)\cong78{,}82\,\mathrm{MPa}$ e
-$G''(0{,}2512)\cong4{,}29\,\mathrm{MPa}$ no termo linear. A diferença
-entre os RMSE médios indica melhor aderência dos parâmetros identificados
-à base digitalizada empregada; não demonstra, por si só, superioridade
-geral do modelo nem validação experimental independente, pois os dados
-usados são os mesmos que fundamentaram a identificação.
+\clearpage
+
+Na comparação de validação, a representação PSM completa, identificada
+com os próprios tempos de relaxação, resultou em RMSE médio de
+$0{,}0280\,\mathrm{MPa}$ entre os seis níveis, enquanto os coeficientes
+publicados por \citeonline{Caire2011} forneceram
+$0{,}0637\,\mathrm{MPa}$ sobre a mesma base digitalizada. Mantendo os
+tempos de Caire e refazendo os dois estágios de ajuste com esses dados,
+obteve-se $0{,}0316\,\mathrm{MPa}$. Esses valores são médias aritméticas
+dos RMSE das seis curvas após a regressão polinomial; por isso, não se
+confundem com os erros dos ajustes individuais da
+Tabela~\ref{tab:qualidade-ajustes-relaxacao}.
+
+A menor diferença da representação identificada em relação aos dados
+utilizados no ajuste é esperada e não demonstra superioridade geral em
+relação à referência. A reconstrução das séries individuais publicadas
+por Caire forneceu RMSE entre $0{,}0080$ e
+$0{,}0332\,\mathrm{MPa}$ frente aos dados digitalizados. Tampouco se
+recuperaram exatamente todos os coeficientes constitutivos publicados ao
+refazer a regressão dos coeficientes de tensão tabulados na tese.
+Digitalização, arredondamento e diferenças no ajuste devem, portanto,
+ser considerados antes de atribuir as discrepâncias ao modelo físico.
+
+Para examinar especificamente a parcela linear, a
+Tabela~\ref{tab:comparacao-material-linear} compara grandezas calculadas
+somente com $G_1(t)$, sem os termos de potências superiores da deformação.
+Nos dois conjuntos, os quatro tempos e as quatro contribuições
+exponenciais são positivos, assim como o módulo de longo prazo.
+Consequentemente, a relaxação é decrescente, tende a um módulo positivo
+e apresenta dissipação não negativa, em acordo com as restrições do
+modelo linear discutidas no referencial teórico.
+
+\begin{table}[!htbp]
+  \centering
+  \caption{Comparação da parcela linear dos conjuntos de parâmetros do material.}
+  \label{tab:comparacao-material-linear}
+  \begin{tabular}{lrrr}
+    \hline
+    Grandeza & Caire & Identificação própria & Diferença relativa\\
+    & $(\mathrm{MPa})$ & $(\mathrm{MPa})$ & $(\%)$\\
+    \hline
+    Módulo inicial $G_1(0)$ & 78,51 & 84,38 & $+7{,}49$\\
+    Módulo de longo prazo $G_{01}$ & 57,93 & 60,88 & $+5{,}09$\\
+    Armazenamento $G'(\omega)$ & 73,11 & 78,82 & $+7{,}81$\\
+    Perda $G''(\omega)$ & 4,81 & 4,29 & $-10{,}87$\\
+    \hline
+  \end{tabular}
+  \fonte{Autoria própria, com parâmetros de \citeonline{Caire2011}.}
+  \smallskip
+  {\small Nota: $\omega=2\pi(0{,}04)\,\mathrm{rad/s}$.
+  Diferença relativa calculada em relação ao conjunto de Caire.}
+\end{table}
+
+O conjunto identificado apresenta módulo de armazenamento aproximadamente
+$7{,}8\,\%$ maior e módulo de perda aproximadamente $10{,}9\,\%$ menor
+nessa frequência. Assim, sua utilização na estrutura alteraria tanto a
+rigidez quanto a dissipação, mesmo que a formulação numérica fosse a mesma.
+Por essa razão, a reprodução estrutural e o estudo entre geometrias
+mantêm o conjunto publicado, e não o conjunto identificado neste trabalho.
+
+Para quantificar a consequência dessa restrição, a
+Tabela~\ref{tab:erro-parcela-linear} apresenta o erro obtido ao calcular
+as mesmas curvas exclusivamente por
+$\sigma=G_1(t)\varepsilon$, sem refazer o ajuste para cada nível.
+O erro aumenta com a deformação e já é apreciável na menor deformação
+disponível. Isso não caracteriza uma falha da integração estrutural:
+mostra a diferença entre identificar a representação constitutiva completa
+e conservar apenas seu termo linear.
+
+\begin{table}[!htbp]
+  \centering
+  \caption{RMSE das curvas calculadas exclusivamente com a parcela linear.}
+  \label{tab:erro-parcela-linear}
+  \begin{tabular}{crr}
+    \hline
+    Deformação & $G_1$ de Caire & $G_1$ identificado\\
+    $(\%)$ & $(\mathrm{MPa})$ & $(\mathrm{MPa})$\\
+    \hline
+    2,5 & 0,2466 & 0,3537\\
+    5,0 & 0,8416 & 1,0591\\
+    7,5 & 1,8715 & 2,1974\\
+    10,0 & 3,1719 & 3,6061\\
+    20,0 & 8,7202 & 9,5885\\
+    30,0 & 14,6588 & 15,9602\\
+    \hline
+  \end{tabular}
+  \fonte{Autoria própria, com parâmetros de \citeonline{Caire2011}.}
+\end{table}
+
+Os resultados verificam a identificação das curvas e a consistência
+física da parcela linear adotada, mas não sustentam sua validade
+experimental em toda a faixa analisada.
+Os elevados valores de $R^2$ da
+Tabela~\ref{tab:qualidade-ajustes-relaxacao} pertencem aos ajustes com
+coeficientes próprios de cada curva, e os RMSE médios anteriores, à
+representação PSM completa. Para estabelecer uma faixa experimental de
+validade da lei truncada em $G_1$, seriam necessários dados adicionais
+em pequenas deformações e um critério de erro admissível. Os dados
+disponíveis começam em $2{,}5\,\%$ e não caracterizam diretamente esse
+limite. O modelo linear é, portanto, mantido como aproximação de referência,
+cuja repercussão no projeto é discutida na
+Subseção~\ref{sec:limitacoes-projeto-resultados}.
 
 \subsection{Reprodução da Resposta Estrutural}
 \label{sec:reproducao-solucao-estrutural}
 
-Antes da comparação entre geometrias, a resposta da configuração linear
-foi verificada pela comparação das soluções obtidas com expansão até a
-primeira, segunda e terceira ordens. As curvaturas máximas na raiz do
+% 20/11/2026 - Abertura direta da verificacao de ordens para o caso de referencia.
+Para a configuração de referência de Caire, denominada E1 no estudo de
+caso, reconstruiu-se a resposta mantendo a mesma geometria, o material e
+o carregamento, com termos de primeira, segunda e terceira
+ordens, conforme a Tabela~\ref{tab:ordem-perturbativa}.
+As curvaturas máximas na raiz do
 enrijecedor foram $0{,}3654$, $0{,}3768$ e
 $0{,}3761\,\mathrm{m^{-1}}$, respectivamente. A diferença entre as
 segunda e terceira ordens foi de aproximadamente $0{,}18\,\%$, mostrando
@@ -4608,30 +4849,111 @@ da solução.
   \fonte{Autoria própria.}
 \end{table}
 
-Para a geometria de referência E1, o máximo absoluto de curvatura foi
-$0{,}3761\,\mathrm{m^{-1}}$, localizado na extremidade superior do
-enrijecedor, isto é, em $s=0\,\mathrm{m}$ no início da solução. Esse ponto
-também correspondeu à maior deformação externa do poliuretano,
-$13{,}16\,\%$. O raio mínimo associado foi $2{,}6586\,\mathrm{m}$, maior
-que o MBR adotado de $2{,}00\,\mathrm{m}$. Como o limite de curvatura
-correspondente ao MBR é $1/\mathrm{MBR}=0{,}50\,\mathrm{m^{-1}}$, a
-curvatura máxima de E1 permanece abaixo desse limite. O resultado fornece
-a referência estrutural para comparar as geometrias adaptadas, sem
-implicar que as dimensões originalmente publicadas para outros casos
-tenham sido reproduzidas sem alterações.
+A pequena alteração entre as ordens segue a tendência apresentada por
+Caire, mas essa concordância qualitativa não substitui a comparação das
+respostas. Para realizá-la, recuperaram-se 31 pontos de cada uma das duas
+distribuições de curvatura da solução no domínio da frequência
+publicada pelo autor. Os pontos foram digitalizados a
+partir dos marcadores vetoriais do PDF, em posições nominais de
+$0$ a $3\,\mathrm{m}$, espaçadas de $0{,}1\,\mathrm{m}$.
 
-\begin{figure}[htb]
+O comparativo da Figura~\ref{fig:validacao-curvatura-caire} mantém a
+definição empregada naquela referência: as duas distribuições
+correspondem aos instantes de curvatura máxima e mínima no engaste.
+Na solução deste trabalho, esses instantes são
+$t_+=5{,}8333\,\mathrm{s}$ e $t_-=18{,}5417\,\mathrm{s}$, dentro de um
+ciclo de $25\,\mathrm{s}$. Não se trata necessariamente dos máximos e
+mínimos locais em todas as seções; esses extremos podem ocorrer em
+outros instantes, como considerado nos envelopes usados no estudo de caso.
+
+\begin{figure}[!htbp]
   \centering
-  \includegraphics[width=0.86\textwidth]{pics/caire-curvature-envelope.png}
-  \caption{Envelope de curvatura ao longo do comprimento da geometria E1.}
-  \label{fig:envelope-curvatura-e1}
-  \fonte{Autoria própria.}
+  % Pontos de Caire: figura 4.14, pagina fisica 138 do PDF.
+  % Eixos vetoriais (pt): x=[174.27771,436.64777], y=[335.21924,123.70816].
+  % Conversao: s=3*(x-xmin)/(xmax-xmin); kappa=0.4*(y0-y)/(y0-y1).
+  \begin{tikzpicture}[x=4cm,y=15cm,font=\small]
+    \foreach \y/\texto in {0/0{,}0,0.1/0{,}1,0.2/0{,}2,0.3/0{,}3,0.4/0{,}4}{
+      \draw[gray!25] (0,\y)--(3,\y);
+      \node[left] at (0,\y) {$\texto$};
+    }
+    \draw[->] (0,0)--(3.12,0);
+    \draw[->] (0,0)--(0,0.42);
+    \foreach \x/\texto in {0/0{,}0,0.5/0{,}5,1/1{,}0,1.5/1{,}5,2/2{,}0,2.5/2{,}5,3/3{,}0}{
+      \draw (\x,0)--(\x,-0.004);
+      \node[below] at (\x,-0.004) {$\texto$};
+    }
+    \node[below] at (1.5,-0.035) {Coordenada de arco $s$ (m)};
+    \node[rotate=90] at (-0.25,0.21) {Curvatura $\kappa$ ($\mathrm{m^{-1}}$)};
+    \draw[thick] plot coordinates {
+      (0,.37613)(.1,.32941)(.2,.28652)(.3,.28354)(.4,.27917)
+      (.5,.27326)(.6,.26571)(.7,.25639)(.8,.24521)(.9,.23212)
+      (1,.21712)(1.1,.20027)(1.2,.18171)(1.3,.16172)(1.4,.14073)
+      (1.5,.11933)(1.6,.09836)(1.7,.07897)(1.8,.05104)(1.9,.03297)
+      (2,.02127)(2.1,.01370)(2.2,.00881)(2.3,.00564)(2.4,.00359)
+      (2.5,.00228)(2.6,.00144)(2.7,.00091)(2.8,.00059)(2.9,.00042)(3,.00037)};
+    \draw[thick,dashed] plot coordinates {
+      (0,.14607)(.1,.13092)(.2,.11675)(.3,.11848)(.4,.11993)
+      (.5,.12105)(.6,.12178)(.7,.12206)(.8,.12182)(.9,.12099)
+      (1,.11952)(1.1,.11733)(1.2,.11439)(1.3,.11070)(1.4,.10631)
+      (1.5,.10137)(1.6,.09616)(1.7,.09126)(1.8,.06976)(1.9,.05330)
+      (2,.04072)(2.1,.03111)(2.2,.02379)(2.3,.01824)(2.4,.01405)
+      (2.5,.01091)(2.6,.00862)(2.7,.00698)(2.8,.00589)(2.9,.00527)(3,.00507)};
+    \foreach \s/\ka/\kb in {
+      0/.37532/.14588,.1/.32871/.13064,.2/.28596/.11654,
+      .3/.28323/.11836,.4/.27913/.11995,.5/.27367/.12109,
+      .6/.26640/.12200,.7/.25730/.12245,.8/.24616/.12222,
+      .9/.23320/.12154,1/.21819/.12018,1.1/.20136/.11791,
+      1.2/.18271/.11495,1.3/.16247/.11131,1.4/.14133/.10676,
+      1.5/.11950/.10153,1.6/.09835/.09608,1.7/.07857/.09084,
+      1.8/.05082/.06947,1.9/.03286/.05309,2/.02126/.04059,
+      2.1/.01376/.03081,2.2/.00875/.02353,2.3/.00557/.01808,
+      2.4/.00375/.01398,2.5/.00239/.01080,2.6/.00170/.00852,
+      2.7/.00102/.00693,2.8/.00080/.00580,2.9/.00080/.00511,3/.00080/.00489}{
+      \draw[blue!65!black,fill=white] (\s,\ka) circle[radius=1.5pt];
+      \draw[blue!65!black,fill=white] (\s,\kb) circle[radius=1.5pt];
+    }
+    \draw[thick] (1.5,.385)--(1.7,.385);
+    \node[right] at (1.73,.385) {TCC: $t_+$};
+    \draw[thick,dashed] (1.5,.36)--(1.7,.36);
+    \node[right] at (1.73,.36) {TCC: $t_-$};
+    \draw[blue!65!black,fill=white] (1.6,.335) circle[radius=1.5pt];
+    \node[right] at (1.73,.335) {Caire: pontos digitalizados};
+  \end{tikzpicture}
+  \caption{Comparação da solução linear com Caire nos instantes de
+  curvatura extrema no engaste.}
+  \label{fig:validacao-curvatura-caire}
+  \fonte{Autoria própria, com dados de \citeonline{Caire2011}.}
 \end{figure}
 
+Para a distribuição associada a $t_+$, o RMSE espacial em relação aos
+pontos digitalizados foi aproximadamente
+$5{,}7\times10^{-4}\,\mathrm{m^{-1}}$, com diferença absoluta máxima de
+$1{,}1\times10^{-3}\,\mathrm{m^{-1}}$. Para a distribuição de $t_-$,
+obtiveram-se, respectivamente, $3{,}2\times10^{-4}$ e
+$6{,}6\times10^{-4}\,\mathrm{m^{-1}}$. No engaste, os valores
+digitalizados são aproximadamente $0{,}3753$ e
+$0{,}1459\,\mathrm{m^{-1}}$, próximos dos valores de terceira ordem
+da Tabela~\ref{tab:ordem-perturbativa}. As diferenças permanecem pequenas
+também ao longo do domínio, e não apenas na seção utilizada para a
+calibração.
+
+Essa concordância sustenta a reprodução do caso linear de referência
+pela implementação das equações de governo e pela reconstrução harmônica.
+Entretanto, os indicadores comparam a solução com uma representação
+gráfica, não com os arquivos numéricos originais de Caire. Além disso,
+o diâmetro interno de $0{,}34\,\mathrm{m}$ foi calibrado com resultados
+da mesma referência. Portanto, trata-se de uma verificação de reprodução
+com calibração geométrica, e não de uma validação independente.
+Uma comparação própria entre as soluções no tempo e na frequência,
+acompanhada de refinamento numérico, permitiria verificar a solução sem
+depender apenas dessa concordância com a tese.
+
+% 20/11/2026 - Secao secundaria em continuidade, sem quebra de pagina forcada.
 \section{Solução do Estudo de Caso}
 \label{sec:solucao-do-estudo-de-caso}
 
-Com a resposta de referência examinada, o procedimento é aplicado às três
+% 20/11/2026 - Aplicacao de projeto separada da verificacao do caso de Caire.
+Com a reprodução do caso linear de referência examinada, o procedimento é aplicado às três
 geometrias do estudo de caso, mantendo-se as condições de carregamento,
 material e linha flexível. Além de verificar os limites de deformação do
 poliuretano e de raio mínimo, comparam-se as margens obtidas e o volume de
@@ -4647,6 +4969,27 @@ Tabela~\ref{tab:resultados-dimensionamento} são estimativas nos pontos da
 malha espacial e temporal; por isso, suas magnitudes e posições dependem
 das resoluções adotadas e da aproximação perturbativa.
 
+% 20/11/2026 - Superficie ja gerada na simulacao para visualizar a resposta espaco-temporal.
+A Figura~\ref{fig:superficie-curvatura-e1} apresenta a superfície de
+curvatura da simulação de E1 ao longo de um ciclo de $25\,\mathrm{s}$.
+Os eixos horizontais representam a posição no conjunto e o tempo,
+enquanto a altura e a escala de cores indicam a curvatura. Essa
+visualização reúne a oscilação periódica e a variação espacial da
+resposta, evidenciando os maiores valores próximos ao engaste e sua
+redução em direção à extremidade oposta do domínio. Trata-se de uma
+representação de $\kappa(s,t)$, não da forma deformada do conjunto;
+a comparação quantitativa entre as geometrias é feita pelos máximos
+e envelopes apresentados a seguir.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{pics/caire-curvature-surface.png}
+  \caption{Superfície de curvatura do conjunto linha flexível-enrijecedor
+  para E1 ao longo de um ciclo.}
+  \label{fig:superficie-curvatura-e1}
+  \fonte{Autoria própria.}
+\end{figure}
+
 \begin{table}[htb]
   \caption{Síntese dos resultados do dimensionamento das três geometrias.}
   \label{tab:resultados-dimensionamento}
@@ -4655,25 +4998,30 @@ das resoluções adotadas e da aproximação perturbativa.
     \hline
     Caso & $D_b$ & $L_e$ & Volume &
       $\kappa_{\mathrm{max}}$ & $\varepsilon_{\mathrm{max}}$ &
-      $\mathrm{FS}_{global}$ & Situação\\
+      $\mathrm{FS}_{global}$ & Critérios\\
     & $(\mathrm{m})$ & $(\mathrm{m})$ & $(\mathrm{m^3})$
       & $(\mathrm{m^{-1}})$ & $(\%)$ & $-$ & $-$\\
     \hline
-    E1 & 0,700 & 1,700 & 0,2539 & 0,3761 & 13,16 & 1,139 & Aprovado\\
-    E2 & 0,660 & 1,900 & 0,2411 & 0,4426 & 14,61 & 1,027 & Aprovado\\
-    E3 & 0,575 & 2,350 & 0,2204 & 0,6364 & 18,30 & 0,786 & Reprovado\\
+    E1 & 0,700 & 1,700 & 0,2539 & 0,3761 & 13,16 & 1,139 & Atende\\
+    E2 & 0,660 & 1,900 & 0,2411 & 0,4426 & 14,61 & 1,027 & Atende\\
+    E3 & 0,575 & 2,350 & 0,2204 & 0,6364 & 18,30 & 0,786 & Não atende\\
     \hline
   \end{tabular}
   \fonte{Autoria própria.}
 \end{table}
 
+Nos três casos, os maiores valores de curvatura e de deformação do
+poliuretano ocorreram no engaste, em $s=0$. Essa localização é comum
+aos resultados calculados, não uma condição imposta à busca dos máximos.
 Na geometria E1, o fator global foi governado pela deformação do
 poliuretano: $\mathrm{FS}_{\varepsilon}=1{,}1394$, enquanto
 $\mathrm{FS}_{\mathrm{MBR}}=1{,}3293$. A deformação máxima ficou
 $1{,}84$ ponto percentual abaixo do limite de $15\,\%$, e o raio mínimo
 de $2{,}6586\,\mathrm{m}$ superou o MBR em $0{,}6586\,\mathrm{m}$.
 Assim, os dois critérios foram atendidos, com maior proximidade do limite
-de deformação.
+de deformação. O ponto crítico foi atingido em
+$t=5{,}8333\,\mathrm{s}$ do ciclo reconstruído; a coordenada $s=0$ não
+significa que esse máximo ocorra no instante inicial.
 
 Em E2, a deformação máxima de $14{,}61\,\%$ ficou apenas
 $0{,}39$ ponto percentual abaixo do limite, resultando em
@@ -4689,12 +5037,73 @@ MBR. Esse raio corresponde a uma curvatura de aproximadamente
 $0{,}6364\,\mathrm{m^{-1}}$, acima do limite de
 $0{,}50\,\mathrm{m^{-1}}$. Os fatores associados à deformação e ao MBR
 foram, respectivamente, $0{,}8198$ e $0{,}7857$; o segundo foi o menor
-e, portanto, governou a reprovação. Logo, E3 não atende a nenhum dos dois
+e, portanto, governou o não atendimento. Logo, E3 não atende a nenhum dos dois
 critérios, apesar de apresentar o menor volume e o maior comprimento
 entre as configurações avaliadas.
 
 \subsection{Comparação dos Resultados}
 \label{sec:comparacao-resultados}
+
+% 20/11/2026 - Interpretacao espacial dos resultados entre geometrias adaptadas.
+A Figura~\ref{fig:comparacao-envelopes-estudo} compara os máximos
+absolutos locais de curvatura ao longo de um ciclo, para as três
+geometrias. Diferentemente da
+Figura~\ref{fig:validacao-curvatura-caire}, cada seção é representada
+pelo seu próprio máximo, independentemente do instante em que ele ocorre.
+O maior comprimento de E3 reduz a curvatura em parte do trecho afastado
+do engaste, mas não compensa sua concentração na raiz. Portanto, uma
+curva mais baixa em parte do domínio não caracteriza, por si só, melhor
+atendimento ao critério de projeto.
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{tikzpicture}[x=4cm,y=8cm,font=\small]
+    \foreach \y/\texto in {0/0{,}0,0.1/0{,}1,0.2/0{,}2,0.3/0{,}3,0.4/0{,}4,0.5/0{,}5,0.6/0{,}6}{
+      \draw[gray!25] (0,\y)--(3,\y);
+      \node[left] at (0,\y) {$\texto$};
+    }
+    \draw[->] (0,0)--(3.12,0);
+    \draw[->] (0,0)--(0,0.68);
+    \foreach \x/\texto in {0/0{,}0,0.5/0{,}5,1/1{,}0,1.5/1{,}5,2/2{,}0,2.5/2{,}5,3/3{,}0}{
+      \draw (\x,0)--(\x,-0.008);
+      \node[below] at (\x,-0.008) {$\texto$};
+    }
+    \node[below] at (1.5,-0.065) {Coordenada de arco $s$ (m)};
+    \node[rotate=90] at (-0.25,0.34) {Curvatura máxima absoluta ($\mathrm{m^{-1}}$)};
+    \draw[thick,blue!70!black] plot coordinates {
+      (0,.37613)(.1,.32941)(.2,.28654)(.3,.28358)(.4,.27924)
+      (.5,.27339)(.6,.26592)(.7,.25672)(.8,.24570)(.9,.23284)
+      (1,.21815)(1.1,.20174)(1.2,.18385)(1.3,.16496)(1.4,.14595)
+      (1.5,.12823)(1.6,.11319)(1.7,.10174)(1.8,.07499)(1.9,.05615)
+      (2,.04240)(2.1,.03216)(2.2,.02448)(2.3,.01869)(2.4,.01436)
+      (2.5,.01113)(2.6,.00877)(2.7,.00710)(2.8,.00599)(2.9,.00535)(3,.00515)};
+    \draw[thick,dashed,orange!85!black] plot coordinates {
+      (0,.44263)(.1,.38416)(.2,.33136)(.3,.31777)(.4,.30304)
+      (.5,.28723)(.6,.27042)(.7,.25271)(.8,.23423)(.9,.21514)
+      (1,.19564)(1.1,.17600)(1.2,.15653)(1.3,.13766)(1.4,.12000)
+      (1.5,.10416)(1.6,.09051)(1.7,.07905)(1.8,.06961)(1.9,.06200)
+      (2,.04671)(2.1,.03540)(2.2,.02692)(2.3,.02056)(2.4,.01579)
+      (2.5,.01225)(2.6,.00966)(2.7,.00782)(2.8,.00659)(2.9,.00590)(3,.00567)};
+    \draw[thick,dashdotted,green!45!black] plot coordinates {
+      (0,.63639)(.1,.53828)(.2,.45391)(.3,.38132)(.4,.31875)
+      (.425,.30447)(.5,.28168)(.6,.25255)(.7,.22500)(.8,.19910)(.9,.17497)
+      (1,.15269)(1.1,.13234)(1.2,.11407)(1.3,.09801)(1.4,.08422)
+      (1.5,.07256)(1.6,.06272)(1.7,.05439)(1.8,.04724)(1.9,.04103)
+      (2,.03557)(2.1,.03073)(2.2,.02648)(2.3,.02282)(2.35,.02123)(2.4,.01862)
+      (2.5,.01444)(2.6,.01139)(2.7,.00923)(2.8,.00779)(2.9,.00696)(3,.00670)};
+    \draw[thick,densely dotted] (0,.5)--(3,.5);
+    \draw[thick,blue!70!black] (1.15,.625)--(1.35,.625);
+    \node[right] at (1.39,.625) {E1};
+    \draw[thick,dashed,orange!85!black] (1.75,.625)--(1.95,.625);
+    \node[right] at (1.99,.625) {E2};
+    \draw[thick,dashdotted,green!45!black] (2.35,.625)--(2.55,.625);
+    \node[right] at (2.59,.625) {E3};
+    \node[above,fill=white,inner sep=2pt] at (2,.5) {Limite: $1/\mathrm{MBR}$};
+  \end{tikzpicture}
+  \caption{Envelopes de curvatura das três geometrias sob as condições comuns.}
+  \label{fig:comparacao-envelopes-estudo}
+  \fonte{Autoria própria.}
+\end{figure}
 
 O aumento do comprimento total não produziu uma redução proporcional da
 curvatura crítica nas geometrias avaliadas. E1, com volume de
@@ -4703,10 +5112,11 @@ $0{,}3761\,\mathrm{m^{-1}}$. E2 apresentou volume ligeiramente menor,
 $0{,}2411\,\mathrm{m^3}$, porém curvatura maior,
 $0{,}4426\,\mathrm{m^{-1}}$. E3 apresentou o menor volume,
 $0{,}2204\,\mathrm{m^3}$, mas a maior curvatura,
-$0{,}6364\,\mathrm{m^{-1}}$. Os resultados indicam que o diâmetro da base
-e a distribuição longitudinal da rigidez têm influência mais direta sobre
-a resposta do que o volume isoladamente. Essa interpretação deve ser
-considerada em conjunto com o fato de que as geometrias também diferem
+$0{,}6364\,\mathrm{m^{-1}}$. O menor volume não correspondeu à menor solicitação crítica.
+A distribuição longitudinal da rigidez, associada ao perfil apresentado
+na Figura~\ref{fig:comparacao-geometria}, é mais informativa para
+interpretar essa diferença do que o volume isoladamente. Contudo,
+as geometrias também diferem
 nos comprimentos cilíndrico e cônico e no comprimento de linha após o
 enrijecedor; assim, os resultados não isolam o efeito de uma única
 dimensão.
@@ -4727,7 +5137,9 @@ dimensão.
   \fonte{Autoria própria.}
 \end{figure}
 
-Entre as geometrias aprovadas, E1 apresentou maior margem global
+Os fatores reunidos na Figura~\ref{fig:fatores-seguranca} evidenciam que
+o critério governante não é o mesmo nos três casos.
+Entre as geometrias que atendem aos critérios, E1 apresentou maior margem global
 ($1{,}1394$), em oposição à E2 ($1{,}0269$). E1 também apresentou menor
 curvatura absoluta e menor deformação máxima que E2. Todavia, E2 possui
 volume aproximadamente $5\,\%$ menor, valor obtido pela relação
@@ -4737,20 +5149,276 @@ de material. A diferença de volume, por si só, não permite concluir que
 E2 seja uma solução mais eficiente, pois sua margem de deformação é
 reduzida e os dois casos não foram objeto de otimização.
 
-Por fim, os resultados não constituem uma otimização global das dimensões.
-A aproximação é válida dentro da expansão perturbativa adotada, da
-frequência analisada, das propriedades viscoelásticas identificadas e do
-domínio finito empregado. A sensibilidade ao comprimento do domínio e a
-incorporação de efeitos não lineares e térmicos permanecem como etapas
-necessárias para uma extrapolação do modelo a condições reais de projeto.
+\subsection{Limitações da Solução e Implicações para o Projeto}
+\label{sec:limitacoes-projeto-resultados}
+
+% 20/11/2026 - Conservadorismo sustentado pela comparacao estrutural nao linear de Caire.
+O atendimento aos limites no modelo linear precisa ser interpretado à
+luz da resposta não linear do poliuretano. A comparação estrutural de
+\citeonline{Caire2011} é especialmente útil porque mantém o termo
+$G_1$ no modelo linear e acrescenta os efeitos constitutivos não lineares
+no modelo mais completo. Para a geometria e as condições examinadas
+naquela tese, os resultados indicam curvaturas máximas menores no modelo
+viscoelástico não linear. A
+Tabela~\ref{tab:caire-linear-naolinear} reúne as diferenças publicadas
+para a frequência adotada neste trabalho, sem apresentá-las como novas
+simulações.
+
+\begin{table}[!htbp]
+  \centering
+  \caption{Diferenças de curvatura máxima entre os modelos de Caire a $0{,}04\,\mathrm{Hz}$.}
+  \label{tab:caire-linear-naolinear}
+  \begin{tabular}{ccc}
+    \hline
+    $\epsilon$ & $\alpha$ & Diferença linear $\rightarrow$ não linear\\
+    $(\%)$ & $(\%)$ & $(\%)$\\
+    \hline
+    10 & 10 & 6,76\\
+    45 & 27 & 9,92\\
+    50 & 50 & 11,80\\
+    \hline
+  \end{tabular}
+  \fonte{Adaptado de \citeonline{Caire2011}.}
+  \smallskip
+  {\small Nota: $\gamma=15{,}47^\circ$.
+  Na comparação publicada, a curvatura máxima não linear é menor.}
+\end{table}
+
+Para as amplitudes $\epsilon=0{,}45$ e $\alpha=0{,}27$, comuns ao estudo
+de caso, a diferença indicada por Caire é $9{,}92\,\%$. Nesse caso de
+referência, a solução linear é mais conservadora quanto ao máximo de
+curvatura: prevê um raio mínimo menor. Como o maior diâmetro do perfil
+é $D_b$, vale $|\varepsilon_{\mathrm{ext}}|\leq\kappa_{\max}D_b/2$.
+Essa cota é atingida no engaste da solução linear de E1; assim, para
+o mesmo perfil, uma curvatura máxima não linear menor também implica
+um máximo de deformação inferior ao linear.
+Essa evidência diz respeito ao modelo
+viscoelástico linear com o conjunto publicado, e não a qualquer escolha
+de módulo elástico nem a qualquer linearização do material.
+
+Esse conservadorismo não transforma a diferença de $9{,}92\,\%$ em um
+fator de correção para E2 e E3. A alteração do perfil modifica a
+distribuição de deformações e pode mudar a relevância dos termos não
+lineares. Assim, o não atendimento de E3 nos cálculos lineares não
+comprova seu não atendimento no modelo não linear; por outro lado, não
+autoriza presumir que a inclusão da não linearidade o tornaria adequado.
+Uma conclusão desse tipo exige resolver cada geometria com a mesma lei
+não linear e as mesmas condições de contorno.
+
+Também é necessário separar a limitação constitutiva da aproximação
+numérica. A diferença de apenas $0{,}18\,\%$ entre as ordens
+perturbativas de E1 não limita o erro de malha, o erro da reconstrução
+temporal ou o efeito do contorno. Na própria comparação de Caire entre
+a solução no tempo por elementos finitos e a solução na frequência,
+a diferença de curvatura máxima para essas amplitudes foi
+$2{,}48\,\%$. Esse valor pertence à verificação realizada pelo autor;
+não é uma estimativa de erro da presente implementação, nem deve ser
+somado à diferença entre modelos constitutivos.
+
+Em termos de decisão de projeto, a margem de E2 merece maior cautela:
+um aumento de aproximadamente $2{,}7\,\%$ em sua deformação máxima já
+seria suficiente para atingir o limite adotado. Em E1, esse aumento
+seria de aproximadamente $13{,}9\,\%$. Esses valores decorrem de
+$\mathrm{FS}_{\varepsilon}-1$ e não são probabilidades de falha.
+A comparação evidencia por que o menor consumo de material de E2 não
+deve ser escolhido sem verificar a sensibilidade a parâmetros e
+resoluções numéricas, mesmo diante da tendência conservadora observada
+para a lei linear no caso de referência.
+
+% A implementar: refinamentos espacial, de fase e de dominio para E1, E2 e E3;
+% comparacao propria tempo x frequencia e analise nao linear de cada geometria.
+O domínio comum de $3\,\mathrm{m}$ deixa somente $0{,}65\,\mathrm{m}$
+de linha após E3, em contraste com $1{,}30\,\mathrm{m}$ em E1.
+A influência dessa proximidade do contorno ainda precisa ser quantificada
+variando o comprimento de linha livre sem alterar o enrijecedor.
+Do mesmo modo, são necessários refinamentos espacial e de fase e a
+comparação própria entre os domínios do tempo e da frequência.
+Sem essas verificações, não se atribui um sentido conservador a todos
+os erros da solução apenas porque uma simplificação constitutiva
+apresentou essa tendência na literatura.
+
+% A implementar: propagacao da identificacao propria ate a resposta estrutural;
+% dados independentes em pequenas deformacoes para avaliar a validade de G1.
+Outra distinção importante é que o estudo estrutural utiliza os
+parâmetros publicados, e não fecha a sequência de simulação com os
+parâmetros da identificação própria. A comparação estrutural entre esses
+dois conjuntos permitiria avaliar a repercussão das diferenças da
+Tabela~\ref{tab:comparacao-material-linear}. Uma avaliação experimental
+independente em pequenas deformações seria necessária para estabelecer
+a faixa de validade física do modelo linear, além da reprodução numérica
+do caso bibliográfico.
+
+Por fim, os fatores calculados expressam apenas o atendimento ao MBR e
+ao limite de deformação sob um carregamento harmônico e uma temperatura.
+Não incluem a dispersão do material, a fadiga por histórico de serviço,
+o aquecimento por dissipação, o contato com folga ou todos os modos de
+falha do conjunto. E1 apresenta a maior margem entre as configurações
+avaliadas; E2 reduz o volume com menor margem; E3 ultrapassa ambos os
+limites no modelo adotado. Essa comparação fornece uma base para
+selecionar configurações para análises posteriores, mas não constitui
+otimização global, certificação de segurança ou liberação final de projeto.
 
 % ----------------------------------------------------------------------
 
 \chapter{Conclusão}
 \label{sec:conclusao}
 
-\section{Trabalhos Futuros}
+% 20/11/2026 - Conclusao vinculada aos objetivos e as evidencias efetivamente apresentadas.
+Este trabalho reuniu a caracterização viscoelástica do poliuretano e a
+análise estrutural do conjunto linha flexível-enrijecedor em uma
+metodologia numérica aplicada a carregamentos harmônicos. A separação
+entre identificação do material, reprodução do caso de referência e
+comparação entre geometrias permitiu examinar tanto o funcionamento da
+ferramenta quanto o alcance das conclusões de projeto obtidas com ela.
+
+Retomando os objetivos específicos apresentados na introdução,
+destacam-se os seguintes resultados:
+
+\begin{enumerate}
+  \item \textbf{Revisão bibliográfica.} Foram reunidos os fundamentos de
+  viscoelasticidade, comportamento do poliuretano, funcionamento dos
+  enrijecedores, modelos mecânicos e séries de Prony. Essa base orientou
+  a representação da memória do material e a escolha dos métodos
+  numéricos, além de permitir distinguir a linearidade constitutiva das
+  aproximações geométricas e dos limites adotados para dimensionamento.
+
+  \item \textbf{Identificação dos parâmetros constitutivos.} Foram
+  implementados o ajuste das seis curvas digitalizadas de relaxação e
+  a identificação das funções constitutivas pela representação
+  polinomial. Os ajustes individuais apresentaram $R^2$ entre
+  $0{,}9994$ e $0{,}9998$, mostrando boa reprodução da base utilizada.
+  Também foi extraída a parcela linear $G_1(t)$ e verificada sua
+  consistência física. O objetivo de implementar a identificação foi,
+  portanto, atendido, sem confundir a qualidade dos ajustes completos
+  com a validade experimental da aproximação linear.
+
+  \item \textbf{Implementação da formulação estrutural.} Foi implementada
+  a solução viscoelástica linear no domínio da frequência, com expansão
+  perturbativa até a terceira ordem, integração espacial por RK4 e
+  ajuste das condições iniciais pelo método do tiro. A reconstrução
+  permitiu obter históricos, distribuições de curvatura, deformações e
+  formas deformadas, bem como localizar os máximos usados nas
+  verificações. Dessa forma, a formulação foi convertida em uma
+  ferramenta de análise do conjunto sob o carregamento harmônico
+  proposto.
+
+  \item \textbf{Avaliação e comparação da resposta estrutural.} A
+  reprodução do caso linear de Caire apresentou diferenças pequenas
+  em relação aos pontos digitalizados da solução publicada. Na
+  distribuição correspondente à máxima curvatura no engaste, a maior
+  diferença absoluta foi aproximadamente
+  $1{,}1\times10^{-3}\,\mathrm{m^{-1}}$. A comparação entre ordens
+  perturbativas também mostrou baixa sensibilidade da curvatura máxima
+  de E1 à passagem da segunda para a terceira ordem. Essas evidências
+  sustentam a reprodução numérica do caso bibliográfico, mas o
+  atendimento deste objetivo fica restrito a esse âmbito: houve
+  calibração geométrica e não foi realizada validação experimental
+  independente.
+
+  \item \textbf{Realização do estudo de caso.} Foram comparadas três
+  geometrias adaptadas à mesma linha, ao mesmo material e ao mesmo
+  carregamento. No modelo adotado, E1 e E2 atenderam aos limites de
+  deformação e de raio mínimo, enquanto E3 ultrapassou ambos. E1
+  apresentou a maior margem global; E2 reduziu o volume em cerca de
+  $5\,\%$ em relação a E1, mas sua deformação máxima de $14{,}61\,\%$
+  ficou próxima do limite de $15\,\%$. Assim, o estudo tornou explícita
+  a diferença entre reduzir o consumo de material e preservar margem
+  em relação aos critérios de projeto.
+
+  \item \textbf{Análise dos resultados e das limitações.} A comparação
+  mostrou que o maior comprimento de um enrijecedor não garante menor
+  solicitação crítica e que o volume, isoladamente, não caracteriza
+  seu desempenho. Também foram discutidos os limites constitutivos,
+  numéricos e operacionais da metodologia. A tendência conservadora
+  do modelo linear observada na comparação bibliográfica foi
+  delimitada ao caso de referência, sem transformá-la em garantia
+  para outras geometrias ou em fator de correção dos resultados.
+\end{enumerate}
+
+Em relação ao objetivo geral, foi possível aplicar a metodologia,
+conferir a reprodução do caso linear de referência e utilizar critérios
+de curvatura e deformação para comparar alternativas geométricas. Esse
+resultado constitui uma base de análise e seleção preliminar, não um
+procedimento de certificação final. A integração entre a identificação
+própria e a avaliação estrutural permanece parcial, pois as simulações
+estruturais utilizaram os parâmetros publicados, mantidos separados
+daqueles identificados neste trabalho.
+
+\section{Limitações do Trabalho}
+\label{sec:limitacoes-trabalho}
+
+% 20/11/2026 - Sintese dos limites de validacao, representatividade e aplicacao de projeto.
+A caracterização foi baseada em dados digitalizados, sem acesso aos
+registros experimentais originais e sem novos ensaios. Por isso, os
+indicadores de ajuste não quantificam a dispersão do material nem
+constituem validação com dados independentes. Além disso, a parcela
+$G_1$ isolada apresentou diferenças relevantes frente às curvas
+disponíveis; sua consistência física não basta para estabelecer uma
+faixa experimental de validade, sobretudo sem dados abaixo de
+$2{,}5\,\%$ de deformação.
+
+A solução estrutural representa um problema local, quase-estático,
+isotérmico e em regime harmônico permanente. O comportamento constitutivo
+foi limitado à viscoelasticidade linear, sem incluir os efeitos térmicos
+e de contato com folga. A concordância com o caso bibliográfico não
+elimina essas simplificações nem demonstra que elas sejam conservadoras
+em qualquer condição.
+
+Do ponto de vista numérico, a proximidade entre as ordens perturbativas
+não substitui estudos de refinamento espacial e de fase ou de
+sensibilidade ao comprimento do domínio. A influência do contorno merece
+atenção especial em E3, que possui o menor trecho de linha após o
+enrijecedor. Essas incertezas ainda não foram quantificadas e são
+particularmente importantes quando a margem calculada é pequena, como
+em E2.
+
+Por fim, os fatores apresentados expressam apenas a relação com os
+limites escolhidos para deformação e MBR. Não abrangem todos os modos
+de falha, a variabilidade dos parâmetros ou a vida em fadiga sob um
+histórico de serviço. Assim, o atendimento aos critérios nos casos
+calculados não equivale à comprovação de segurança do conjunto em
+operação.
+
+\section{Sugestões de Trabalhos Futuros}
 \label{sec:trabalhos-futuros}
+
+% 20/11/2026 - Sugestoes restritas a caracterizacao, fadiga e otimizacao genetica.
+Como continuidade deste trabalho, sugerem-se os seguintes desenvolvimentos:
+
+\begin{enumerate}
+  \item \textbf{Caracterização viscoelástica com dados originais.}
+  Implementar a identificação a partir dos registros originais de
+  ensaios de relaxação, em vez de curvas digitalizadas. A utilização
+  de repetições e de dados independentes para validação permitiria
+  avaliar a dispersão experimental e reduzir a influência da leitura
+  dos gráficos sobre os parâmetros obtidos.
+
+  \item \textbf{Caracterização viscoelástica não linear.} Aprofundar a
+  identificação das funções constitutivas que representam a dependência
+  da resposta com o nível de deformação, considerando diferentes
+  históricos de carregamento na avaliação do modelo. Esse desenvolvimento
+  permitiria verificar a capacidade da representação não linear de
+  descrever o poliuretano além da parcela $G_1$ utilizada na solução
+  estrutural deste trabalho.
+
+  \item \textbf{Dimensionamento considerando a fadiga do material.}
+  Incorporar critérios de fadiga do poliuretano, relacionando os
+  históricos de tensão ou deformação aos dados de resistência sob
+  carregamento cíclico. Assim, a seleção do enrijecedor poderia considerar
+  a vida em serviço, e não apenas o atendimento ao raio mínimo e ao
+  limite de deformação em um ciclo.
+
+  \item \textbf{Otimização estrutural por algoritmo genético.} Acoplar
+  a ferramenta de análise a um algoritmo genético para buscar perfis
+  de menor volume que respeitem as restrições de curvatura e deformação.
+  Essa proposta segue a abordagem de \citeonline{Tanaka2009}, que
+  empregaram um algoritmo genético no projeto de enrijecedores,
+  utilizando o volume de polímero como função objetivo. No contexto
+  deste trabalho, os diâmetros externos e os comprimentos dos trechos
+  cilíndrico e cônico poderiam ser tratados como variáveis de projeto,
+  mantendo a compatibilidade com a linha flexível e as condições da
+  aplicação.
+\end{enumerate}
 
 %%% ====================================================================
 %%% Início da parte pós-textual do documento.
@@ -4760,29 +5428,5 @@ necessárias para uma extrapolação do modelo a condições reais de projeto.
 
 %%% Referências Bibliográfica
 \bibliography{referencias}
-
-%%% Início dos apêndices ---------------------------------------------
-
-\apendices
-
-%%% A linha abaixo impede que as seções, subseções, etc. dos apêndices e anexos
-%%% sejam mostradas no Sumário.
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-
-\partapendices*
-
-% --------------------------------------------------------------------
-
-\chapter{Demonstração do Teorema Loren Ipsum}
-
-% --------------------------------------------------------------------
-%%% Início dos anexos ------------------------------------------------
-\anexos
-
-\partanexos*
-
-\chapter{Exemplo de lombada}
-
-\hspace*{0mm}\fbox{\includegraphics[scale=0.8]{pics/normas-ifes-apendice-d.png}}
 
 \end{document}

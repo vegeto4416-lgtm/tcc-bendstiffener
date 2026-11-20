@@ -260,21 +260,23 @@
 %%% ---
 %%% List of symbol
 \newenvironment{isymbols}{%
+  \interlinepenalty=10000
   \list{}% empty label
   {%
     \setlength{\topsep}{\baselineskip}
     \setlength{\partopsep}{0pt}
-    \setlength{\itemsep}{0.5\baselineskip}
+    \setlength{\itemsep}{0.15\baselineskip}
     \setlength{\parsep}{0pt}
-    \setlength{\leftmargin}{2em}
+    % 20/11/2026 - Coluna propria para simbolos compostos e descricoes alinhadas.
+    \setlength{\leftmargin}{3.5cm}
     \setlength{\rightmargin}{0em}
     \setlength{\listparindent}{1em}
     \setlength{\itemindent}{0em}
-    \setlength{\labelwidth}{0em}
-    \setlength{\labelsep}{2em}
+    \setlength{\labelwidth}{3.2cm}
+    \setlength{\labelsep}{0.3cm}
   }
 }{\endlist}
-\newcommand{\simb}[1]{\item[#1]\mbox{}}
+\newcommand{\simb}[1]{\item[{#1}]\mbox{}}
 %%% ---
 
 % ---
