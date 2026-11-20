@@ -4243,36 +4243,34 @@ na Seção~\ref{sec:solucao-do-estudo-de-caso}.
 \chapter{Resultados e Discussão}
 \label{sec:resultados-e-discussao}
 
-Este capítulo apresenta e interpreta os resultados obtidos nas etapas
-experimental, numérica e de dimensionamento. Inicialmente, avalia-se a
-capacidade do modelo identificado de reproduzir os ensaios de relaxação
-e a resposta estrutural calculada. Em seguida, comparam-se as três
-geometrias analisadas, considerando curvatura, deformação do poliuretano,
-raio mínimo, volume e fatores de segurança.
+Os resultados são discutidos em duas etapas. Primeiro, examina-se a
+reprodução dos ensaios de relaxação e da resposta estrutural de referência;
+depois, avalia-se como as geometrias selecionadas respondem às condições
+comuns do estudo de caso. A comparação considera curvatura, deformação do
+poliuretano, raio mínimo, volume e atendimento aos critérios adotados, sem
+extrapolar as hipóteses e as resoluções numéricas descritas na metodologia.
 
 \section{Validação do Programa}
 \label{sec:validacao-programa}
 
-Nesta seção, verifica-se se os procedimentos implementados reproduzem os
-dados de caracterização do material e a resposta esperada do sistema
-linha flexível--enrijecedor. A validação tem como finalidade distinguir
-as limitações próprias da identificação viscoelástica dos possíveis
-desvios da solução estrutural.
+A avaliação do programa abrange duas verificações complementares: a
+representação dos ensaios de relaxação pelos parâmetros identificados e a
+reprodução da resposta estrutural do caso de referência. Analisá-las em
+separado ajuda a distinguir diferenças ligadas à caracterização do
+poliuretano daquelas associadas à solução estrutural.
 
 \subsection{Reprodução do Comportamento de Relaxação}
 \label{sec:reproducao-relaxacao}
-
-Esta subseção avalia a qualidade da representação viscoelástica ajustada
-aos ensaios de relaxação. Os resultados permitem verificar a aderência da
-série de Prony aos dados experimentais e a extensão das diferenças entre
-a identificação própria e os parâmetros publicados por Caire.
 
 Os ensaios de relaxação foram realizados para seis níveis de deformação,
 de $2{,}5$ a $30\,\%$. Em cada nível, ajustou-se uma série de Prony com
 quatro tempos de relaxação próprios ao conjunto global de dados,
 $2{,}3199$, $21{,}3538$, $234{,}2795$ e $3731{,}4008\,\mathrm{s}$.
-Os ajustes produziram coeficientes de determinação entre $0{,}9865$ e
-$0{,}9998$, o que indica aderência elevada aos resultados experimentais.
+Os coeficientes de determinação apresentados na
+Tabela~\ref{tab:qualidade-ajustes-relaxacao} variam de $0{,}9994$ a
+$0{,}9998$. Em conjunto com os baixos valores de RMSE e MAE, esse
+resultado indica que as curvas ajustadas acompanham de perto os dados
+digitalizados utilizados na identificação.
 
 \begin{figure}[htb]
   \centering
@@ -4282,13 +4280,16 @@ $0{,}9998$, o que indica aderência elevada aos resultados experimentais.
   \fonte{Autoria própria.}
 \end{figure}
 
-A comparação entre os resultados por nível, apresentada na
-Tabela~\ref{tab:qualidade-ajustes-relaxacao}, confirma que os menores
-desvios foram associados aos níveis intermediários e superiores de
-deformação. A variação dos parâmetros é também compatível com a
-dependência não linear da resposta em relação à deformação, motivo pelo
-qual os coeficientes da representação PSM foram obtidos pela regressão dos
-coeficientes das curvas individuais em funções polinomiais de grau quatro.
+A Tabela~\ref{tab:qualidade-ajustes-relaxacao} permite comparar os erros
+entre os níveis de deformação. O RMSE varia de
+$0{,}0022\,\mathrm{MPa}$ a $0{,}0074\,\mathrm{MPa}$, e o MAE, de
+$0{,}0018\,\mathrm{MPa}$ a $0{,}0061\,\mathrm{MPa}$. Embora os erros
+absolutos sejam maiores nas curvas de maior tensão, os valores de $R^2$
+permanecem elevados em todos os níveis. A variação dos coeficientes
+identificados entre as curvas também mostra por que uma única curva
+linear não representa necessariamente toda a faixa de deformações:
+para a representação PSM, os coeficientes das curvas individuais foram
+regredidos em funções polinomiais de grau quatro.
 
 \begin{table}[htb]
   \caption{Qualidade dos ajustes de relaxação por nível de deformação.}
@@ -4324,16 +4325,14 @@ do decaimento mostram que os parâmetros publicados não são reproduzidos
 exatamente pelas tabelas fornecidas na própria tese. Para a frequência
 harmônica de $0{,}04\,\mathrm{Hz}$, o modelo próprio forneceu
 $G'(0{,}2512)\cong78{,}82\,\mathrm{MPa}$ e
-$G''(0{,}2512)\cong4{,}29\,\mathrm{MPa}$ no termo linear.
+$G''(0{,}2512)\cong4{,}29\,\mathrm{MPa}$ no termo linear. A diferença
+entre os RMSE médios indica melhor aderência dos parâmetros identificados
+à base digitalizada empregada; não demonstra, por si só, superioridade
+geral do modelo nem validação experimental independente, pois os dados
+usados são os mesmos que fundamentaram a identificação.
 
 \subsection{Reprodução da Resposta Estrutural}
 \label{sec:reproducao-solucao-estrutural}
-
-Esta subseção apresenta a avaliação da convergência da solução
-perturbativa e a resposta da geometria de referência. A comparação entre
-as ordens de aproximação verifica a sensibilidade do método às parcelas
-não lineares consideradas, ao passo que os máximos calculados fornecem
-referência para a etapa de dimensionamento.
 
 Antes da comparação entre geometrias, a resposta da configuração linear
 foi verificada pela comparação das soluções obtidas com expansão até a
@@ -4341,8 +4340,11 @@ primeira, segunda e terceira ordens. As curvaturas máximas na raiz do
 enrijecedor foram $0{,}3654$, $0{,}3768$ e
 $0{,}3761\,\mathrm{m^{-1}}$, respectivamente. A diferença entre as
 segunda e terceira ordens foi de aproximadamente $0{,}18\,\%$, mostrando
-que a expansão de terceira ordem aumentou pouco a resposta em relação à
-segunda e tornou adequada a adoção dessa ordem no estudo.
+que a inclusão da terceira ordem alterou pouco a curvatura máxima em
+relação à solução de segunda ordem. A proximidade desses dois resultados
+indica baixa sensibilidade a essa parcela adicional, para a configuração
+e as condições analisadas; não constitui uma estimativa do erro absoluto
+da solução.
 
 \begin{table}[htb]
   \caption{Sensibilidade da curvatura máxima à ordem da expansão perturbativa.}
@@ -4367,7 +4369,12 @@ $0{,}3761\,\mathrm{m^{-1}}$, localizado na extremidade superior do
 enrijecedor, isto é, em $s=0\,\mathrm{m}$ no início da solução. Esse ponto
 também correspondeu à maior deformação externa do poliuretano,
 $13{,}16\,\%$. O raio mínimo associado foi $2{,}6586\,\mathrm{m}$, maior
-que o MBR adotado de $2{,}00\,\mathrm{m}$.
+que o MBR adotado de $2{,}00\,\mathrm{m}$. Como o limite de curvatura
+correspondente ao MBR é $1/\mathrm{MBR}=0{,}50\,\mathrm{m^{-1}}$, a
+curvatura máxima de E1 permanece abaixo desse limite. O resultado fornece
+a referência estrutural para comparar as geometrias adaptadas, sem
+implicar que as dimensões originalmente publicadas para outros casos
+tenham sido reproduzidas sem alterações.
 
 \begin{figure}[htb]
   \centering
@@ -4380,23 +4387,21 @@ que o MBR adotado de $2{,}00\,\mathrm{m}$.
 \section{Solução do Estudo de Caso}
 \label{sec:solucao-do-estudo-de-caso}
 
-Nesta seção, aplica-se o procedimento validado às geometrias selecionadas
-para o estudo de caso. A análise considera condições comuns de
-carregamento e verifica o atendimento simultâneo aos limites de deformação
-do poliuretano e de raio mínimo de curvatura.
+Com a resposta de referência examinada, o procedimento é aplicado às três
+geometrias do estudo de caso, mantendo-se as condições de carregamento,
+material e linha flexível. Além de verificar os limites de deformação do
+poliuretano e de raio mínimo, comparam-se as margens obtidas e o volume de
+cada enrijecedor.
 
 \subsection{Resultados Obtidos}
 \label{sec:resultados-obtidos}
 
-Esta subseção reúne os valores máximos calculados para cada geometria e
-identifica o critério que governou a aprovação ou reprovação em cada
-caso. Os resultados são apresentados de forma conjunta para permitir a
-leitura direta das diferenças entre os enrijecedores.
-
-As três geometrias foram submetidas ao mesmo carregamento, à mesma
-frequência e ao mesmo modelo constitutivo. Os resultados foram obtidos
-pela reconstrução em 361 fases por ciclo e pelo cálculo dos máximos sobre
-a malha espacial e temporal utilizada.
+Para comparar os casos em uma mesma base, os resultados foram calculados
+com carregamento, frequência e modelo constitutivo comuns, reconstruindo
+361 fases por ciclo. Os máximos da
+Tabela~\ref{tab:resultados-dimensionamento} são estimativas nos pontos da
+malha espacial e temporal; por isso, suas magnitudes e posições dependem
+das resoluções adotadas e da aproximação perturbativa.
 
 \begin{table}[htb]
   \caption{Síntese dos resultados do dimensionamento das três geometrias.}
@@ -4419,26 +4424,33 @@ a malha espacial e temporal utilizada.
 \end{table}
 
 Na geometria E1, o fator global foi governado pela deformação do
-poliuretano. O fator associado à deformação foi $1{,}1394$, enquanto o
-fator associado ao MBR foi $1{,}3293$. Na E2, a deformação máxima atingiu
-$14{,}61\,\%$, com fator global de $1{,}0269$; neste caso também, o limite
-de deformação governou a decisão. O raio mínimo calculado foi
-$2{,}2592\,\mathrm{m}$, superior ao MBR imposto.
+poliuretano: $\mathrm{FS}_{\varepsilon}=1{,}1394$, enquanto
+$\mathrm{FS}_{\mathrm{MBR}}=1{,}3293$. A deformação máxima ficou
+$1{,}84$ ponto percentual abaixo do limite de $15\,\%$, e o raio mínimo
+de $2{,}6586\,\mathrm{m}$ superou o MBR em $0{,}6586\,\mathrm{m}$.
+Assim, os dois critérios foram atendidos, com maior proximidade do limite
+de deformação.
 
-A geometria E3 apresentou $18{,}30\,\%$ de deformação máxima e raio mínimo
-de $1{,}5714\,\mathrm{m}$, o que corresponde à utilização de
-$127{,}28\,\%$ do MBR considerado no critério. Os fatores de segurança
-foram $0{,}8198$ para a deformação e $0{,}7857$ para o MBR, sendo o fator
-global governado pelo MBR. Assim, a E3 não atende aos requisitos adotados,
-apesar de apresentar o menor volume e o maior comprimento.
+Em E2, a deformação máxima de $14{,}61\,\%$ ficou apenas
+$0{,}39$ ponto percentual abaixo do limite, resultando em
+$\mathrm{FS}_{\mathrm{global}}=1{,}0269$. Esse valor indica atendimento
+ao critério no caso calculado, mas uma margem menor que a de E1. O raio
+mínimo de $2{,}2592\,\mathrm{m}$ também permaneceu acima do MBR de
+$2{,}00\,\mathrm{m}$; portanto, como em E1, foi a deformação que
+governou a avaliação.
+
+A geometria E3 apresentou deformação máxima de $18{,}30\,\%$, superior ao
+limite adotado, e raio mínimo de $1{,}5714\,\mathrm{m}$, inferior ao
+MBR. Esse raio corresponde a uma curvatura de aproximadamente
+$0{,}6364\,\mathrm{m^{-1}}$, acima do limite de
+$0{,}50\,\mathrm{m^{-1}}$. Os fatores associados à deformação e ao MBR
+foram, respectivamente, $0{,}8198$ e $0{,}7857$; o segundo foi o menor
+e, portanto, governou a reprovação. Logo, E3 não atende a nenhum dos dois
+critérios, apesar de apresentar o menor volume e o maior comprimento
+entre as configurações avaliadas.
 
 \subsection{Comparação dos Resultados}
 \label{sec:comparacao-resultados}
-
-Esta subseção interpreta as diferenças observadas entre as geometrias
-avaliadas. A comparação busca relacionar volume, curvatura, deformação e
-fatores de segurança, sem confundir o estudo com uma otimização completa
-das dimensões do enrijecedor.
 
 O aumento do comprimento total não produziu uma redução proporcional da
 curvatura crítica nas geometrias avaliadas. E1, com volume de
@@ -4449,7 +4461,11 @@ $0{,}4426\,\mathrm{m^{-1}}$. E3 apresentou o menor volume,
 $0{,}2204\,\mathrm{m^3}$, mas a maior curvatura,
 $0{,}6364\,\mathrm{m^{-1}}$. Os resultados indicam que o diâmetro da base
 e a distribuição longitudinal da rigidez têm influência mais direta sobre
-a redução da curvatura do que o volume isoladamente.
+a resposta do que o volume isoladamente. Essa interpretação deve ser
+considerada em conjunto com o fato de que as geometrias também diferem
+nos comprimentos cilíndrico e cônico e no comprimento de linha após o
+enrijecedor; assim, os resultados não isolam o efeito de uma única
+dimensão.
 
 \begin{figure}[htb]
   \centering
@@ -4472,7 +4488,10 @@ Entre as geometrias aprovadas, E1 apresentou maior margem global
 curvatura absoluta e menor deformação máxima que E2. Todavia, E2 possui
 volume aproximadamente $5\,\%$ menor, valor obtido pela relação
 $0{,}2411/0{,}2539-1$. Portanto, a escolha entre E1 e E2 dependeria da
-priorização da margem estrutural ou da economia de material.
+priorização da margem em relação aos critérios adotados ou da economia
+de material. A diferença de volume, por si só, não permite concluir que
+E2 seja uma solução mais eficiente, pois sua margem de deformação é
+reduzida e os dois casos não foram objeto de otimização.
 
 Por fim, os resultados não constituem uma otimização global das dimensões.
 A aproximação é válida dentro da expansão perturbativa adotada, da
